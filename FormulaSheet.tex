@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{latexsym, epsfig, ulem, cancel, multicol, hyperref}
+\usepackage{graphicx, tikz, subfigure,pgfplots}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\setlength{\parindent}{0pt}
+\usepackage{multirow}
+\usepackage{mathtools}
+\pgfplotsset{width=10cm,compat=1.9}
+\usepackage{esint}
+
+\title{Relativity Formula Sheet}
+\author{Dennis Li}
+\date{A formula sheet}
+
+
+\newcommand{\liminfty}[1]{\lim_{#1 \to \infty}}
+\newcommand{\limzero}[1]{\lim_{#1 \to 0}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\lineint}[1]{\int_{#1}}
+\newcommand{\pypx}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\divg}{\nabla \cdot}
+\newcommand{\curl}{\nabla \times}
+\newcommand{\dydx}[2]{\frac{d #1}{d #2}}
+\newcommand{\sqbkt}[1]{\left[ #1 \right]}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\tribkt}[1]{\left< #1 \right>}
+\newcommand{\abso}[1]{\left|#1 \right|}
+
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Notation}
+Speed of light: $c = 299792458 \; m/s \approx 3\times 10^{8}\; m/s$\\
+\[
+\Delta t = c\Delta t_{conv}
+\]
+Where $t_{conv}$ is the conventional time.
+\[
+\beta = \frac{v_{rel}}{c} \;\;\; \gamma = \frac{1}{\sqrt{1-\beta^2}}
+\]
+Where $v_{rel}$ is the relative speed between 2 frames, where observer in one of the frame is at rest.
+
+
+
+\section{Special Relativity}
+\subsection{Invariant spacetime interval}
+\[
+\Delta s^2 = -\Delta t^2 + \Delta r^2
+\]
+\subsection{Time Dilation}
+\[
+\Delta t = \gamma \Delta \tau
+\]
+$\Delta \tau $ is the proper time. This is the formula of time dilation. 
+
+\subsection{Length Contraction}
+\[
+\Delta r = \frac{\Delta r_0}{\gamma}
+\]
+$\Delta r_0$ is the proper length.
+\subsection{Doppler Effect of Light}
+\[
+f' = \sqrt{\frac{1\pm\beta}{1\mp \beta}}f
+\]
+if blue-shifted: $\frac{+}{-}$, and vice versa.
+\subsection{Lorentz Transformation}
+Explicit form of Lorentz transformation
+\[
+\begin{cases}
+    t = \gamma(t'+\beta x')\\
+    x = \gamma(\beta t' + x')\\
+    y=y'\\
+    z=z'
+\end{cases}
+\]
+The Inverse Lorentz Transformation
+\[
+\begin{cases}
+    t' = \gamma(t-\beta x)\\
+    x = \gamma(-\beta t + x)\\
+    y'=y\\
+    z'=z
+\end{cases}
+\]
+Matrix form
+\[
+\begin{bmatrix}
+    t \\ x \\ y \\ z
+\end{bmatrix}
+=
+\begin{bmatrix}
+    \gamma      &   \beta\gamma   & 0 & 0\\
+    \beta\gamma &   \gamma & 0 & 0\\
+    0&0&1&0\\
+    0&0&0&1
+\end{bmatrix}
+\begin{bmatrix}
+    t'\\ x' \\ y' \\ z'
+\end{bmatrix}
+\]
+And the inverse
+\[
+\begin{bmatrix}
+    t' \\ x' \\ y' \\ z'
+\end{bmatrix}
+=
+\begin{bmatrix}
+    \gamma      &   -\beta\gamma   & 0 & 0\\
+    -\beta\gamma &   \gamma & 0 & 0\\
+    0&0&1&0\\
+    0&0&0&1
+\end{bmatrix}
+\begin{bmatrix}
+    t\\ x \\ y \\ z
+\end{bmatrix}
+\]
+\subsection{Momentum-Energy}
+\subsubsection{Momenergy derived}
+\[
+\textbf{Momenergy} = \paren{mass}\times \frac{\paren{\textbf{spacetime displacement}}}{\paren{\text{proper time of displacement}}}
+\]
+\subsubsection{Momentum and Energy}
+\[
+E=m\dydx{t}{\tau}
+\]
+\[
+p_x = m\dydx{x}{\tau}\;\;\; p_y = m\dydx{y}{\tau}\;\;\; p_z = m\dydx{z}{\tau}
+\]
+\subsubsection{Total Energy}
+\[
+E_{tot} = K + m_{rest}
+\]
+E is the total energy and K is the kinetic energy of the particle , is the rest mass.
+\[
+E_{tot}^2 = E_{rest}^2 + p^2
+\]
+
+
+
+
+\end{document}
+
