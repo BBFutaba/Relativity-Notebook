@@ -10,7 +10,7 @@
 \pgfplotsset{width=10cm,compat=1.9}
 
 \title{\textbf{Theory of Relativity Notebook}}
-\author{Dennis Li \thanks{Instructor: Prof. Gabriel Perez-Giz}}
+\author{Dennis Li \thanks{Prof. Gabriel Perez-Giz \and Manu Dorghabekov}}
 
 
 \newcommand{\liminfty}[1]{\lim_{#1 \to \infty}}
@@ -48,6 +48,7 @@ Now let us consider a line segment in the xy-plane as follows
 \end{axis}
 \end{tikzpicture}
 \end{center}
+
 We can see that the line segment can be the hypotenuse of infinitely many right triangle, whole remaining the same length.\\
 and this relationship satisfies the Pythagoras theorem:
 \[
@@ -1004,122 +1005,1697 @@ This section will wrap up our study so far nicely. It will be consisted of quest
 WIP
 
 \chapter{Intro to Electrodynamics - Griffiths}
+
 \section{Electrodynamics and Relativity (12.1)}
-\subsection{\textbf{12.1 The Special Theory of Relativity}}
-\subsubsection{\textbf{12.1.1 Einstein’s Postulates}}
-        \begin{enumerate}
-            \item \textbf{The principle of relativity.} The laws of physics apply in all inertial reference systems.
-            \item \textbf{The universal speed of light.} The speed of light in vacuum is the same for all inertial observers, regardless of the motion of the source.
-        \end{enumerate}
-\newline Although it developed historically out of Einstein’s contemplation
-of electrodynamics, the special theory is not limited to any particular class
-of phenomena—rather, it is a description of the space-time “arena” in which all
-physical phenomena take place. And in spite of the reference to the speed of light
-in the second postulate, relativity has nothing to do with light: c is a fundamental
-velocity, and it happens that light travels at that speed, but it is perfectly possible
-to conceive of a universe in which there are no electric charges, and hence
-no electromagnetic fields or waves, and yet relativity would still prevail.
-\subsubsection{\textbf{12.1.2 The Geometry of Relativity}}
+
+\subsection{12.1 The Special Theory of Relativity}
+
+    \subsubsection{12.1.1 Einstein’s Postulates}
+            \begin{enumerate}
+                \item \textbf{The principle of relativity.} The laws of physics apply in all inertial reference systems.
+                \item \textbf{The universal speed of light.} The speed of light in vacuum is the same for all inertial observers, regardless of the motion of the source.
+            \end{enumerate}
+    \newline Although it developed historically out of Einstein’s contemplation of electrodynamics, the special theory is not limited to any particular class of phenomena—rather, it is a description of the space-time “arena” in which all physical phenomena take place. And in spite of the reference to the speed of light
+    in the second postulate, relativity has nothing to do with light: c is a fundamental velocity, and it happens that light travels at that speed, but it is perfectly possible to conceive of a universe in which there are no electric charges, and hence no electromagnetic fields or waves, and yet relativity would still prevail.
+    
+\subsubsection{12.1.2 The Geometry of Relativity}
     \begin{enumerate}
         \item \textbf{The relativity of simultaneity}: Two events that are simultaneous in one inertial system are not, in general, simultaneous in another. An \textbf{observation} is an artificial reconstruction after the fact, when all the data are in, and it doesn’t depend on where the observer is located. In fact, a wise observer will avoid the whole problem by stationing assistants at strategic locations, each equipped with a watch synchronized to a master clock, so that time measurements can be made right at the scene.
         \item \textbf{Time dilation}: Moving clocks run slow. $\bar{\Delta t} = \sqrt{1 - \frac{v^2}{c^2}}\Delta t$. Evidently, the time elapsed between the same two events (light leaves bulb, and light strikes center of floor) is different for two observers (inside the train and outside). In fact, the interval recorded on the train clock, $\bar{t}$, is shorter by the factor $\gamma \equiv \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$. 
         Because moving clocks are not synchronized, it is essential when checking time dilation to focus attention on a single moving clock. All moving clocks runs low by the same factor, but you can’t start timing on one clock and then switch to another because they weren’t in step to begin with. But you can use as many stationary clocks (stationary with respect to you, the observer) as you please, for
         they are properly synchronized (moving observers would dispute this, but that’s their problem).
-        \item \textbf{Lorentz contraction}: Moving objects are shortened. Dimensions perpendicular to the velocity are not contracted. $\bar{x} = x \sqrt{1 - \frac{v^2}{c^2}}$.
+        \item \textbf{Lorentz contraction}: Moving objects are shortened. Dimensions perpendicular to the velocity are not contracted. $\bar{x} = x \sqrt{1 - \frac{v^2}{c^2}}$. And the relativistic velocity addition formula of A wrt C (ground), and A wrt B (train) is:
+        \[
+        v_{AC} = \frac{v_{AB} + v_{BC}}{1 + \frac{v_{AB} v_{BC}}{c^2}}
+        \]
     \end{enumerate}
-\subsubsection{\textbf{12.1.3 The Lorentz Transformations}}
-Suppose we know the coordinates $(x, y, z, t)$ of a particular event $E$ in one inertial system $S$, and we would like to calculate the coordinates $(\bar{x}, \bar{y}, \bar{z}, \bar{t})$ of that same event in some other inertial system $\bar{S}$. What we need is a “dictionary” for translating from the language of $S$ to the language of $\bar{S}$. We may as well orient our axes, so that $\bar{S}$ slides along the $x$ axis at speed $v$. If we “start the clock” $(t = 0)$ at the moment the origins $(O $ and $ \bar{O})$ coincide, then at time $t$, $\bar{O}$ will be a distance $vt$ from $O$, hence the Lorentz Transformations:
+    
+\subsubsection{12.1.3 The Lorentz Transformations}
+    Suppose we know the coordinates $(x, y, z, t)$ of a particular event $E$ in one inertial system $S$, and we would like to calculate the coordinates $(\bar{x}, \bar{y}, \bar{z}, \bar{t})$ of that same event in some other inertial system $\bar{S}$. What we need is a “dictionary” for translating from the language of $S$ to the language of $\bar{S}$. We may as well orient our axes, so that $\bar{S}$ slides along the $x$ axis at speed $v$. If we “start the clock” $(t = 0)$ at the moment the origins $(O $ and $ \bar{O})$ coincide, then at time $t$, $\bar{O}$ will be a distance $vt$ from $O$, hence the Lorentz Transformations:
+    
+    \begin{enumerate}
+        \item $\bar{x} = \gamma (x - vt)$
+        \item $\bar{y} = y$
+        \item $\bar{z} = z$
+        \item $\bar{t} = \gamma \left( t - \frac{v}{c^2} x \right)$
+    \end{enumerate}
+    
+    \textbf{Rules for Translating Angles:} There is no universal rule for translating angles — you have to know whether it’s an angle made by a velocity vector $\mathbf{\tan{\theta}=\frac{u_y}{u_x}=\frac{1}{\gamma}\frac{\bar{u}_y}{\bar{u}_x+v}}$ or a position vector $\mathbf{\tan{\theta}=\gamma\frac{\sin{\bar{\theta}}}{\cos{\bar{\theta}}}}$.]
+    
+\subsubsection{12.1.4 The Structure of Spacetime}
+    \begin{enumerate}
+        \item \textbf{Four-vectors.} \\
+            The Lorentz transformations take on a simpler appearance when expressed in matrix form (where $x^0=ct, \beta = \frac{v}{c}, x^1=x, x^2=y, x^3=z$): 
+            \[
+            \begin{pmatrix}
+            \bar{x}^0 \\
+            \bar{x}^1 \\
+            \bar{x}^2 \\
+            \bar{x}^3
+            \end{pmatrix}
+            =
+            \begin{pmatrix}
+            \gamma & -\gamma\beta & 0 & 0 \\
+            -\gamma\beta & \gamma & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+            \end{pmatrix}
+            \begin{pmatrix}
+            x^0 \\
+            x^1 \\
+            x^2 \\
+            x^3
+            \end{pmatrix}
+            \]   
+            Letting Greek indices run from 0 to 3, this can be distilled into a single equation:
+            \[
+            \bar{x}^\mu = \sum_{\nu=0}^{3} (\Lambda^\mu_{\ \nu}) x^\nu,
+            \]
+        
+            where $\Lambda$ is the \textbf{Lorentz transformation matrix} (the superscript $\mu$ labels the row, the subscript $\nu$ labels the column). \\
+            The \textbf{four-dimensional scalar product} (is invariant under $\Lambda$ just like ordinary dot product is invariant under rotation): 
+            \[ 
+            -a^0b^0+a^1b^1+a^2b^2+a^3b^3 = -a^0b^0 + \mathbf{a \cdot b} 
+            \]
+            Introduce \textbf{covariant} vector $a_{\mu}$ , which differs from \textbf{contravariant}  $a^{\mu}$ only in the sign of zeroth component:
+            \[
+            a_{\mu}=(a_0, a_1, a_2, a_3)=(-a^0, a^1, a^2, a^3)
+            \] Note, that raising or lowering a temporal index costs a minus sign $(a_0=-a^0)$.  Formally the \textbf{Minkowski metric}, 
+            \[
+            a_{\mu} = \sum_{\nu=0}^{3} g_{\mu\nu} a^\nu , \quad \text{where} \quad g_{\mu\nu} \equiv
+            \begin{pmatrix}
+            -1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+            \end{pmatrix}
+            \]
+            The scalar product can now be written with summation symbol,
+            \[
+            \sum_{\mu=0}^{3} a^{\mu} b_\mu \quad \text{ or, more compactly, } \quad a^\mu b_\mu =a_\mu b^\mu
+            \]
+            This is called the \textbf{Einstein summation convention}. Note \textbf{rapidity} (rapidity add, whereas velocities dont): 
+            \[
+            \theta \equiv \tanh^{-1}{v/c}
+            \]
+    
+        \item \textbf{The invariant interval}\\
+            If \(a^\mu a_\mu > 0\), \(a^\mu\) is called spacelike. \\
+            If \(a^\mu a_\mu < 0\), \(a^\mu\) is called timelike. \\
+            If \(a^\mu a_\mu = 0\), \(a^\mu\) is called lightlike. \\
+            
+            Suppose event A occurs at \((x^0_A, x^1_A, x^2_A, x^3_A)\), and event B at \((x^0_B, x^1_B, x^2_B, x^3_B)\).
+            The difference,
+            \[
+            \Delta x^\mu \equiv x^\mu_A - x^\mu_B,
+            \]
+            is the displacement 4-vector. The scalar product of \(\Delta x^\mu\) with itself is called the invariant interval between two events:
+            
+            \[
+            I \equiv (\Delta x)^\mu (\Delta x)_\mu = -(\Delta x^0)^2 + (\Delta x^1)^2 + (\Delta x^2)^2 + (\Delta x^3)^2 = -c^2t^2 + d^2,
+            \]
+            
+            where \(t\) is the time difference between the two events and \(d\) is their spatial separation.\\
+            If the displacement between two events is timelike (\(I < 0\)), there exists an inertial system (accessible by Lorentz transformation) in which they occur at the same point. For if I hop on a train going from (A) to (B) at the speed \(v = \frac{d}{t}\), leaving event A when it occurs, I shall be just in time to pass B when it occurs; in the train system, A and B take place at the same point. You cannot do this for a spacelike interval, of course, because \(v\) would have to be greater than \(c\), and no observer can exceed the speed of light (\(\gamma\) would be imaginary and the Lorentz transformations would be nonsense). On the other hand, if the displacement is spacelike (\(I > 0\)), then there exists a system in which the two events occur at the same time (see Prob. 12.21). And if the displacement is lightlike (\(I = 0\)), then the two events could be connected by a light signal.
+            
+        \item \textbf{Space-time diagrams}
+            \\Under rotations about the \(z\) axis, a point \(P\) in the \(xy\) plane describes a circle: the locus of all points a fixed distance \(r = \sqrt{x^2 + y^2}\) from the origin. Under Lorentz transformations, however, it is the interval \(I = (x^2 - c^2t^2)\) that is preserved, and the locus of all points with a given value of \(I\) is a hyperbola. 
+            When you perform a Lorentz transformation (that is, when you go into a moving inertial system), the coordinates \((x, t)\) of a given event will change to \((\bar{x}, \bar{t})\), but these new coordinates will lie on the same hyperbola as \((x, t)\). \vspace{1 cm}
+            \begin{center}
+                \begin{tikzpicture}[scale=1]
+                    % Draw axes
+                    \draw[thick,->] (0,0) -- (3,0) node[anchor=north] {$x$ (space)};
+                    \draw[thick,->] (0,0) -- (0,3) node[anchor=east] {$ct$ (time)};
+                
+                    % Draw light cone
+                    \draw[dashed] (0,0) -- (2.8,2.8) node[anchor=south west] {Future Light Cone};
+                    \draw[dashed] (0,0) -- (-2.5,2.5);
+                    \draw[dashed] (0,0) -- (2.5,-2.5) node[anchor=north west] {Past Light Cone};
+                    \draw[dashed] (0,0) -- (-2.5,-2.5);
+                
+                    % Timelike separated event
+                    \filldraw[black] (1,2) circle (2pt) node[anchor=south east] {Timelike Event};
+                
+                    % Lightlike separated event
+                    \filldraw[black] (2,2) circle (2pt) node[anchor=south west] {\quad Lightlike Event};
+                
+                    % Spacelike separated event
+                    \filldraw[black] (2.5,0.5) circle (2pt) node[anchor=south west] {Spacelike Event};
+                
+                    % Origin Event
+                    \filldraw[black] (0,0) circle (2pt) node[anchor=north east] {Event E};
+                \end{tikzpicture}
+            \end{center}
 
-\begin{enumerate}
-    \item $\bar{x} = \gamma (x - vt)$
-    \item $\bar{y} = y$
-    \item $\bar{z} = z$
-    \item $\bar{t} = \gamma \left( t - \frac{v}{c^2} x \right)$
-\end{enumerate}
+             \textbf{Conclusion}: In terms of the space-time diagram, an event on the upper sheet of a timelike hyperboloid definitely occurred after (\( 0, \bm{0} \)), and one on the lower sheet certainly occurred before; but an event on a spacelike hyperboloid occurred at positive $t$, or negative $-t$, depending on your reference frame.The displacement between causally related events is always timelike, and their temporal ordering is the same for all inertial observers.
+        \end{enumerate}
 
-\textbf{Rules for Translating Angles:} There is no universal rule for translating angles — you have to know whether it’s an angle made by a velocity vector $\mathbf{\tan{\theta}=\frac{u_y}{u_x}=\frac{1}{\gamma}\frac{\bar{u}_y}{\bar{u}_x+v}}$ or a position vector $\mathbf{\tan{\theta}=\gamma\frac{\sin{\bar{\theta}}}{\cos{\bar{\theta}}}}$.]
+\subsection{12.2 Relativistic Mechanics}
 
-\subsection{\textbf{12.1.4 The Structure of Spacetime}}
-\begin{enumerate}
-    \item \textbf{Four-vectors.} The Lorentz transformations take on a simpler appearance when expressed in matrix form (where $x^0=ct, \beta = \frac{v}{c}, x^1=x, x^2=y, x^3=z$): 
-    \[
-    \begin{pmatrix}
-    \bar{x}^0 \\
-    \bar{x}^1 \\
-    \bar{x}^2 \\
-    \bar{x}^3
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-    \gamma & -\gamma\beta & 0 & 0 \\
-    -\gamma\beta & \gamma & 0 & 0 \\
-    0 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 1
-    \end{pmatrix}
-    \begin{pmatrix}
-    x^0 \\
-    x^1 \\
-    x^2 \\
-    x^3
-    \end{pmatrix}
-    \]   
-    Letting Greek indices run from 0 to 3, this can be distilled into a single equation:
-    \[
-    \bar{x}^\mu = \sum_{\nu=0}^{3} (\Lambda^\mu_{\ \nu}) x^\nu,
-    \]
-\end{enumerate}
-where $\Lambda$ is the \textbf{Lorentz transformation matrix} (the superscript $\mu$ labels the row, the subscript $\nu$ labels the column). \\
-The \textbf{four-dimensional scalar product} (is invariant under $\Lambda$ just like ordinary dot product is invarient under rotation): 
-\[ 
--a^0b^0+a^1b^1+a^2b^2+a^3b^3 = =a^0b^0 + \mathbf{a \cdot b} 
-\]
-Introduce \textbf{covariant} vector $a_{\mu}$ , which differs from \textbf{contravariant}  $a^{\mu}$ only in the sign of zeroth component:
-\[
-a_{\mu}=(a_0, a_1, a_2, a_3)=(-a^0, a^1, a^2, a^3)
-\] Note, that raising or lowering a temporal index costs a minus sign $(a_0=-a^0)$.  Formally the \textbf{Minkowski metric}, 
-\[
-a_{\mu} = \sum_{\nu=0}^{3} g_{\mu\nu} a^\nu , \quad \text{where} \quad g_{\mu\nu} \equiv
-\begin{pmatrix}
--1 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1
-\end{pmatrix}
-\]
-The scalar product can now be written with summation symbol,
-\[
-\sum_{\mu=0}^{3} a^{\mu} b_\mu \quad \text{ or, more compactly, } \quad a^\mu b_\mu =a_\mu b^\mu
-\]
-This is called the \textbf{Einstein summation convention}.
-\section{12.2}
-placeholder
-\section{12.3}
-placeholder
+    \subsubsection{12.2.1 Proper Time and Proper Velocity}      
+        As you progress along your world line (\(\tau\) the time associated with the moving object -\textbf{proper time}), your watch runs slow; while the clock on the wall ticks off an interval \(dt\), your watch only advances \(d\tau\):
+        
+        \[
+        d\tau = \sqrt{1 - \frac{u^2}{c^2}} \, dt.
+        \]
+        
+        The hybrid quantity (distance measured on the ground, over time measured in the airplane) is called \textbf{proper velocity}; for contrast, I’ll call \(u\) the ordinary velocity. The two are related by:
+        
+        \[
+        \eta = \frac{u}{\sqrt{1 - \frac{u^2}{c^2}}}.
+        \]
+        
+        From a theoretical standpoint, however, proper velocity has an enormous advantage over ordinary velocity: it transforms simply, when you go from one inertial system to another. In fact, \(\eta\) is the spatial part of a 4-vector,
+        
+        \[
+        \eta^\mu \equiv \frac{dx^\mu}{d\tau}=\gamma(c, v_x, v_y, v_z)
+        \]
+        
+        whose zeroth component is:
+        
+        \[
+        \eta^0 = \frac{dx^0}{d\tau} = c \frac{dt}{d\tau} = \frac{c}{\sqrt{1 - \frac{u^2}{c^2}}}
+        \]
+        
+        for the numerator, \(dx^\mu\), is a displacement 4-vector, while the denominator, \(d\tau\), is invariant. Thus, for instance, when you go from system \(S\) to system \(\bar{S}\), moving at speed \(v\) along the common \(x\)\(\bar{x}\) axis:
+        
+        \[
+        \begin{aligned}
+        \bar{\eta}^0 &= \gamma (\eta^0 - \beta \eta^1), \\
+        \bar{\eta}^1 &= \gamma (\eta^1 - \beta \eta^0), \\
+        \bar{\eta}^2 &= \eta^2, \\
+        \bar{\eta}^3 &= \eta^3.
+        \end{aligned}
+        \]
+        More generally,
+        
+        \[
+        \bar{\eta}^\mu = \Lambda^\mu_{\ \nu} \eta^\nu, \quad
+        \]
+        
+        \(\eta^\mu\) is called the proper velocity 4-vector, or simply the 4-velocity.
+        
+        By contrast, the transformation rule for ordinary velocities is quite cumbersome:
+        
+        \[
+        \begin{aligned}
+        \bar{u}_x &= \frac{d\bar{x}}{d\bar{t}} = \frac{u_x - v}{1 - \frac{vu_x}{c^2}}, \\
+        \bar{u}_y &= \frac{d\bar{y}}{d\bar{t}} = \frac{u_y}{\gamma \left(1 - \frac{vu_x}{c^2}\right)}, \\
+        \bar{u}_z &= \frac{d\bar{z}}{d\bar{t}} = \frac{u_z}{\gamma \left(1 - \frac{vu_x}{c^2}\right)}.
+        \end{aligned} \quad (12.45)
+        \]
+        
+        The reason for the added complexity is plain: we’re obliged to transform both the numerator \(dl\) and the denominator \(dt\), whereas for proper velocity, the denominator \(d\tau\) is invariant, so the ratio inherits the transformation rule of the numerator
+        alone.
+        
+    \subsubsection{12.2.2 Relativistic Energy and Momentum}
+        \textbf{Relativistic momentum} of an object of mass \(m\) traveling at (ordinary) velocity \(u\):
+        
+        \[
+        \bm{p} \equiv m\eta = \frac{mu}{\sqrt{1 - \frac{u^2}{c^2}}}
+        \]
+        
+        Relativistic momentum is the spatial part of a 4-vector,
+        
+        \[
+        p^\mu \equiv m\eta^\mu,
+        \]
+        
+        with the temporal component,
+        
+        \[
+        p^0 = m\eta^0 = \frac{mc}{\sqrt{1 - \frac{u^2}{c^2}}}
+        \]
+        
+        Einstein identified \(p^0c\) as \textbf{relativistic energy}:
+        
+        \[
+        E \equiv \frac{mc^2}{\sqrt{1 - \frac{u^2}{c^2}}}
+        \]
+        
+        Notice that the relativistic energy is nonzero even when the object is stationary; we call this rest energy:
+        
+        \[
+        E_\text{rest} \equiv mc^2
+        \]
+        
+        The remainder, which is attributable to the motion, is kinetic energy:
+        
+        \[
+        E_\text{kin} \equiv E - mc^2 = mc^2 \left(\frac{1}{\sqrt{1 - \frac{u^2}{c^2}}} - 1\right)
+        \]
 
+        \begin{center}
+            \textbf{In every closed system, the total relativistic energy and momentum are conserved.}
+        \end{center}
+        
+        The scalar product of \( p^\mu \) with itself is
+        
+        \[
+        p^\mu p_\mu = -(p^0)^2 + (\bm{p} \cdot \bm{p}) = -m^2c^2
+        \]
+        
+        In terms of the relativistic energy and momentum,
+        
+        \[
+        E^2 - p^2c^2 = m^2c^4 
+        \]
+        
+        \newline This result is extremely useful, for it enables you to calculate \(E\) (if you know \( p \equiv |\bm{p}| \)), or \( p \) (knowing \( E \)), without ever having to determine the velocity. If you know the energy and momentum of a particle, the velocity is: 
+        \[
+        \bm{v}=\frac{\bm{p}c^2}{E}
+        \]
+        
+    \subsubsection{12.2.3 Relativistic Kinematics}
+    \subsubsection{12.2.4 Relativistic Dynamics}
+
+        Newton’s first law is built into the principle of relativity. His second law, in the form
+        \[
+        \bm{F} = \frac{d\bm{p}}{dt} =\frac{m}{\sqrt{1 - \frac{u^2}{c^2}}} \left[ \mathbf{a} + \frac{\mathbf{u}(\mathbf{u} \cdot \mathbf{a})}{c^2 - u^2} \right]
+        \]
+        
+        retains its validity in relativistic mechanics, provided we use the relativistic momentum.
+        Work, as always, is the line integral of the force:
+        
+        \[
+        W \equiv \int \bm{F} \cdot d\bm{l}.
+        \]
+        
+        The work-energy theorem (“the net work done on a particle equals the increase in its kinetic energy”) holds relativistically:
+        
+        \[
+        W = \int \frac{d\bm{p}}{dt} \cdot d\bm{l} = \int \frac{d\bm{p}}{dt} \cdot \frac{d\bm{l}}{dt} dt = \int \frac{d\bm{p}}{dt} \cdot \bm{u} \, dt= \int \frac{dE}{dt} dt = E_{\text{final}} - E_{\text{initial}}.
+        \]
+        
+        (Since the rest energy is constant, it doesn’t matter whether we use the total energy, here, or the kinetic energy.)
+        
+        Unlike the first two, Newton’s third law does not, in general, extend to the relativistic domain. Indeed, if the two objects in question are separated in space, the third law is incompatible with the relativity of simultaneity. For suppose the force of A on B at some instant \(t\) is \(\bm{F}(t)\), and the force of B on A at the same instant is \(-\bm{F}(t)\); then the third law applies in this reference frame. But a moving observer will report that these equal and opposite forces occurred at different times; in his system, therefore, the third law is violated.
+        
+        Because \(\bm{F}\) is the derivative of momentum with respect to ordinary time, both the numerator and the denominator must be transformed. Thus the \(x\) component:
+        
+        \[
+        \bar{F}_x = \frac{d \bar{p}_x}{d \bar{t}} = \frac{\gamma dp_x - \gamma\beta dp^0}{\gamma dt -  \frac{\gamma\beta}{c} dx} = \frac{\frac{dp_x}{dt} - \beta \frac{ dp^0}{dt}}{1 - \frac{\beta}{c}\frac{dx}{dt}} = \frac{F_x - \frac{\beta}{c}(\frac{dE}{dt})}{1 - \frac{\beta u_x}{c}}.
+        \]
+        and the \(y\) and \(z\) components:
+        \[
+        \bar{F}_y = \frac{F_y}{\gamma (1 - \beta u_x/c)}, \hspace{2cm} \bar{F}_z = \frac{F_z}{\gamma (1 - \beta u_x/c)}. 
+        \]      
+        
+        We calculated \(\frac{dE}{dt}\) using \(\frac{d\bm{p}}{dt} \cdot \bm{u} = \bm{F} \cdot \bm{u}\); putting that in:
+        
+        \[
+        \bar{F}_x = \frac{F_x - \beta (\bm{u} \cdot \bm{F})/c}{1 - \beta u_x/c}.
+        \]
+        
+        In one special case, these equations are reasonably tractable: If the particle is (instantaneously) at rest in \(S\), so that \(\bm{u} = 0\), then:
+        
+        \[
+        \bar{\bm{F}}_\perp = \frac{1}{\gamma} \bm{F}_\perp, \quad \bar{\bm{F}}_\parallel = \bm{F}_\parallel.
+        \]
+        
+        We introduce a “proper” force, analogous to proper velocity, which is the derivative of momentum with respect to proper time:
+        
+        \[
+        K^\mu \equiv \frac{dp^\mu}{d\tau}. \quad (12.68)
+        \]
+        
+        This is called the Minkowski force; it is plainly a 4-vector, since \(p^\mu\) is a 4-vector and proper time is invariant. The spatial components of \(K^\mu\) are related to the “ordinary” force by:
+        
+        \[
+        \bm{K} = \left(\frac{dt}{d\tau}\right) \frac{d\bm{p}}{dt} = \frac{1}{\sqrt{1 - \frac{u^2}{c^2}}} \bm{F}, \quad (12.69)
+        \]
+        
+        while the zeroth component,
+        
+        \[
+        K^0 = \frac{dp^0}{d\tau} = \frac{1}{c} \frac{dE}{d\tau},
+        \]
+        
+        is, apart from the \(1/c\), the (proper) rate at which the energy of the particle increases—in other words, the (proper) power delivered to the particle.
+
+        In classical mechanics, the total momentum (\(\bm{P}\)) of a collection of interacting particles can be expressed as the total mass (\(M\)) times the velocity of the center-of-mass:
+        
+        \[
+        \bm{P} = M \frac{d\bm{R}_\text{m}}{dt}.
+        \]
+        
+        In relativity, the center-of-mass (\(\bm{R}_\text{m} = \frac{1}{M} \sum m_i \bm{r}_i\)) is replaced by the \textbf{center-of-energy} (\(\bm{R}_\text{e} = \frac{1}{E} \sum E_i \bm{r}_i\), where \(E\) is the total energy), and \(M\) by \(E/c^2\):
+        
+        \[
+        \bm{P} = \frac{E}{c^2} \frac{d\bm{R}_\text{e}}{dt}.
+        \]
+        
+        \(\bm{P}\) now includes all forms of momentum, and \(E\) all forms of energy—not just mechanical, but also whatever may be stored in the fields.
+        
 \chapter{Intro to Elementary Particles - Griffiths}
-\section{Relativistic Kinematics (Chapter 3)}
-placeholder
+
+    \section{Relativistic Kinematics (Chapter 3)}
+        \subsection{3.2 Four-vectors}
+            \subsubsection{1. Tensor Rank and Components}
+                \begin{itemize}
+                    \item \textbf{Second-Rank Tensor (e.g., \( S^{\mu \nu} \))}:
+                    \begin{itemize}
+                        \item A second-rank tensor has two indices (e.g., \( \mu \) and \( \nu \)).
+                        \item In four-dimensional spacetime, where each index can take four values (0, 1, 2, 3), a second-rank tensor has \( 4 \times 4 = 16 \) components.
+                        \item It transforms with two factors of the transformation matrix \( A \):
+                        \[
+                        S'^{\mu \nu} = A^\mu_{\ \alpha} A^\nu_{\ \beta} S^{\alpha \beta}.
+                        \]
+                        \end{itemize}
+                
+                    \item \textbf{Third-Rank Tensor (e.g., \( T^{\mu \nu \rho} \))}:
+                    \begin{itemize}
+                        \item A third-rank tensor has three indices (e.g., \( \mu \), \( \nu \), and \( \rho \)).
+                        \item It has \( 4^3 = 64 \) components and transforms with three factors of the transformation matrix \( A \):
+                        \[
+                        T'^{\mu \nu \rho} = A^\mu_{\ \alpha} A^\nu_{\ \beta} A^\rho_{\ \gamma} T^{\alpha \beta \gamma}.
+                        \]
+                    \end{itemize}
+                \end{itemize}
+            
+            \subsubsection{2. Hierarchy of Tensors}
+            
+                \begin{itemize}
+                    \item \textbf{Scalars} are tensors of rank zero. They have no indices and are invariant under transformations.
+                    \item \textbf{Vectors} are tensors of rank one, with a single index (e.g., \( V^\mu \)).
+                    \item Higher-rank tensors follow the pattern, with more indices and correspondingly more components.
+                \end{itemize}
+            
+            \subsubsection{}section*{3. Covariant, Mixed, and Symmetric Tensors}
+            
+                \begin{itemize}
+                    \item \textbf{Covariant Tensor}: A tensor with all lower indices (e.g., \( S_{\mu \nu} \)). These indices are obtained by lowering the indices of a \textbf{contravariant tensor} (with upper indices) using the metric tensor \( g_{\mu \nu} \). Lowering an index can involve a change in sign for spatial indices in a metric with signature \((+, -, -, -)\).
+                    \[
+                        s_{\mu \nu} = g_{\mu k} g_{\nu \lambda} s^{k \lambda};
+                    \]
+                    \item \textbf{Mixed Tensor}: A tensor that has both upper and lower indices (e.g., \( T^{\mu}_{\ \nu} \)). This tensor can result from contracting a higher-rank tensor.
+                    \[
+                        s^{\mu}_{\nu} = g_{\nu \lambda} s^{\mu \lambda};
+                    \]
+                    \item \textbf{Symmetric:} A second rank tensor is called symmetric if its unchanged when you switch the indices (\(s^{\nu \mu}=s^{\mu \nu}\)); it is \textbf{antisymmetric} if it changes sign (\(a^{\nu \mu}=-a^{\mu \nu}\)).
+                \end{itemize}
+            
+            \subsubsection{4. Tensor Products}
+            
+                \begin{itemize}
+                    \item \textbf{Product of Two Tensors}: The product of two tensors is itself a tensor of combined rank:
+                    \begin{itemize}
+                        \item Example: \( (a^\mu b^\nu) \) is a second-rank tensor.
+                        \item Example: \( (a^\mu T^{\nu \rho \sigma}) \) is a fourth-rank tensor.
+                    \end{itemize}
+                \end{itemize}
+            
+            \subsubsection*{5. Tensor Contraction}
+            
+                \begin{itemize}
+                    \item \textbf{Contraction}: The process of summing over a pair of like indices (one upper and one lower) reduces the rank of the tensor by 2:
+                    \begin{itemize}
+                        \item Example: \( S^\mu_{\ \mu} \) is a scalar (rank-zero tensor).
+                        \item Example: \( T^{\mu \nu}_{\ \ \nu} \) is a vector (rank-one tensor).
+                    \end{itemize}
+                \end{itemize}
+
+        \subsection{3.4.2 Relativistic Collisions}
+            In a relativistic collision, energy and momentum are always conserved. In other words, all four components of the energy-momentum four-vector are conserved. As in the classical case, kinetic energy may or may not be conserved.
+            
+            \begin{enumerate}
+                \item Energy is conserved: \( E_A + E_B = E_C + E_D \).
+                \item Momentum is conserved: \( \mathbf{p}_A + \mathbf{p}_B = \mathbf{p}_C + \mathbf{p}_D \).
+                \item Kinetic energy may or may not be conserved.
+            \end{enumerate}
+            
+            The first two can be combined into a single expression: \( p_A^\mu + p_B^\mu = p_C^\mu + p_D^\mu \).
+            
+            Again, we can classify collisions as sticky, explosive, or elastic, depending on whether the kinetic energy decreases, increases, or remains the same. Since the total energy (rest plus kinetic) is always conserved, it follows that rest energy (and hence also mass) increases in a sticky collision, decreases in an explosive collision, and is unchanged in an elastic collision. Please note: except in \textit{elastic collisions}, mass is not conserved.
+            
+            \begin{enumerate}
+                \item[(a)] Sticky (kinetic energy decreases): rest energy and mass increase.
+                \item[(b)] Explosive (kinetic energy increases): rest energy and mass decrease.
+                \item[(c)] Elastic (kinetic energy is conserved): rest energy and mass are conserved.
+            \end{enumerate}
+            
+        
+        \textit{\textbf{Suggestion 1.} To get the energy of a particle, when you know its momentum, use the invariant:}
+        \[
+            E^2-\bm{p}^2c^2=m^2c^4    
+        \] 
+        
+        \textit{\textbf{Suggestion 2.} If you know the energy and momentum of a particle, and you want to determine its velocity, use:}
+        \[
+            \bm{v}=\frac{\bm{p}c^2}{E}
+        \]
+        
+        \textit{\textbf{Suggestion 3.} Use four-vector notation, and exploit the invariant dot product. Remember that \(p^2=mc^2\) for any real particle}\\
+        
+        \textit{\textbf{Suggestion 4.} If a problem seems cumbersome in the lab frame, try analyzing it in the center-of-momentum (CM) (\(\bm{p_{total}=0}\)) system. (In the CM frame, \( \vec{p}'_{\text{total}} = 0 \implies 0 = \gamma_{\text{CM}} \left( \vec{p}_{\text{total}} - \frac{E_{\text{total}} \vec{v}_{\text{CM}}}{c^2} \right) \implies \vec{v}_{\text{CM}} = \frac{\vec{p}_{\text{total}} c^2}{E_{\text{total}}} \))}
 
 \chapter{A First Course in GR - Schultz}
-WIP
-\section{Chapter 1}
-WIP
-\section{Chapter 2}
-WIP
-\section{Chapter 3}
-WIP
-\section{Chaoter 4}
-WIP
+
+\section{Chapter 1. Special relativity}
+    \subsection{1.2 Definition of an inertial observer in SR}
+        This coordinate system must satisfy the following three properties to be called inertial:
+
+        \begin{enumerate}
+            \item The distance between point \( P_1 \) (coordinates \( x_1, y_1, z_1 \)) and point \( P_2 \) (coordinates \( x_2, y_2, z_2 \)) is independent of time.
+            \item The clocks that sit at every point ticking off the time coordinate \( t \) are synchronized and all run at the same rate.
+            \item The geometry of space at any constant time \( t \) is Euclidean.
+        \end{enumerate}
+        An observation made by the inertial observer is the act of assigning to any event the coordinates \( x \), \( y \), \( z \) of the location of its occurrence, and the time read by the clock at \( (x, y, z) \) when the event occurred.
+    \subsection{1.5 Construction of the coordinates used by another observer}
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[scale=1.5]
+            % Diagram on the left: Frame O
+            \draw[<->] (-2.5,0) -- (2.5,0) node[right] {$x$};  % x-axis
+            \draw[<->] (0,-2.5) -- (0,2.5) node[above] {$t$};  % t-axis
+            \draw[<->,thick] (-1,-2) -- (1,2) node[above right] {$\bar{t}$}; % t-bar axis
+            \draw[<->,thick] (-2,-1) -- (2,1) node[below right] {$\bar{x}$}; % x-bar axis
+            
+            % Indicating the angles
+            \draw (0.7,0) arc[start angle=0, end angle=27, radius=0.7];
+            \node at (0.8, 0.2) {$\theta$};
+            \draw (0.5,1) arc[start angle=45, end angle=90, radius=0.7];
+            \node at (0.3, 1.3) {$\theta$};
+        
+            % Diagram on the right: Frame O-bar
+            \draw[<->] (6,-2.5) -- (6, 2.5) node[above] {$\bar{t}$}; % t-bar-axis
+            \draw[->] (3.5,0) -- (8.5,0) node[right] {$\bar{x}$}; % x-bar-axis
+            \draw[<-,thick] (5,2) -- (7,-2) node[above right] {$t$}; % t-axis
+            \draw[->,thick] (4,1) -- (8,-1) node[below right] {$x$}; % x-axis
+            
+            % Indicating the angles
+            \draw (6.7,0) arc[start angle=0, end angle=-27, radius=0.7];
+            \node at (7, -0.2) {$\theta$};
+            \draw (6,1) arc[start angle=90, end angle=130, radius=0.7];
+            \node at (5.7, 1.3) {$\theta$};
+        
+        \end{tikzpicture}
+        \caption{Spacetime diagrams representing the same physical situation from different frames of reference. On the left, the diagram is in the frame of observer \(O\), with \(\bar{O}\) moving to the right. On the right, the diagram is in the frame of observer \(\bar{O}\), with \(O\) moving to the left. The four angles are all equal to \(\arctan{|v|}\), where \(|v|\) is the relative speed between \(O\) and \(\bar{O}\).}
+        \end{figure}
+
+        \textbf{Note:} When light rays (traveling at \(45^{\deg}\) in any reference frame) from an event hit the \(t\) (or \(\bar{t}\)) axis at the same event (coordinate on the time axis), they are happening simultaneously in that reference frame. Also note:
+        \(\bar{t}\) axis (\(\bar{x} = 0\)) : \( vt - x = 0 \),\\
+        \(\bar{x}\) axis (\(\bar{t} = 0\)) : \( vx - t = 0 \).
+        
+    \subsection{1.6 Invariance of the interval \(\Delta s^2 = \Delta \bar{ s}^2\) }
+        \textbf{Note:} Two events which are simultaneous in one frame are simultaneous in any frame moving in a direction perpendicular to their separation relative to the first frame.
+        
+    \subsection{1.7 Invariant hyperbola}
+        In (Fig. 1.12(a) p:16) we have drawn a hyperbola and its tangent at \( x = 0 \), which is obviously a line of simultaneity \( t = \text{const} \). In (Fig. 1.12(b) p:16) we have drawn the same curves from the point of view of observer \( \bar{O} \) who moves to the left relative to \( O \). The event \( P \) has been shifted to the right: it could be shifted anywhere on the hyperbola by choosing the Lorentz transformation properly. The lesson of Fig. 1.12(b) is that the tangent to a hyperbola at any event \( P \) is a line of simultaneity of the Lorentz frame whose time axis joins \( P \) to the origin. If this frame has velocity \( v \), the tangent has slope \( v \).
+    \subsection{1.8 Particularly important results}
+        \textit{Time Dilation Note:} Notice that \( \Delta \bar{t} \) is the time actually measured by a single clock, which moves on a world line from the origin to \( B \), while \( \Delta t \) is the difference in the readings of two clocks at rest in \( O \); one on a world line through the origin and one on a world line through \( B \).
+        
+
+        \textit{Lorentz contraction:}
+        \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[scale=1.5]
+            % Diagram on the left: Frame O
+            \draw[<->] (-2.5,0) -- (3.5,0) node[right] {$x$};  % x-axis
+            \draw[<->] (0,-2.5) -- (0,2.5) node[above] {$t$};  % t-axis
+            \draw[<->,thick] (-1,-2) -- (1,2) node[above right] {$\bar{t}$}; % t-bar axis
+            \draw[<->,dashed] (-2,-1) -- (3,1.5) node[below right] {$\bar{x}$}; % x-bar axis
+            \draw[<->,thick] (1,-2) -- (3,2) node[above right] {$\bar{t}$}; % t-bar axis
+            
+            % Indicating the angles
+            \draw (0.7,0) arc[start angle=0, end angle=27, radius=0.7];
+            \node at (0.8, 0.2) {$\theta$};
+            \draw (0.5,1) arc[start angle=45, end angle=90, radius=0.7];
+            \node at (0.3, 1.3) {$\theta$};
+
+            % Events
+            \filldraw[black] (0,0) circle (2pt) node[anchor= south east] {\( \mathcal{A} \)};
+            
+            \filldraw[black] (2,0) circle (2pt) node[anchor= north west] {\( \mathcal{B} \)};
+
+            \filldraw[black] (8/3,8/6) circle (2pt) node[anchor= south east] {\( \mathcal{C} \)};
+        
+            
+        \end{tikzpicture}
+        \caption{The proper length of \( AC \) is the length of the rod in its rest frame, while that of \( AB \) is its length in \( O \).}
+        \end{figure}
+
+        In Fig. 1.13 we show the world path of a rod at rest in \( \bar{O} \). Its length in \( \bar{O} \) is the square root of \( s^2_{AC} \), while its length in \( O \) is the square root of \( s^2_{AB} \). If event \( C \) has coordinates \( \bar{t} = 0 \), \( \bar{x} = l \), then by the identical calculation from before it has \( x \) coordinate in \( O \):
+        
+        \[
+        x_C = \frac{l}{\sqrt{1 - v^2/c^2}},
+        \]
+        
+        and since the \( \bar{x} \) axis is the line \( t = vx \), we have
+        
+        \[
+        t_C = \frac{vl}{\sqrt{1 - v^2/c^2}}.
+        \]
+        
+        The line \( BC \) has slope (relative to the \( t \)-axis) 
+        
+        \[
+        \frac{\Delta x}{\Delta t} = v,
+        \]
+        
+        and so we have
+        
+        \[
+        \frac{x_C - x_B}{t_C - t_B} = v,
+        \]
+        
+        and we want to know \( x_B \) when \( t_B = 0 \). Thus,
+        
+        \[
+        x_B = x_C - vt_C = l \sqrt{1 - v^2/c^2} - \frac{v^2l}{\sqrt{1 - v^2/c^2}} = l \sqrt{1 - v^2/c^2}.
+        \]
+        
+        This is the Lorentz contraction.
+                
+\section{Chapter 2. Vector analysis in special relativity}
+
+    \subsection{2.1 Definition of a vector}
+
+        We shall always emphasize the notion of a vector (and, later, any tensor) as a geometrical object: something which can be defined and (sometimes) visualized without referring to a specific coordinate system.
+        The general vector \( \mathbf{A} \) is defined by a collection of numbers (its components in some frame, say \( O \)):
+
+        \[
+        A \underset{\mathcal{O}}{\rightarrow} (A^0, A^1, A^2, A^3) = \{A^\alpha\} 
+        \]
+        and the Lorentz transformation is:
+        \[
+            A^{\bar{\alpha}}=\Lambda^{\bar{\alpha}}_\beta A^\beta
+        \]
+    
+    \subsection{2.2 Vector Algebra}
+
+        The definition of the basis vectors of the frame \( \mathcal{O} \) is equivalent to
+        \[
+        (\vec{e}_\alpha)^\beta = \delta_\alpha^\beta.
+        \]
+        Then any vector \(A\) can be written as:
+        \[
+        \vec{A}= A^0 \vec{e}_0 + A^1 \vec{e}_1 + A^2 \vec{e}_2 + A^3 \vec{e}_3 = A^\alpha \vec{e}_\alpha.
+        \]
+        In the last line we use the summation convention.
+    
+        \textit{Transformation of Basis Vectors}: \quad \( \vec{e}_\alpha=\Lambda^{\bar{\beta}}_\alpha \vec{e}_{\bar{\beta}}\)
+
+        \textit{Inverse transformation}: The only thing the Lorentz transformation depends on is the relative velocity of the two frames. Hence: \(    \vec{e}_\alpha=\Lambda^{\bar{\beta}}_\alpha(\bm{v}) \vec{e}_{\bar{\beta}}\). If the basis of \(\mathcal{O}\) is obtained from that of \(\mathcal{\bar{O}}\) by the transformation with velocity \(v\), then the reverse must be true if we use \(-v\):
+        \[
+            \vec{e}_\bar{\mu}=\Lambda^{\nu}_\bar{\mu}(\bm{-v}) \vec{e}_{\nu}
+        \]
+        Combining the two equations we get:
+        \[
+            \Lambda^{\nu}_\bar{\beta} (\bm{-v}) \Lambda^{\bar{\beta}}_\alpha (\bm{v}) = \delta^\nu_\alpha
+        \]
+        This expresses the fact that the matrix \([\Lambda^\nu_{\ \bar{\beta}}(-v)]\) is the inverse of \([\Lambda^{\bar{\beta}}_{\ \alpha}(v)]\), because the sum on \(\bar{\beta}\) is exactly the operation we perform when we multiply two matrices. The matrix \((\delta^\nu_{\ \alpha})\) is, of course, the identity matrix. Also, note that the component transformation is \(A^{\bar{\alpha}}=\Lambda^{\bar{\alpha}}_\beta A^\beta\) and the basis transformation is \(\vec{e}_\bar{\mu}=\Lambda^{\nu}_\bar{\mu}(\bm{-v}) \vec{e}_{\nu}\)
+
+    \subsection{2.4 The four-vector}
+
+        Define the four-velocity \( \vec{U} \) to be a vector tangent to the world line of the particle, and of such a length that it stretches one unit of time in that particle’s frame. For a uniformly moving particle, let us look at this definition in the inertial frame in which it is at rest. Then the four-velocity points parallel to the time axis and is one unit of time long. That is, it is identical with \( \vec{e}_0 \) of that frame. Thus we could also use as our definition of the four-velocity of a uniformly moving particle that it is the vector \( \vec{e}_0 \) in its inertial rest frame.
+
+        An accelerated particle has no inertial frame in which it is always at rest. However, there is an inertial frame which momentarily has the same velocity as the particle, but which a moment later is of course no longer comoving with it. This frame is the momentarily comoving reference frame (MCRF), and is an important concept. The four-velocity of an accelerated particle is defined as the \( \vec{e}_0 \) basis vector of its MCRF at that event. This vector is tangent to the (curved) world line of the particle.
+
+    \subsection{2.4 The four-momentum}
+        The four-momentum \(\vec{p}\) is defined as:
+        \[
+            \vec{p} = m \vec{U} \hspace{2cm} \implies \hspace{2cm} \vec{p} \underset{\mathcal{O}}{\rightarrow} (E, p^1, p^2, p^3)
+        \]
+        Where \(m\) is the rest mass of the particle, which is its mass as measured in its rest frame. We call \(p^0\) the energy \(E\) of the particle in the frame \(\mathcal{O}\). The other components are its spatial momentum \(p^i\).
+        
+    \subsection{2.5 Scalar product}
+        
+        \textit{Magnitude of a vector}: \(\mathbf{A}^2 = -(A^0)^2 + (A^1)^2 + (A^2)^2 + (A^3)^2\). 
+        
+        The magnitude so defined is a frame-independent number, i.e., a scalar under Lorentz transformations.\\ 
+        
+         \textit{Scalar product of two vectors}: \(\mathbf{A} \cdot \mathbf{B} = -A^0B^0 + A^1B^1 + A^2B^2 + A^3B^3\)
+         
+        \\Two vectors \( \mathbf{A} \) and \( \mathbf{B} \) are said to be orthogonal if \( \mathbf{A} \cdot \mathbf{B} = 0 \). The minus sign in the definition of the scalar product means that two vectors orthogonal to one another are not necessarily at right angles in the spacetime diagram. The rule is that two vectors are orthogonal if they make equal angles with the \(45 \degree \) line representing the path of a light ray. Thus, a vector tangent to the light ray is orthogonal to itself.
+    
+        \textit{Example:} An orthonormal tetrad is a set of four vectors that are orthogonal and normalized to unit magnitude. (A timelike vector has "unit magnitude" if its magnitude is \(-1\).) The relations above can be summarized as
+        \[
+        \vec{e}_\alpha \cdot \vec{e}_\beta = \eta_{\alpha\beta},
+        \]
+        
+        where \(\eta_{\alpha\beta}\) is similar to a Kronecker delta in that it is zero when \(\alpha \neq \beta\), but it differs in that \(\eta_{00} = -1\), while \(\eta_{11} = \eta_{22} = \eta_{33} = +1\).
+    
+         \textit{Example:} The four-velocity \(\vec{U}\) of a particle is just the time basis vector of its MCRF, so we have:
+        \[
+            \vec{U}\cdot \vec{U} = -1
+        \]
+        
+        
+    \subsection{2.6 Applications }
+
+    \textit{\textbf{Four-velocity and acceleration as derivatives}}\\
+    
+        Suppose a particle makes an infinitesimal displacement \( d\mathbf{x} \), whose components in \( O \) are \( (dt, dx, dy, dz) \). The magnitude of this displacement is just \( -dt^2 + dx^2 + dy^2 + dz^2 \). Comparing this with Eq. (1.1), we see that this is just the interval, \( ds^2 \):
+        \[
+        ds^2 = d\mathbf{x} \cdot d\mathbf{x}
+        \]
+        Since the world line is timelike, this is negative. This led us to define the proper time \( d\tau \) by
+        \[
+        (d\tau)^2 = -d\mathbf{x} \cdot d\mathbf{x}
+        \]
+        
+        Now consider the vector \( \frac{d\mathbf{x}}{d\tau} \), where \( d\tau \) is the square root of \((d\tau)^2\). This vector is tangent to the world line since it is a multiple of \( d\vec{x} \). Its magnitude is
+        \[
+        \frac{d\vec{x}}{d\tau} \cdot \frac{d\vec{x}}{d\tau} = \frac{d\vec{x} \cdot d\vec{x}}{(d\tau)^2} = -1.
+        \]
+        It is therefore a timelike vector of unit magnitude tangent to the world line. In an MCRF,
+        \[
+        \vec{dx} \underset{\stackrel{\text{MCRF}}{\text{\(d\tau = dt\)}}}{\longrightarrow}(dt, 0, 0, 0),
+        \]
+        so that
+        \[
+        \frac{d\vec{x}}{d\tau} \underset{MCRF}{\longrightarrow} (1, 0, 0, 0)
+        \]
+        or
+        \[
+        \frac{d\vec{x}}{d\tau} = (\vec{e}_0)_{\text{MCRF}}.
+        \]
+        This was the definition of the four-velocity. So we have the useful expression:
+        \[
+        \vec{U} = \frac{d\vec{x}}{d\tau}
+        \]
+        Moreover, let us examine
+        \[
+        \frac{d\vec{U}}{d\tau} = \frac{d^2\vec{x}}{d\tau^2},
+        \]
+        which is some sort of four-acceleration:
+        \[
+        \frac{d}{d\tau} (\vec{U} \cdot \vec{U}) = 2\vec{U} \cdot \frac{d\vec{U}}{d\tau}.
+        \]
+        But since \( \vec{U} \cdot \vec{U} = -1 \) is a constant, we have
+        \[
+        \vec{U} \cdot \frac{d\vec{U}}{d\tau} = 0.
+        \]
+        Since, in the MCRF, \( \vec{U} \) has only a zero component, this orthogonality means that
+        \[
+        \frac{d\vec{U}}{d\tau} \underset{MCRF}{\longrightarrow} (0, a^1, a^2, a^3).
+        \]
+        This vector is defined as the acceleration four-vector \( \vec{a} \):
+        \[
+        \vec{a} = \frac{d\vec{U}}{d\tau}, \quad \vec{U} \cdot \vec{a} = 0.
+        \]
+
+    \textit{\textbf{Energy and Momentum}}\\
+        Consider a particle whose momentum is \( \vec{p} \). Then
+        \[
+        \vec{p} \cdot \vec{p} = m^2 \vec{U} \cdot \vec{U} = -m^2
+        \]
+        But
+        \[
+        \vec{p} \cdot \vec{p} = -E^2 + (p^1)^2 + (p^2)^2 + (p^3)^2
+        \]
+        Therefore,
+        \[
+        E^2 = m^2 + \sum_{i=1}^{3} (p^i)^2.
+        \]
+        This is the familiar expression for the total energy of a particle.
+        
+        Suppose an observer \( \bar{O} \) moves with four-velocity \( \vec{U}_{\text{obs}} \) not necessarily equal to the particle’s four-velocity. Then
+        \[
+        \vec{p} \cdot \vec{U}_{\text{obs}} = \vec{p} \cdot \vec{e}_{\bar{0}},
+        \]
+        where \( \vec{e}_{\bar{0}} \) is the basis vector of the frame of the observer. In that frame, the four-momentum has components
+        \[
+        \vec{p} \underset{\mathcal{O}}{\rightarrow} (\bar{E}, p^\bar{1}, p^\bar{2}, p^\bar{3}).
+        \]
+        Therefore, we obtain:
+        \[
+        - \vec{p} \cdot \vec{U}_{\text{obs}} = \bar{E}
+        \]
+        This is an important equation. It says that the energy of the particle relative to the observer, \( \bar{E} \), can be computed by anyone in any frame by taking the scalar product \( \vec{p} \cdot \vec{U}_{\text{obs}} \). This is called a ‘frame-invariant’ expression for the energy relative to the observer. It is almost always helpful in calculations to use such expressions.\\
+
+    \subsection{2.7 Photons }
+
+        \textit{\textbf{No four-velocity}}: Photons move on null lines, so, for a photon path,
+        \[
+        d\vec{x} \cdot d\vec{x} = 0.
+        \]
+        Therefore, \( d\tau \) is zero and Eq. (2.31) shows that the four-velocity cannot be defined. Another way of saying the same thing is to note that there is no frame in which light is at rest (the second postulate of SR), so there is no MCRF for a photon. Thus, no \( \vec{e}_0 \) in any frame will be tangent to a photon’s world line.
+        
+        Note carefully that it is still possible to find vectors tangent to a photon’s path (which, being a straight line, has the same tangent everywhere): \( d\vec{x} \) is one. The problem is finding a tangent of unit magnitude, since they all have vanishing magnitude.
+
+        \textit{\textbf{Four-momentum}}:
+        The four-momentum of a particle is not a unit vector. Instead, it is a vector where the components in some frame give the particle energy and momentum relative to that frame. If a photon carries energy \( E \) in some frame, then in that frame \( p^0 = E \). If it moves in the \( x \) direction, then \( p^y = p^z = 0 \), and in order for the four-momentum to be parallel to its world line (hence be null) we must have \( p^x = E \). This ensures that
+        \[
+        \vec{p} \cdot \vec{p} = -E^2 + E^2 = 0.
+        \]
+        So we conclude that photons have spatial momentum equal to their energy.
+        
+        We know from quantum mechanics that a photon has energy
+        \[
+        E = h\nu, \quad \text{(2.38)}
+        \]
+        where \( \nu \) is its frequency and \( h \) is Planck’s constant, \( h = 6.6256 \times 10^{-34} \) J s.
+
+        \textit{\textbf{Zero rest-mass particles}}:
+        The rest mass of a photon must be zero, since
+        \[
+        m^2 = -\vec{p} \cdot \vec{p} = 0.
+        \]
+        Any particle whose four-momentum is null must have rest mass zero, and conversely. The only known zero rest-mass particle is the photon.
+
+        \subsection{2.8 Exercises}
+        \textbf{Problem 19, P53:}
+            \textbf{Derivation of the Four-Acceleration Magnitude}
+            
+            The four-velocity of a particle moving along the \( x \)-axis is given by:
+            \[
+            U^\mu = \left(\gamma, \gamma v\right)
+            \]
+                    
+            The four-acceleration \( a^\mu \) is defined as the derivative of the four-velocity with respect to proper time \( \tau \):
+            \[
+            a^\mu = \frac{dU^\mu}{d\tau} = \left(\frac{d\gamma}{d\tau}, \frac{d(\gamma v)}{d\tau}\right)
+            \]
+            
+            Since \( \frac{d\tau}{dt} = \frac{1}{\gamma} \), we can express these derivatives in terms of coordinate time \( t \).
+            
+            \textbf{Time Component \( a^0 \)}
+            
+            The time component of the four-acceleration is:
+            \[
+            a^0 = \frac{d\gamma}{d\tau} = \gamma \frac{d\gamma}{dt}
+            \]
+            Using the relation:
+            \[
+            \frac{d\gamma}{dt} = \frac{d}{dt} \left(\frac{1}{\sqrt{1 - v^2}}\right) = \frac{\gamma^3 v}{1} \frac{dv}{dt}
+            \]
+            
+            we get:
+            \[
+            a^0 = \gamma^4 v \frac{dv}{dt}
+            \]
+            
+            \textbf{Spatial Component \( a^1 \)}
+            
+            The spatial component of the four-acceleration is:
+            \[
+            a^1 = \frac{d(\gamma v)}{d\tau} = \gamma \frac{d(\gamma v)}{dt} = \gamma \left( \gamma \frac{dv}{dt} + v \frac{d\gamma}{dt} \right)
+            \]
+            
+            Substituting \( \frac{d\gamma}{dt} \):
+            
+            \[
+            a^1 = \gamma^3 \frac{dv}{dt} + \gamma^5 v^2 \frac{dv}{dt} = \gamma^3 \frac{dv}{dt} \left(1 + \gamma^2 v^2\right)
+            \]
+            
+            Given that \( \gamma^2 = \frac{1}{1 - v^2} \), we find:
+            
+            \[
+            a^1 = \gamma^4 \frac{dv}{dt}
+            \]
+            
+            \textbf{Magnitude of the Four-Acceleration}
+            
+            The invariant magnitude of the four-acceleration is calculated as:
+            \[
+            a^\mu a_\mu = -(a^0)^2 + (a^1)^2
+            \]
+            Substituting the components:
+            \[
+            a^\mu a_\mu = -\left(\gamma^4 v \frac{dv}{dt}\right)^2 + \left(\gamma^4 \frac{dv}{dt}\right)^2
+            \]
+            Factoring out \( \left(\gamma^4 \frac{dv}{dt}\right)^2 \):
+            \[
+            a^\mu a_\mu = \left(\gamma^4 \frac{dv}{dt}\right)^2 \left(1 - v^2\right)
+            \]
+            
+            Since \( \gamma^2 = \frac{1}{1 - v^2} \), we have:
+            \[
+            a^\mu a_\mu = \left(\gamma^2 \cdot \frac{dv}{dt}\right)^2
+            \]
+            
+            Given \( a^\mu a_\mu = \alpha^2 \), where \( \alpha \) is the proper acceleration, we conclude:
+            
+            \[
+            \alpha = \gamma^3 \frac{dv}{dt}
+            \]
+            
+            This shows how the proper acceleration \( \alpha \) is related to the coordinate acceleration \( \frac{dv}{dt} \) in special relativity, with the factor \( \gamma^3 \) accounting for relativistic effects.
+
+        \textbf{\textit{Problem 20, P54:}}
+        
+            \textbf{Lorentz Transformation and Four-Velocity}
+
+            Consider a particle in the MCRF, where the particle is at rest. The four-velocity in this frame is given by:
+            \[
+            \vec{U}_{\text{MCRF}} = \vec{e}_{\bar{0}} = (1, 0, 0, 0)
+            \]
+            
+            where \( \vec{e}_{\bar{0}} \) is the time basis vector in the MCRF.
+            
+            Now, suppose the particle is observed from another frame that is moving with velocity \( \vec{v} = (v_x, v_y, v_z) \) relative to the MCRF. The Lorentz transformation matrix \( \Lambda^\mu_{\ \nu} \) for a boost in the direction of \( \vec{v} \) is given by:
+            \[
+            \Lambda^\mu_{\ \nu} =
+            \begin{pmatrix}
+            \gamma & -\gamma v_x & -\gamma v_y & -\gamma v_z \\
+            -\gamma v_x & 1 + (\gamma - 1)n_x^2 & (\gamma - 1)n_x n_y & (\gamma - 1)n_x n_z \\
+            -\gamma v_y & (\gamma - 1)n_y n_x & 1 + (\gamma - 1)n_y^2 & (\gamma - 1)n_y n_z \\
+            -\gamma v_z & (\gamma - 1)n_z n_x & (\gamma - 1)n_z n_y & 1 + (\gamma - 1)n_z^2
+            \end{pmatrix}
+            \]
+            
+            where:
+            \begin{align*}
+            \gamma &= \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}, \\
+            \vec{n} &= \frac{\vec{v}}{|\vec{v}|} = (n_x, n_y, n_z).
+            \end{align*}
+            
+            The Lorentz transformation relates the coordinates in the MCRF to those in the moving frame. When applied to the time basis vector \( \vec{e}_{\bar{0}} \) of the MCRF, the resulting four-velocity \( \vec{U} \) in the new frame is given by:  
+            \[
+            U^\alpha = \Lambda^\alpha_{\ \bar{\beta}} (e_{\bar{0}})^{\bar{\beta}} = \Lambda^\alpha_{\ \bar{0}}
+            \]
+            
+            This gives:
+            \[
+            U^\alpha = \gamma \begin{pmatrix} 1 \\ -\beta_x \\ -\beta_y \\ -\beta_z \end{pmatrix} 
+            = \gamma \begin{pmatrix} 1 \\ -\frac{v_x}{c} \\ -\frac{v_y}{c} \\ -\frac{v_z}{c} \end{pmatrix}
+            \]
+            
+            The negative signs in the spatial components arise due to the direction of the relative motion between the frames.
+           
+
+\section{Chapter 3. Tensor analysis in special relativity}
+
+    \subsection{3.1 The metric tensor}
+        Consider the representation of two vectors $\vec{A} = A^\alpha \vec{e}_\alpha$ and $\vec{B} = B^\beta \vec{e}_\beta$ on the basis $\{ \vec{e}_\alpha \}$ of some frame $O$. Their scalar product is:
+        \[
+        \vec{A} \cdot \vec{B} = A^\alpha B^\beta (\vec{e}_\alpha \cdot \vec{e}_\beta) = A^\alpha B^\beta \eta_{\alpha\beta}. \tag{3.1}
+        \]
+        Right now we observe that they essentially give a ‘rule’ for associating with two vectors $\vec{A}$ and $\vec{B}$ with a single number, which we call their scalar product. The rule is that the number is the double sum $A^\alpha B^\beta \eta_{\alpha\beta}$. Such a rule is at the heart of the meaning of ‘tensor’, as we now discuss.
+
+    \subsection{3.2 Definition of tensors}
+        A tensor of type $\binom{0}{N}$ is a function of $N$ vectors into the real numbers, which is linear in each of its $N$ arguments.
+        We let $g$ be the metric tensor and write, by definition,
+        \[
+        g(\vec{A}, \vec{B}) := \vec{A} \cdot \vec{B}. \tag{3.3}
+        \]
+        Then we regard $g(\ ,\ )$ as a function which can take two arguments, and which is linear in that
+        \[
+        g(\alpha \vec{A} + \beta \vec{B}, \vec{C}) = \alpha g(\vec{A}, \vec{C}) + \beta g(\vec{B}, \vec{C}), \tag{3.4}
+        \]
+        and similarly for the second argument. The value of $g$ on two arguments, denoted by $g(\vec{A}, \vec{B})$, is their dot product, a real number. 
+
+        \textit{\textbf{Components of a tensor}}: The components in a frame \(O\) of a tensor of type $\binom{0}{N}$ are the values of the function when its arguments are the basis vectors \(\{ \vec{e}_\alpha \}\) of the frame \(O\). For the metric tensor, this gives the components as:
+         \[
+         g(\vec{e}_\alpha, \vec{e}_\beta) = \vec{e}_\alpha \cdot \vec{e}_\beta = \eta_{\alpha\beta} \tag{3.5}
+         \]
+
+    \subsection{3.3 The \(\binom{0}{1}\) tensors: one-forms}
+
+    \textit{\textbf{General properties}}: Let an arbitrary one-form be called \(\tilde{p}\). Then \(\tilde{p}\), supplied with one vector argument, gives a real number: \(\tilde{p}(\vec{A})\) is a real number. Suppose \(\tilde{q}\) is another one-form. Then we can define
+    \[
+    \tilde{s} = \tilde{p} + \tilde{q}, \quad \tilde{r} = \alpha \tilde{p},
+    \]
+    to be the one-forms that take the following values for an argument \(\vec{A}\):
+    \[
+    \tilde{s}(\vec{A}) = \tilde{p}(\vec{A}) + \tilde{q}(\vec{A}), \quad \tilde{r}(\vec{A}) = \alpha \tilde{p}(\vec{A}).
+    \]
+    With these rules, the set of all one-forms satisfies the axioms for a vector space. This space is called the ‘dual vector space’ to distinguish it from the space of all vectors such as \(\vec{A}\).
+    The components of \(\tilde{p}\) are called \(p_\alpha\):
+    \[
+    p_\alpha := \tilde{p}(\vec{e}_\alpha). \tag{3.7}
+    \]
+    Any component with a single lower index is, by convention, the component of a one-form; an upper index denotes the component of a vector. In terms of components, \(\tilde{p}(\vec{A})\) is
+    \[
+    \tilde{p}(\vec{A}) = \tilde{p}(A^\alpha \vec{e}_\alpha)
+    = A^\alpha \tilde{p}(\vec{e}_\alpha)= A^\alpha p_\alpha. \tag{3.8}
+    \]
+    So the real number \(\tilde{p}(\vec{A})\) is easily found to be the sum \(A^0p_0 + A^1p_1 + A^2p_2 + A^3p_3\). Notice that all terms have plus signs: this operation is called the contraction of \(\vec{A}\) and \(\tilde{p}\). The components of \(\tilde{p}\) on a basis \(\{\vec{e}_{\bar{\beta}}\}\) are
+    \[
+    p_{\bar{\beta}} := \tilde{p}(\vec{e}_{\bar{\beta}}) = \tilde{p}(\Lambda^\alpha_{\ \bar{\beta}} \vec{e}_\alpha)
+    = \Lambda^\alpha_{\ \bar{\beta}} \tilde{p}(\vec{e}_\alpha) = \Lambda^\alpha_{\ \bar{\beta}} p_\alpha. \tag{3.9}
+    \]
+    Comparing this with  \(\vec{e}_{\bar{\beta}} = \Lambda^\alpha_{\ \bar{\beta}} \vec{e}_\alpha\) we see that components of one-forms transform in exactly the same manner as basis vectors and in the opposite manner to components of vectors. By ‘opposite’, we mean using the inverse transformation. This use of the inverse guarantees that \(A^\alpha p_\alpha\) is frame-independent for any vector \(\vec{A}\) and one-form \(\tilde{p}\). This is such an important observation that we shall prove it explicitly:    \[
+    A^{\bar{\alpha}} p_{\bar{\alpha}} = (\Lambda^{\bar{\alpha}}_{\ \beta} A^\beta)(\Lambda^\mu_{\ \bar{\alpha}} p_\mu), \tag{3.10a}
+    \]
+    \[
+    = \Lambda^\mu_{\ \bar{\alpha}} \Lambda^{\bar{\alpha}}_{\ \beta} A^\beta p_\mu, \tag{3.10b}
+    \]
+    \[
+    = \delta^\mu_{\ \beta} A^\beta p_\mu, \tag{3.10c}
+    \]
+    \[
+    = A^\beta p_\beta. \tag{3.10d}
+    \]
+    (This is the same way in which the vector \(A^\alpha \vec{e}_\alpha\) is kept frame-independent.) This inverse transformation gives rise to the word ‘dual’ in ‘dual vector space’. \textbf{Note:} the transformation of a basis is the expression of new vectors in terms of old ones (Recall: \(\vec{e}_{\bar{\beta}} = \Lambda^\alpha_{\ \bar{\beta}} \vec{e}_\alpha\)); the transformation of components is the expression of the same object in terms of the new basis (Recall: \(A^\bar{\alpha}=\Lambda^{\bar{\alpha}}_{\ \beta} A^\beta\) where $A^\bar{\alpha}$ is in basis $e^\bar{\alpha}$).
+
+    \textit{\textbf{Basis one-forms}}: Since the set of all one-forms is a vector space, we can use any set of four linearly independent one-forms as a basis. Define an associated one-form basis \(\{ \tilde{\omega}^\alpha, \alpha = 0, \dots, 3 \}\), which we shall call the basis dual to \(\{\vec{e}_\alpha\}\), upon which a one-form has the components defined above. That is, we want a set \(\{\tilde{\omega}^\alpha\}\) such that    \[
+    \tilde{p} = p_\alpha \tilde{\omega}^\alpha. \tag{3.11}
+    \]
+    (Notice that using a raised index on \(\tilde{\omega}^\alpha\) permits the summation convention to operate.) The \(\{\tilde{\omega}^\alpha\}\) are four distinct one-forms, just as the \(\{\vec{e}_\alpha\}\) are four distinct vectors. This equation must imply Eq. (3.8) for any vector \(\vec{A}\) and one-form \(\tilde{p}\):
+    \[
+    \tilde{p}(\vec{A}) = p_\alpha A^\alpha= p_\alpha \tilde{\omega}^\alpha(\vec{A})
+    = p_\alpha \tilde{\omega}^\alpha(A^\beta \vec{e}_\beta)
+    = p_\alpha A^\beta \tilde{\omega}^\alpha(\vec{e}_\beta).
+    \]
+    Now, this final line can only equal \(p_\alpha A^\alpha\) for all \(A^\beta\) and \(p_\alpha\) if
+    \[
+    \tilde{\omega}^\alpha(\vec{e}_\beta) = \delta^\alpha_\beta. \tag{3.12}
+    \]
+    Comparing with Eq. (3.7), we see that this equation gives the \(\beta\)th component of the \(\alpha\)th basis one-form. It therefore defines the \(\alpha\)th basis one-form. We can write out these components as
+    \[
+    \tilde{\omega}^0 \rightarrow_O (1, 0, 0, 0),
+    \]
+    \[
+    \tilde{\omega}^1 \rightarrow_O (0, 1, 0, 0),
+    \]
+    \[
+    \tilde{\omega}^2 \rightarrow_O (0, 0, 1, 0),
+    \]
+    \[
+    \tilde{\omega}^3 \rightarrow_O (0, 0, 0, 1).
+    \]
+    It is important to understand two points here. The relationship, Eq. (3.12), is between the two bases, not between individual pairs, such as \(\tilde{\omega}^0\) and \(\vec{e}_0\). That is, if we change \(\vec{e}_0\), while leaving \(\vec{e}_1\), \(\vec{e}_2\), and \(\vec{e}_3\) unchanged, then in general this induces changes not only in \(\tilde{\omega}^0\) but also in \(\tilde{\omega}^1\), \(\tilde{\omega}^2\), and \(\tilde{\omega}^3\). The second point to understand is that, although we can describe both vectors and one-forms by giving a set of four components, their geometrical significance is very different. The student should not lose sight of the fact that the components tell only part of the story. The basis contains the rest of the information.
+    It remains to determine how \(\{\tilde{\omega}^\alpha\}\) transforms under a change of basis. That is, each frame has its own unique set \(\{\tilde{\omega}^\alpha\}\); how are those of two frames related?
+    \[
+    \tilde{\omega}^{\bar{\alpha}} = \Lambda^{\bar{\alpha}}_{\ \beta} \tilde{\omega}^\beta. \quad \tag{3.13}
+    \]
+
+    \textit{\textbf{Recall basis transformation: }} The transformation matrix \( T \) is a matrix that relates the coordinates of a vector in one basis to its coordinates in another basis. Given two bases \(\{\vec{e}_\alpha\}\) (the original basis) and \(\{\tilde{\lambda}_\alpha\}\) (the new basis), the transformation matrix \( T \) is constructed by expressing each new basis vector \(\tilde{\lambda}_\alpha\) as a linear combination of the original basis vectors \(\vec{e}_\alpha\). 
+
+    If \( \tilde{\lambda}_\alpha = T_{\alpha\beta} \vec{e}_\beta \), the matrix \( T \) has the components \( T_{\alpha\beta} \), where each column corresponds to the coordinates of one of the new basis vectors in terms of the original basis. 
+        
+    To transform the coordinates of a vector \( \vec{v} \) from the original basis to the new basis, the inverse of the transformation matrix is applied: \( \vec{v}_{\tilde{\lambda}} = T^{-1} \vec{v} \). Conversely, applying \( T \) to a vector's coordinates in the new basis will transform them back to the original basis.
+
+    \textbf{\textit{Recall frame transformation:}} In special relativity, the Lorentz transformation matrix \(\Lambda^\mu_\nu\) relates the coordinates of vectors between two inertial frames. The matrix multiplication for transforming vector components sums across the columns of the Lorentz matrix, while transforming basis vectors sums across the rows of the inverse Lorentz matrix. The Lorentz transformation matrix \(\Lambda^\mu_\nu\) and its inverse \(\Lambda^{-1} = \Lambda(-v)\) satisfy:
+
+    \[
+    \Lambda^\mu_\alpha \Lambda^\alpha_\nu = \delta^\mu_\nu
+    \quad \text{and} \quad
+    \Lambda^\alpha_\mu \Lambda^\mu_\beta = \delta^\alpha_\beta
+    \]
+    
+    This ensures that the transformation preserves the identity matrix, maintaining the consistency of vector and basis transformations across different frames. The relationship between \(\Lambda\) and its inverse guarantees that transforming to a new frame and back leaves vectors and bases unchanged, preserving the structure of spacetime.
+
+    \textbf{\textit{Recall frame transformation vectors and one-form:}} In special relativity, the transformation of vectors and one-forms between different reference frames is governed by the Lorentz transformation matrix \(\Lambda^\mu_\nu\).
+    \textbf{Vector Components:}
+    The components of a vector \(V^\mu\) transform from frame \(O\) to frame \(O'\) using the Lorentz transformation:
+    \[
+    (V)^\bar{\mu} = \Lambda^\bar{\mu}_\nu V^\nu
+    \]
+    \textbf{Basis Vectors:}
+    The basis vectors \(\vec{e}_\nu\) transform using the inverse Lorentz transformation, which corresponds to a velocity \(-v\):
+    \[
+    (\vec{e})_\bar{\mu} = \Lambda(-v)^\nu_\bar{\mu} \vec{e}_\nu
+    \]
+    \textbf{One-Form Components:}
+    The components of a one-form \(\tilde{p}_\mu\) transform similarly to vectors, using the Lorentz transformation:
+    \[
+    \tilde{p}_\bar{\mu} = \Lambda(-v)_\bar{\mu}^\nu \tilde{p}_\nu
+    \]
+    \textbf{One-Form Basis:}
+    The basis one-forms \(\tilde{\lambda}^\mu\) transform using the Lorentz transformation, i.e. same as for components of a vector:
+    \[
+    \tilde{\lambda}^\bar{\mu} = \Lambda^\bar{\mu}_\nu \tilde{\lambda}^\nu
+    \]
+    These relationships ensure the consistency of transformations between vector and one-form components and their respective bases across different reference frames, preserving the structure of spacetime.
+    
+    \textit{\textbf{Picture of a one-form}}: The one generally used by mathematicians is shown in Fig. 3.1. The one-form consists of a series of surfaces. The ‘magnitude’ of it is given by the spacing between the surfaces: the larger the spacing the smaller the magnitude. In this picture, the number produced when a one-form acts on a vector is the number of surfaces that the arrow of the vector pierces.
+
+    \textit{\textbf{Gradient of a function is a one-form}}: Consider a scalar field \(\phi(\vec{x})\) defined at every event \(\vec{x}\). The world line of some particle encounters a value of \(\phi\) at each event on it (see Fig. 3.2), and this value changes from event to event. If we label (parametrize) each point on the curve by the value of proper time \(\tau\) along it, then we can express the coordinates of events on the curve as functions of \(\tau\):
+    \[
+    [t = t(\tau), x = x(\tau), y = y(\tau), z = z(\tau)].
+    \]
+    The four-velocity has components:
+    \[
+    \vec{U} \rightarrow \left(\frac{d t}{d\tau}, \frac{d x}{d\tau}, \ldots\right).
+    \]
+    Since \(\phi\) is a function of \(t\), \(x\), \(y\), and \(z\), it is implicitly a function of \(\tau\) on the curve:
+    \[
+    \phi(\tau) = \phi[t(\tau), x(\tau), y(\tau), z(\tau)],
+    \]
+    and its rate of change on the curve is
+    \[
+    \frac{d\phi}{d\tau} = \frac{\partial \phi}{\partial t} \frac{d t}{d\tau}
+    + \frac{\partial \phi}{\partial x} \frac{d x}{d\tau}
+    + \frac{\partial \phi}{\partial y} \frac{d y}{d\tau}
+    + \frac{\partial \phi}{\partial z} \frac{d z}{d\tau}
+    = \frac{\partial \phi}{\partial t} U^t + \frac{\partial \phi}{\partial x} U^x + \frac{\partial \phi}{\partial y} U^y + \frac{\partial \phi}{\partial z} U^z. \tag{3.14}
+    \]
+    It is clear from this that in the last equation we have devised a means of producing from the vector \(\vec{U}\) the number \( \frac{d\phi}{d\tau} \) that represents the rate of change of \(\phi\) on a curve on which \(\vec{U}\) is the tangent. This number \( \frac{d\phi}{d\tau} \) is clearly a linear function of \(\vec{U}\), so we have defined a one-form. 
+    By comparison with Eq. (3.8), we see that this one-form has components \(\left(\frac{\partial \phi}{\partial t}, \frac{\partial \phi}{\partial x}, \frac{\partial \phi}{\partial y}, \frac{\partial \phi}{\partial z}\right)\). This one-form is called the gradient of \(\phi\), denoted by \(\tilde{d}\phi\):
+    \[
+    \tilde{d}\phi \rightarrow_O \left(\frac{\partial \phi}{\partial t}, \frac{\partial \phi}{\partial x}, \frac{\partial \phi}{\partial y}, \frac{\partial \phi}{\partial z}\right). \tag{3.15}
+    \]
+    How do the components transform? For a one-form we must have
+    \[
+    (\tilde{d}\phi)_{\bar{\alpha}} = \Lambda^\beta_{\ \bar{\alpha}} (\tilde{d}\phi)_\beta. \tag{3.16}
+    \]
+    But we know how to transform partial derivatives:
+    \[
+    \frac{\partial \phi}{\partial x^{\bar{\alpha}}} = \frac{\partial \phi}{\partial x^\beta} \frac{\partial x^\beta}{\partial x^{\bar{\alpha}}},
+    \]
+    which means
+    \[
+    (\tilde{d}\phi)_{\bar{\alpha}} = \frac{\partial x^\beta}{\partial x^{\bar{\alpha}}} (\tilde{d}\phi)_\beta. \tag{3.17}
+    \]
+    Are Eqs. (3.16) and (3.17) consistent? The answer, of course, is yes. The reason: since
+    \[
+    x^\beta = \Lambda^\beta_{\ \bar{\alpha}} x^{\bar{\alpha}},
+    \]
+    and since \(\Lambda^\beta_{\ \bar{\alpha}}\) are just constants, then
+    \[
+    \frac{\partial x^\beta}{\partial x^{\bar{\alpha}}} = \Lambda^\beta_{\ \bar{\alpha}}. \tag{3.18}
+    \]
+    This identity is fundamental. Components of the gradient transform according to the inverse of the components of vectors. So the gradient is the ‘archetypal’ one-form.
+
+    \textit{\textbf{Notation for derivatives:}}
+    From now on we shall employ the usual subscripted notation to indicate derivatives:
+    \[
+    \frac{\partial \phi}{\partial x^\alpha} := \phi_{,\alpha}. \tag{3.19}
+    \]
+    Note that the index \(\alpha\) appears as a superscript in the denominator of the left-hand side of Eq. (3.19) and as a subscript on the right-hand side. As we have seen, this placement of indices is consistent with the transformation properties of the expression. In particular, we have
+    \[
+    x^\alpha_{,\beta} \equiv \delta^\alpha_\beta,
+    \]
+    which we can compare with Eq. (3.12) to conclude that
+    \[
+    \tilde{d}x^\alpha := \tilde{\omega}^\alpha. \tag{3.20}
+    \]
+    This is a useful result, that the basis one-form is just \(\tilde{d}x^\alpha\). We can use it to write, for any function \(f\),
+    \[
+    \tilde{d}f = \frac{\partial f}{\partial x^\alpha} \tilde{d}x^\alpha.
+    \]
+    This looks very much like the physicist’s ‘sloppy-calculus’ way of writing differentials or infinitesimals. The notation \(\tilde{d}\) has been chosen partly to suggest this comparison, but this choice makes it doubly important for the student to avoid confusion on this point. The object \(\tilde{d}f\) is a tensor, not a small increment in \(f\); it can have a small (‘infinitesimal’) value if it is contracted with a small vector.
+
+    \textit{\textbf{Normal one-forms}}: A one-form is said to be normal to a surface if its value is zero on every vector tangent to the surface. If the surface is closed and divides spacetime into an ‘inside’ and ‘outside’, a normal is said to be an outward normal one-form if it is a normal one-form and its value on vectors which point outwards from the surface is positive.
+
+    \subsection{3.4 The \(\binom{0}{2}\) tensors}
+    Tensors of type \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) have two vector arguments. We have encountered the metric tensor already, but the simplest of this type is the product of two one-forms, formed according to the following rule: if \(\tilde{p}\) and \(\tilde{q}\) are one-forms, then \(\tilde{p} \otimes \tilde{q}\) is the \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor which, when supplied with vectors \(\vec{A}\) and \(\vec{B}\) as arguments, produces the number \(\tilde{p}(\vec{A}) \tilde{q}(\vec{B})\), i.e., just the product of the numbers produced by the \(\left(\begin{array}{c} 0 \\ 1 \end{array}\right)\) tensors. The symbol \(\otimes\) is called an ‘outer product sign’ and is a formal notation to show how the \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor is formed from the one-forms. Notice that \(\otimes\) is not commutative: \(\tilde{p} \otimes \tilde{q}\) and \(\tilde{q} \otimes \tilde{p}\) are different tensors. The first gives the value \(\tilde{p}(\vec{A}) \tilde{q}(\vec{B})\), the second the value \(\tilde{q}(\vec{A}) \tilde{p}(\vec{B})\).
+    
+    \textit{\textbf{Components}}: The most general \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor is not a simple outer product, but it can always be represented as a sum of such tensors. To see this we must first consider the components of an arbitrary \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor \(f\):
+    \[
+    f_{\alpha\beta} := f(\vec{e}_\alpha, \vec{e}_\beta). \tag{3.21}
+    \]
+    Since each index can have four values, there are 16 components, and they can be thought of as being arrayed in a matrix. The value of \(f\) on arbitrary vectors is
+    \[
+    f(\vec{A},\vec{B}) = f(A^\alpha \vec{e}_\alpha, B^\beta \vec{e}_\beta)
+    = A^\alpha B^\beta f(\vec{e}_\alpha, \vec{e}_\beta)
+    = A^\alpha B^\beta f_{\alpha\beta}. \tag{3.22}
+    \]
+    (Again notice that two different dummy indices are used to keep the different summations distinct.) Can we form a basis for these tensors? That is, can we define a set of 16 \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensors \(\tilde{\omega}^{\alpha\beta}\) such that, analogous to Eq. (3.11),
+    \[
+    f = f_{\alpha\beta} \tilde{\omega}^{\alpha\beta}? \tag{3.23}
+    \]
+    For this to be the case we would have to have
+    \[
+    f_{\mu\nu} = f(\vec{e}_\mu, \vec{e}_\nu) = f_{\alpha\beta} \tilde{\omega}^{\alpha\beta}(\vec{e}_\mu, \vec{e}_\nu)
+    \]
+    and this would imply, as before, that
+    \[
+    \tilde{\omega}^{\alpha\beta}(\vec{e}_\mu, \vec{e}_\nu) = \delta^\alpha_\mu \delta^\beta_\nu. \tag{3.24}
+    \]
+    But \(\delta^\alpha_\mu\) is (by Eq. (3.12)) the value of \(\tilde{\omega}^\alpha\) on \(\vec{e}_\mu\), and analogously for \(\delta^\beta_\nu\). Therefore, \(\tilde{\omega}^{\alpha\beta}\) is a tensor whose value is just the product of the values of two basis one-forms, and we therefore conclude
+    \[
+    \tilde{\omega}^{\alpha\beta} = \tilde{\omega}^\alpha \otimes \tilde{\omega}^\beta. \tag{3.25}
+    \]
+    So the tensors \(\tilde{\omega}^\alpha \otimes \tilde{\omega}^\beta\) are a basis for all \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensors, and we can write
+    \[
+    f = f_{\alpha\beta} \tilde{\omega}^\alpha \otimes \tilde{\omega}^\beta. \tag{3.26}
+    \]
+    This is one way in which a general \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor is a sum over simple outer-product tensors.
+    
+    \textit{\textbf{Symmetries:}} A \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor takes two arguments, and their order is important, as we have seen. The behavior of the value of a tensor under an interchange of its arguments is an important property of it. A tensor \(f\) is called symmetric if
+    \[
+    f(\vec{A},\vec{B}) = f(\vec{B},\vec{A}) \quad \forall \, \vec{A}, \vec{B}. \tag{3.27}
+    \]
+    Setting \(\vec{A} = \vec{e}_\alpha\) and \(\vec{B} = \vec{e}_\beta\), this implies of its components that
+    \[
+    f_{\alpha\beta} = f_{\beta\alpha}. \tag{3.28}
+    \]
+    This is the same as the condition that the matrix array of the elements is symmetric. An arbitrary \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor \(h\) can define a new symmetric \(h^{(s)}\) by the rule
+    \[
+    h^{(s)}(\vec{A},\vec{B}) = \frac{1}{2} \left[ h(\vec{A},\vec{B}) + h(\vec{B},\vec{A}) \right]. \tag{3.29}
+    \]
+    This is such an important mathematical property that a special notation is used for it:
+    \[
+    h_{(\alpha\beta)} := \frac{1}{2} \left( h_{\alpha\beta} + h_{\beta\alpha} \right). \tag{3.31}
+    \]
+    Therefore, the numbers \(h_{(\alpha\beta)}\) are the components of the symmetric tensor formed from \(h\).
+    Similarly, a tensor \(f\) is called antisymmetric if
+    \[
+    f(\vec{A},\vec{B}) = -f(\vec{B},\vec{A}) \quad \forall \, \vec{A}, \vec{B}, \tag{3.32}
+    \]
+    \[
+    f_{\alpha\beta} = -f_{\beta\alpha}. \tag{3.33}
+    \]
+    An antisymmetric \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor can always be formed as
+    \[
+    h^{(A)}(\vec{A},\vec{B}) = \frac{1}{2} \left[ h(\vec{A},\vec{B}) - h(\vec{B},\vec{A}) \right],
+    \]
+    \[
+    h_{[\alpha\beta]} = \frac{1}{2} \left( h_{\alpha\beta} - h_{\beta\alpha} \right). \tag{3.34}
+    \]
+    Notice that
+    \[
+    h_{\alpha\beta} = \frac{1}{2} \left( h_{\alpha\beta} + h_{\beta\alpha} \right) + \frac{1}{2} \left( h_{\alpha\beta} - h_{\beta\alpha} \right)
+    = h_{(\alpha\beta)} + h_{[\alpha\beta]}. \tag{3.35}
+    \]
+    So any \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor can be split uniquely into its symmetric and antisymmetric parts.
+    
+    \subsection{3.5 Metric as a mapping of vectors into one-forms}
+    We now introduce what we shall later see is the fundamental role of the metric in differential geometry: to act as a mapping between vectors and one-forms. To see how this works, consider \(g\) and a single vector \(\vec{V}\). Since \(g\) requires two vectorial arguments, the expression \(g(\vec{V}, \,)\) still lacks one: when another one is supplied, it becomes a number. Therefore, \(g(\vec{V}, \,)\), considered as a function of vectors, is a linear function of vectors producing real numbers: a one-form. We call it \(\tilde{V}\):
+    \[
+    g(\vec{V}, \,) := \tilde{V}( \,). \tag{3.37}
+    \]
+    Then \(\tilde{V}\) is the one-form that evaluates on a vector \(\vec{A}\) to \(\vec{V} \cdot \vec{A}\):
+    \[
+    \tilde{V}(\vec{A}) := g(\vec{V},\vec{A}) = \vec{V} \cdot \vec{A}. \tag{3.38}
+    \]
+    Note that since \(g\) is symmetric, we also can write
+    \[
+    g( \,, \vec{V}) := \tilde{V}( \,).
+    \]
+    What are the components of \(\tilde{V}\)? They are
+    \[
+    V_\alpha := \tilde{V}(\vec{e}_\alpha) = \vec{V} \cdot \vec{e}_\alpha = \vec{e}_\alpha \cdot \vec{V}
+    = \vec{e}_\alpha \cdot (V^\beta \vec{e}_\beta)
+    = (\vec{e}_\alpha \cdot \vec{e}_\beta)V^\beta,
+    \]
+    \[
+    V_\alpha = \eta_{\alpha\beta}V^\beta. \tag{3.39}
+    \]
+    It is important to notice here that we distinguish the components \(V_\alpha\) of \(\vec{V}\) from the components \(V^\beta\) of \(\tilde{V}\) only by the position of the index. Then, from Eq. (3.39), we have as a special case
+    \[
+    V_0 = V^\beta \eta_{\beta 0} = V^0 \eta_{00} + V^1 \eta_{10} + \dots 
+    = V^0(-1) + 0 + 0 + 0 
+    = -V^0, \tag{3.40}
+    \]
+    \[
+    V_1 = V^\beta \eta_{\beta 1} = V^0 \eta_{01} + V^1 \eta_{11} + \dots 
+    = +V^1, \tag{3.41}
+    \]
+    etc. This may be summarized as: 
+    \[
+    \text{ if } \vec{V} \rightarrow (a, b, c, d),
+    \text{ then } \tilde{V} \rightarrow (-a, b, c, d). \tag{3.42}
+    \]
+    The components of \(\tilde{V}\) are obtained from those of \(\vec{V}\) by changing the sign of the time component. 
+    
+    \textit{\textbf{The inverse: going from $\tilde{A}$ to $\vec{A}$}}: Consider Eq. (3.39). if \((\eta_{\alpha\beta})\) this matrix has an inverse, then we could use it to obtain \(\{V^\beta\}\) from \(\{V_\alpha\}\). This inverse exists if and only if \((\eta_{\alpha\beta})\) has a nonvanishing determinant. But since \((\eta_{\alpha\beta})\) is a diagonal matrix with entries \((-1, 1, 1, 1)\), its determinant is \(-1\). An inverse does exist, and we call its components \(\eta^{\alpha\beta}\). Then, given \(\{A_\beta\}\) we can find \(\{A^\alpha\}\):
+    \[
+    A^\alpha := \eta^{\alpha\beta}A_\beta. \tag{3.43}
+    \]
+    The use of the inverse guarantees that the two sets of components satisfy Eq. (3.39). So the mapping provided by \(g\) between vectors and one-forms is one-to-one and invertible. 
+    In particular, with \(\tilde{d}\phi\) we can associate a vector \(\vec{d}\phi\), which is the one usually associated with the gradient. We can see that this vector is orthogonal to surfaces of constant \(\phi\) as follows: its inner product with a vector in a surface of constant \(\phi\) is, by this mapping, identical with the value of the one-form \(\tilde{d}\phi\) on that vector. This, in turn, must be zero since \(\tilde{d}\phi(\vec{V})\) is the rate of change of \(\phi\) along \(\vec{V}\), which in this case is zero since \(\vec{V}\) is taken to be in a surface of constant \(\phi\).
+    It is important to know what \(\{\eta^{\alpha\beta}\}\) is identical to \((\eta_{\alpha\beta})\). Thus, to go from a one-form to a vector, simply change the sign of the time component.
+    
+    \textit{\textbf{Why distinguish one-form from vectors?}}: 
+    
+    \textit{\textbf{Magnitudes and scalar products of the one-forms}}: 
+    A one-form \(\tilde{p}\) is defined to have the same magnitude as its associated vector \(\vec{p}\). Thus we write
+    \[
+    \tilde{p}^2 = \vec{p}^2 = \eta_{\alpha\beta} p^\alpha p^\beta = \eta_{\alpha\beta} (\eta^{\alpha\mu} p_\mu)(\eta^{\beta\nu} p_\nu) = \tilde{p}^2 = \eta^{\alpha\mu} p_\mu p_\alpha. \tag{3.50}
+    \]
+    Since \(\eta_{\alpha\beta}\) and \(\eta^{\beta\nu}\) are inverse matrices to each other, the sum over \(\beta\) collapses \((\eta_{\alpha\beta}\eta^{\beta\nu} = \delta^\nu_\alpha)\). Thus, the inverse metric tensor can be used directly to find the magnitude of \(\tilde{p}\) from its components.
+    As with vectors, we can now define an inner product of one-forms. This is
+    \[
+    \tilde{p} \cdot \tilde{q} := \frac{1}{2} \left[ (\tilde{p} + \tilde{q})^2 - \tilde{p}^2 - \tilde{q}^2 \right]. \tag{3.52}
+    \]
+    Its expression in terms of components is, not surprisingly,
+    \[
+    \tilde{p} \cdot \tilde{q} = -p_0 q_0 + p_1 q_1 + p_2 q_2 + p_3 q_3. \tag{3.53}
+    \]
+    \textit{\textbf{Normal vectors and unit normal one-forms}}:
+    A vector is said to be normal to a surface if its associated one-form is a normal one-form. Eq. (3.38) shows that this definition is equivalent to the usual one that the vector be orthogonal to all tangent vectors. A normal vector or one-form is said to be a unit normal if its magnitude is \(\pm 1\).
+
+    A three-dimensional surface is said to be timelike, spacelike, or null according to which of these classes its normal falls into. An outward normal vector is the vector associated with an outward normal one-form, as defined earlier. This ensures that its scalar product with any vector which points outwards is positive. If the surface is spacelike, the outward normal vector points outwards. If the surface is timelike, however, the outward normal vector points inwards. And if the surface is null, the outward vector is tangent to the surface!
+
+    \subsection{3.6 Finally: \(\binom{M}{N}\) tensors}
+
+    \textit{\textbf{Vector as a function of one-forms}}
+    The dualism discussed above is in fact complete.Given a vector \(\vec{V}\), once we supply a one-form we get a real number:
+    \[
+    \vec{V}(\tilde{p}) \equiv \tilde{p}(\vec{V}) \equiv p_\alpha V^\alpha \equiv \langle \tilde{p}, \vec{V} \rangle. \tag{3.54}
+    \]
+    In this way we dethrone vectors from their special position as things ‘acted on’ by tensors, and regard them as tensors themselves, specifically as linear functions of single one-forms into real numbers.
+    
+    \textit{\textbf{\(\binom{M}{0}\) tensors}}
+    Generalizing this, we define:
+    An \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensor is a linear function of \(M\) one-forms into the real numbers. All our previous discussions of \(\left(\begin{array}{c} 0 \\ N \end{array}\right)\) tensors apply here. A simple \(\left(\begin{array}{c} 2 \\ 0 \end{array}\right)\) tensor is \(\vec{V} \otimes \vec{W}\), which, when supplied with two arguments \(\tilde{p}\) and \(\tilde{q}\), gives the number \(\vec{V}(\tilde{p})\vec{W}(\tilde{q}) := \tilde{p}(\vec{V})\tilde{q}(\vec{W}) = V^\alpha p_\alpha W^\beta q_\beta\). So \(\vec{V} \otimes \vec{W}\) has components \(V^\alpha W^\beta\). A basis for \(\left(\begin{array}{c} 2 \\ 0 \end{array}\right)\) tensors is \(\vec{e}_\alpha \otimes \vec{e}_\beta\). The components of an \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensor are its values when the basis one-forms \(\tilde{\omega}^\alpha\) are its arguments. Notice that \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensors have components all of whose indices are superscripts.
+
+    \textit{\textbf{\(\binom{M}{N}\) tensors}}
+    The final generalization is:
+    An \(\left(\begin{array}{c} M \\ N \end{array}\right)\) tensor is a linear function of \(M\) one-forms and \(N\) vectors into the real numbers.
+    In general, the components of a \(\left(\begin{array}{c} M \\ N \end{array}\right)\) tensor will have \(M\) indices up and \(N\) down. In a new frame, the components transform as:
+    \[
+    R^{\bar{\alpha}}_{\ \bar{\beta}} = R(\tilde{\omega}^{\bar{\alpha}}; \vec{e}_{\bar{\beta}})
+    = R\left(\Lambda^{\bar{\alpha}}_{\ \mu} \tilde{\omega}^{\mu}; \Lambda^{\nu}_{\ \bar{\beta}} \vec{e}_{\nu}\right)
+    = \Lambda^{\bar{\alpha}}_{\ \mu} \Lambda^{\nu}_{\ \bar{\beta}} R^{\mu}_{\ \nu}. \tag{3.55}
+    \]
+    Some old names that are still in current use are: upper indices are called ‘contravariant’ (because they transform contrary to basis vectors) and lower ones ‘covariant’.
+
+    \subsection{3.7 Index raising and lowering}
+    In the same way that the metric maps a vector \(\vec{V}\) into a one-form \(\tilde{V}\), it maps an \(\left(\begin{array}{c} N \\ M \end{array}\right)\) tensor into an \(\left(\begin{array}{c} N-1 \\ M+1 \end{array}\right)\) tensor. Similarly, the inverse maps an \(\left(\begin{array}{c} N \\ M \end{array}\right)\) tensor into an \(\left(\begin{array}{c} N+1 \\ M-1 \end{array}\right)\) tensor.
+
+    \textit{\textbf{Mixed components of metric}}
+    The numbers \(\{\eta_{\alpha\beta}\}\) are the components of the metric, and \(\{\eta^{\alpha\beta}\}\) those of its inverse. Suppose we raise an index of \(\eta_{\alpha\beta}\) using the inverse. Then we get the ‘mixed’ components of the metric,
+    \[
+    \eta^\alpha_{\ \beta} \equiv \eta^{\alpha\mu} \eta_{\mu\beta}. \tag{3.59}
+    \]
+    But on the right we have just the matrix product of two matrices that are the inverse of each other, so it is the unit identity matrix. Since one index is up and one down, it is the Kronecker delta, written as
+    \[
+    \eta^\alpha_{\ \beta} \equiv \delta^\alpha_{\ \beta}. \tag{3.60}
+    \]
+
+    \subsection{3.8 Differentiation of tensors}
+    A function \(f\) is a \(\left(\begin{array}{c} 0 \\ 0 \end{array}\right)\) tensor, and its gradient \(\tilde{d}f\) is a \(\left(\begin{array}{c} 0 \\ 1 \end{array}\right)\) tensor. Differentiation of a function produces a tensor of one higher (covariant) rank. We shall now see that this applies as well to the differentiation of tensors of any rank. 
+    Consider a \(\left(\begin{array}{c} 1 \\ 1 \end{array}\right)\) tensor \(T\) whose components \(\{T^\alpha_{\ \beta}\}\) are functions of position. We can write \(T\) as
+    \[
+    T = T^\alpha_{\ \beta} \tilde{\omega}^\beta \otimes \vec{e}_\alpha. \tag{3.61}
+    \]
+    Suppose, as we did for functions, that we move along a world line with parameter \(\tau\) (proper time). The rate of change of \(T\),
+    \[
+    \frac{dT}{d\tau} = \lim_{\Delta \tau \rightarrow 0} \frac{T(\tau + \Delta \tau) - T(\tau)}{\Delta \tau}, \tag{3.62}
+    \]
+    is not hard to calculate. Since the basis one-forms and vectors are the same everywhere (i.e., \(\tilde{\omega}^\alpha(\tau + \Delta \tau) = \tilde{\omega}^\alpha(\tau)\)), it follows that
+    \[
+    \frac{dT}{d\tau} = \left(\frac{dT^\alpha_{\ \beta}}{d\tau}\right) \tilde{\omega}^\beta \otimes \vec{e}_\alpha, \tag{3.63}
+    \]
+    where \(dT^\alpha_{\ \beta}/d\tau\) is the ordinary derivative of the function \(T^\alpha_{\ \beta}\) along the world line:
+    \[
+    \frac{dT^\alpha_{\ \beta}}{d\tau} = T^\alpha_{\ \beta, \gamma} U^\gamma. \tag{3.64}
+    \]
+    Now, the object \(dT/d\tau\) is a \(\left(\begin{array}{c} 1 \\ 1 \end{array}\right)\) tensor, since in Eq. (3.62) it is defined to be just the difference between two such tensors. From Eqs. (3.63) and (3.64) we have, for any vector \(\vec{U}\),
+    \[
+    \frac{dT}{d\tau} = \left(T^\alpha_{\ \beta, \gamma} \tilde{\omega}^\beta \otimes \vec{e}_\alpha\right) U^\gamma, \tag{3.65}
+    \]
+    from which we can deduce that
+    \[
+    \nabla T := \left(T^\alpha_{\ \beta, \gamma} \tilde{\omega}^\beta \otimes \tilde{\omega}^\gamma \otimes \vec{e}_\alpha\right) \tag{3.66}
+    \]
+    is a \(\left(\begin{array}{c} 1 \\ 2 \end{array}\right)\) tensor. This tensor is called the gradient of \(T\).
+    
+    We use the notation \(\nabla T\) rather than \(\tilde{d}T\) because the latter notation is usually reserved by mathematicians for something else. We also have a convenient notation for Eq. (3.65):
+    \[
+    \frac{dT}{d\tau} = \nabla_{\vec{U}} T, \tag{3.67}
+    \]
+    \[
+    \nabla_{\vec{U}} T \rightarrow \left(T^\alpha_{\ \beta, \gamma} U^\gamma\right). \tag{3.68}
+    \]
+    This derivation made use of the fact that the basis vectors (and therefore the basis one-forms) were constant everywhere. We will find that we can’t assume this in the curved spacetime of GR, and taking this into account will be our entry point into the theory!
+    
+\section{Chapter 4. Perfect fluids in special relativity}
+
+    \subsection{4.1 Fluids}
+        A \textbf{continuum} is a collection of particles so numerous that the dynamics of individual particles cannot be followed, leaving only a description of the collection in terms of ‘average’ or ‘bulk’ quantities: number of particles per unit volume, density of energy, density of momentum, pressure, temperature, etc.\\
+        An \textbf{"element"} is a collection of particles large enough so that the individual particles don’t matter, but it is small enough so that it is relatively homogeneous: the average velocity, kinetic energy, and interparticle spacing must be the same everywhere in the collection.\\
+        Note that \textbf{rigidity} comes from forces parallel to the interface between two elements. Two adjacent elements can push and pull on each other, but the continuum won’t be rigid unless they can also prevent each other from sliding along their common boundary. A \textbf{fluid} is characterized by the weakness of such antislipping forces compared to the direct push–pull force, which is called pressure. A \textbf{perfect fluid} is defined as one in which all antislipping forces are zero, and the only force between neighboring fluid elements is pressure.
+
+    \subsection{4.2 Dust: the number-flux vector $\vec{N}$}
+    
+    \textbf{‘Dust’} is defined to be a collection of particles, all of which are at rest in some one Lorentz frame.
+
+    \textit{The number density n}: number density in the MCRF of the element. (How many are there per unit volume?)
+    
+    Number density in a frame \(\bar{O}\):
+    \[
+    n \sqrt{1 - v^2} = \text{number density in the frame in which particles have velocity } \mathbf{u}.
+    \tag{4.2}
+    \]
+
+    \textit{The flux across a surface}: is the number crossing a unit area of that surface in a unit time. 
+
+    Suppose the particles had $x-y$ components of velocity in \(\bar{O}\) and let us for simplicity consider a surface $S$ perpendicular to $\bar{x}$. Then the dashed line in Fig. 4.3 encloses all and only those particles that cross \(A\) in \(S\) in the time \(\bar{t}\). This is a ‘parallelepiped’, whose volume is the area of its base times its height. But its height – its extent in the \(x\) direction – is just \(\bar{v}_x \bar{t}\). Therefore we get:
+    \[
+    (\text{flux})^{\bar{x}} = \frac{n \bar{v}^x }{\sqrt{1 - v^2}}.
+    \tag{4.3}
+    \]
+
+    \textit{The number-flux four-vector $\vec{N}$}: 
+    Defined by:
+    \[
+        \vec{N}=n\vec{U} \tag{4.4}
+    \]
+    where \(\vec{U}\) is the four-velocity of the particles. It follows that
+    \[
+    \vec{N}_{\rightarrow \bar{O}} =
+    \left(
+    \frac{n}{\sqrt{1 - v^2}},
+    \frac{n v^x}{\sqrt{1 - v^2}},
+    \frac{n v^y}{\sqrt{1 - v^2}},
+    \frac{n v^z}{\sqrt{1 - v^2}}
+    \right).
+    \tag{4.5}
+    \]
+    Thus, in any frame, the time component of $\vec{N}$ is the number density and the spatial components are the fluxes across surfaces of the various coordinates.
+    \[
+    \vec{N} \cdot \vec{N} = -n^2, \quad n = \left(-\vec{N} \cdot \vec{N}\right)^{1/2}.     \tag{4.6}
+    \]
+
+    \subsection{4.3 One-forms and surfaces}
+
+    \textit{Number density as a timelike flux}: 
+    The flux is the number of world lines that cross \(S\) in the interval \(\bar{t} = 1\) (Fig. 4.4). Really, since it is a two-dimensional surface, its ‘world path’ is three-dimensional. The flux is the number of world lines that cross a unit ‘volume’ of this three-surface—a cube of unit side, \(\bar{t} = 1\), \(\bar{y} = 1\), \(\bar{z} = 1\). So we can define a flux as the number of world lines crossing a unit three-volume. There is no reason we cannot now define this three-volume to be an ordinary spatial volume \(\bar{x} = 1\), \(\bar{y} = 1\), \(\bar{z} = 1\), taken at some particular time \(\bar{t}\). This is shown in Fig. 4.5. Now the flux is the number crossing in the interval \(\bar{x} = 1\) (since \(\bar{y}\) and \(\bar{z}\) are suppressed). But this is just the number ‘contained’ in the unit volume at the given time: the number density. So the ‘timelike’ flux is the number density.
+
+    \textit{A one-form defines a surface}: 
+    In general, a surface is defined as the solution to some equation
+    \[
+    \phi(t, x, y, z) = \text{const.}
+    \]
+    The gradient of the function \(\phi\), \(\tilde{d}\phi\), is a normal one-form. In some sense, \(\tilde{d}\phi\) defines the surface \(\phi = \text{const.}\), since it uniquely determines the directions normal to that surface. However, any multiple of \(\tilde{d}\phi\) also defines the same surface, so it is customary to use the unit-normal one-form when the surface is not null:
+    \[
+    \tilde{n} := \frac{\tilde{d}\phi}{|\tilde{d}\phi|}, \tag{4.7}
+    \]
+    where
+    \[
+    |\tilde{d}\phi| \text{ is the magnitude of } \tilde{d}\phi : |\tilde{d}\phi| = \left|\eta^{\alpha\beta} \phi_{,\alpha} \phi_{,\beta}\right|^{1/2}. \tag{4.8}
+    \]
+    As in three-dimensional vector calculus (e.g., Gauss’ law), we define the ‘surface element’ as the unit normal times an area element in the surface. In this case, a volume element in a three-space whose coordinates are \(x^\alpha\), \(x^\beta\), and \(x^\gamma\) can be represented by
+    \[
+    \tilde{n} \, dx^\alpha \, dx^\beta \, dx^\gamma, \tag{4.9}
+    \]
+    and a unit volume (\(dx^\alpha = dx^\beta = dx^\gamma = 1\)) is just \(\tilde{n}\). (These \(dx\)s are the infinitesimals that we integrate over, not the gradients.)
+
+    \textit{The flux across the surface:} 
+    Let \(\phi\) be a coordinate, say \(\bar{x}\). Then a surface of constant \(\bar{x}\) has normal \(\tilde{d} \bar{x}\), which is a unit normal already since \(\tilde{d} \bar{x} \rightarrow \bar{O} (0, 1, 0, 0)\). Then \(\langle \tilde{d} \bar{x}, \vec{N} \rangle = N^\alpha (\tilde{d} \bar{x})_\alpha = N^{\bar{x}}\), which is what we have already seen is the flux across \(\bar{x}\) surfaces. Clearly, had we chosen \(\phi = \bar{t}\), then we would have wound up with \(N^{\bar{0}}\), the number density, or flux across a surface of constant \(\bar{t}\). Thus, the flux (of particles) across a surface of constant \(\phi\) is \(\langle \tilde{n}, \vec{N} \rangle\).
+
+    \textit{Representation of a frame by a one-form:} 
+    An inertial frame, which up to now has been defined by its four-velocity, can be defined also by a one-form, namely that associated with its four-velocity \(g(\vec{U}, \cdot)\). This has components
+    \[
+    U_\alpha = \eta_{\alpha\beta} U_\beta
+    \]
+    or, in this frame,
+    \[
+    U_0 = -1, \quad U_i = 0.
+    \]
+    This is clearly also equal to \(-\tilde{d}\bar{t}\) (since their components are equal). So we could equally well define a frame by giving \(\tilde{d} t\). This has a nice picture: \(\tilde{d} t\) is to be pictured as a set of surfaces of constant \(t\), the surfaces of simultaneity. These clearly do define the frame, up to spatial rotations, which we usually ignore.
+
+    \subsection{4.4 Dust again: the stress-energy tensor}
+
+    \textit{\textbf{Energy density}}:
+    In the MCRF, the energy of each particle is just \(m\), and the number per unit volume is \(n\). Therefore, the energy per unit volume is \(mn\). We denote this in general by \(\rho\):
+    \[
+    \rho := \text{energy density in the MCRF}. \tag{4.11}
+    \]
+    Thus \(\rho\) is a scalar just as \(n\) is (and \(m\) is). In our case of dust,
+    \[
+    \rho = nm \quad \text{(dust)}. \tag{4.12}
+    \]
+    In the frame \(\bar{O}\) we again have that the number density is \(n / \sqrt{1 - v^2}\), but now the energy of each particle is \(m / \sqrt{1 - v^2}\), since it is moving. Therefore, the energy density is:
+    \[
+    \frac{\rho}{1 - v^2} = \text{energy density in a frame in which particles have velocity } v. \tag{4.13}
+    \]
+    This transformation involves two factors of \((1 - v^2)^{-1/2} = \Lambda^\bar{0} _0\), because both volume and energy transform. It is impossible, therefore, to represent energy density as some component of a vector. It is, in fact, a component of a \( \begin{pmatrix} 2 \\ 0 \end{pmatrix} \) tensor. So there is a tensor T, called the stress–energy tensor, which has all these numbers as values when supplied with the appropriate one-forms as arguments.
+    
+    \textit{\textbf{Stress-energy tensor}}:
+    The most convenient definition of the stress–energy tensor is in terms of its components in some (arbitrary) frame:
+    \[
+    T(\tilde{d}x^\alpha, \tilde{d}x^\beta) = T^{\alpha\beta} := \text{flux of \(\alpha\) momentum across a surface of constant \(x^\beta\)}. \tag{4.14}
+    \]
+    (By \(\alpha\) momentum we mean, of course, the \(\alpha\) component of four-momentum: \(p^\alpha := \langle \tilde{d}x^\alpha, \vec{p} \rangle\).)
+
+    Let us see how this definition fits in with our discussion above. Consider \(T^{00}\). This is defined as the flux of zero momentum (energy) across a surface \(t = \text{constant}\). This is just the energy density:
+    \[
+    T^{00} = \text{energy density}. \tag{4.15}
+    \]
+    Similarly, \(T^{0i}\) is the flux of energy across a surface \(x^i = \text{constant}\):
+    \[
+    T^{0i} = \text{energy flux across \(x^i\) surface}. \tag{4.16}
+    \]
+    Then \(T^{i0}\) is the flux of \(i\) momentum across a surface \(t = \text{constant}\): the density of \(i\) momentum,
+    \[
+    T^{i0} = \text{\(i\) momentum density}. \tag{4.17}
+    \]
+    Finally, \(T^{ij}\) is the \(j\) flux of \(i\) momentum:
+    \[
+    T^{ij} = \text{flux of \(i\) momentum across \(j\) surface}. \tag{4.18}
+    \]
+    For any particular system, giving the components of \(T\) in some frame defines it completely. For dust, the components of \(T\) in the MCRF are particularly easy. There is no motion of the particles, so all \(i\) momenta are zero and all spatial fluxes are zero. Therefore
+    \[
+    (T^{00})_{\text{MCRF}} = \rho = mn,
+    \]
+    \[
+    (T^{0i})_{\text{MCRF}} = (T^{i0})_{\text{MCRF}} = (T^{ij})_{\text{MCRF}} = 0.
+    \]
+    It is easy to see that the tensor \(\vec{p} \otimes \vec{N}\) has exactly these components in the MCRF, where \(\vec{p} = m\vec{U}\) is the four-momentum of a particle. Therefore we have
+    \[
+    \text{Dust}: \quad T = \vec{p} \otimes \vec{N} = mn \, \vec{U} \otimes \vec{U} = \rho \, \vec{U} \otimes \vec{U}. \tag{4.19}
+    \]
+    From this we can conclude
+    \[
+    T^{\alpha\beta} = T(\tilde{\omega}^\alpha, \tilde{\omega}^\beta) = \rho \, \vec{U}(\tilde{\omega}^\alpha) \, \vec{U}(\tilde{\omega}^\beta) = \rho U^\alpha U^\beta. \tag{4.20}
+    \]
+    In the frame \(\bar{O}\), where
+    \[
+    \vec{U} \rightarrow \left(\frac{1}{\sqrt{1 - v^2}}, \frac{v_x}{\sqrt{1 - v^2}}, \ldots \right),
+    \]
+    we therefore have
+    \[
+    T^{\bar{0}\bar{0}} = \rho U^{\bar{0}} U^{\bar{0}} = \frac{\rho}{1 - v^2},
+    \]
+    \[
+    T^{\bar{0}\bar{i}} = \rho U^{\bar{0}} U^{\bar{i}} = \frac{\rho v_i}{1 - v^2},
+    \]
+    \[
+    T^{\bar{i}\bar{0}} = \rho U^{\bar{i}} U^{\bar{0}} = \frac{\rho v_i}{1 - v^2},
+    \]
+    \[
+    T^{\bar{i}\bar{j}} = \rho U^{\bar{i}} U^{\bar{j}} = \frac{\rho v_i v_j}{1 - v^2}.
+    \tag{4.21}
+    \]
+    These are exactly what we would calculate, from first principles, for energy density, energy flux, momentum density, and momentum flux respectively.Notice one important point: \(T^{\alpha\beta} = T^{\beta\alpha}\); that is, \(T\) is symmetric. This will turn out to be true in general, not just for dust.
+    
+    \subsection{4.5 General fluids}
+
+    \textit{Definition of macroscopic quantities:}
+    MCRF is specific to a single fluid element, and which frame is the MCRF is a function of position and time. All scalar quantities associated with a fluid element in relativity (such as number density, energy density, and temperature) are defined to be their values in the MCRF. Thus we make the definitions displayed in Table 4.1.
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|l|l|}
+    \hline
+    \textbf{Symbol} & \textbf{Name} & \textbf{Definition} \\ \hline
+    \(\vec{U}\) & Four-velocity of fluid element & Four-velocity of MCRF \\ \hline
+    \(n\) & Number density & Number of particles per unit volume in MCRF \\ \hline
+    \(\vec{N}\) & Flux vector & \(\vec{N} := n\vec{U}\) \\ \hline
+    \(\rho\) & Energy density & Density of total mass energy (rest mass, random kinetic, chemical, $\dots$)\\ \hline
+    \(\Pi\) & Internal energy per particle & \(\Pi := \frac{\rho}{n} - m \Rightarrow \rho = n(m + \Pi)\). Thus \(\Pi\) is a general name for all energies other than the rest mass.\\ \hline
+    \(\rho_0\) & Rest-mass density & \(\rho_0 := mn\). Since \(m\) is a constant, this is the 'energy' associated with the rest mass only. Thus, \(\rho = \rho_0 + n\Pi\).\\ \hline
+    \(T\) & Temperature & Usual thermodynamic definition in MCRF (see below). \\ \hline
+    \(p\) & Pressure & Usual fluid-dynamical notion in MCRF. More about this later. \\ \hline
+    \(S\) & Specific entropy & Entropy per particle (see below). \\ \hline
+    \end{tabular}
+    \caption{Macroscopic quantities for single-component fluids}
+    \label{table 4.1}
+    \end{table}
+    
+    \textit{\textbf{First law of thermodynamics:}}
+    In the MCRF, we imagine that the fluid element is able to exchange energy with its surroundings in only two ways: by heat conduction (absorbing an amount of heat \(\delta Q\)) and by work (doing an amount of work \(p \delta V\), where \(V\) is the three-volume of the element). If we let \(E\) be the total energy of the element, then since \(\delta Q\) is energy gained and \(p \delta V\) is energy lost, we can write (assuming small changes)
+    \[
+    \delta E = \delta Q - p \delta V,
+    \]
+    or
+    \[
+    \delta Q = \delta E + p \delta V.
+    \tag{4.22}
+    \]
+    Now, if the element contains a total of \(N\) particles, and if this number doesn’t change (i.e., no creation or destruction of particles), we can write
+    \[
+    V = \frac{N}{n}, \quad \Delta V = -\frac{N}{n^2} \Delta n. \tag{4.23}
+    \]
+    Moreover, we also have (from the definition of \(\rho\))
+    \[
+    E = \rho V = \frac{\rho N}{n}, \quad \Delta E = \rho \Delta V + V \Delta \rho.
+    \]
+    These two results imply
+    \[
+    \Delta Q = \frac{N}{n} \Delta \rho - \frac{N(\rho + p)}{n^2} \Delta n.
+    \]
+    If we write \(q := \frac{Q}{N}\), which is the heat absorbed per particle, we obtain
+    \[
+    n \Delta q = \Delta \rho - \frac{(\rho + p)}{n} \Delta n. \tag{4.24}
+    \]
+    Now suppose that the changes are ‘infinitesimal’. It can be shown in general that a fluid’s state can be given by two parameters: for instance, \(\rho\) and \(T\) or \(\rho\) and \(n\). Everything else is a function of, say, \(\rho\) and \(n\). That means that the right-hand side of Eq. (4.24),
+    \[
+    d\rho - \frac{(\rho + p)}{n} dn,
+    \]
+    depends only on \(\rho\) and \(n\). If we write \( q := \frac{Q}{N} \), which is the heat absorbed per particle, we obtain
+    \[
+    n \, \Delta q = \Delta \rho - \frac{\rho + p}{n} \, \Delta n. \tag{4.24}
+    \]
+    Now suppose that the changes are ‘infinitesimal’. It can be shown in general that a fluid’s state can be given by two parameters: for instance, \(\rho\) and \(T\) or \(\rho\) and \(n\). Everything else is a function of, say, \(\rho\) and \(n\). That means that the right-hand side of Eq. (4.24),
+    \[
+    d\rho - \frac{\rho + p}{n} \, dn,
+    \]
+    depends only on \(\rho\) and \(n\). The general theory of first-order differential equations shows that this always possesses an integrating factor: that is, there exist two functions \(A\) and \(B\), functions only of \(\rho\) and \(n\), such that
+    \[
+    d\rho - \frac{\rho + p}{n} \, dn \equiv A \, dB
+    \]
+    is an identity for all \(\rho\) and \(n\). It is customary in thermodynamics to define temperature to be \( \frac{A}{n} \) and specific entropy to be \( B \):
+    \[
+    d\rho - \frac{\rho + p}{n} \, dn = nT \, dS, \tag{4.25}
+    \]
+    or, in other words,
+    \[
+    \delta q = T \, \delta S. \tag{4.26}
+    \]
+    The heat absorbed by a fluid element is proportional to its increase in entropy.
+
+    \textbf{\textit{The general stress-energy tensor:}}
+    The definition of \(T^{\alpha\beta}\) in Eq. (4.14) is perfectly general. Let us in particular look at it in the MCRF, where there is no bulk flow of the fluid element, and no spatial momentum in the particles. Then in the MCRF we have:
+
+    \begin{enumerate}
+        \item \(T^{00} = \) energy density \(= \rho\).
+        \item \(T^{0i} = \) energy flux. Although there is no motion in the MCRF, energy may be transmitted by heat conduction. So \(T^{0i}\) is basically a heat-conduction term in the MCRF.
+        \item \(T^{i0} = \) momentum density. Again, the particles themselves have no net momentum in the MCRF, but if heat is being conducted, then the moving energy will have an associated momentum. We’ll argue below that \(T^{i0} \equiv T^{0i}\).
+        \item \(T^{ij} = \) momentum flux. This is an interesting and important term. The next section gives a thorough discussion of it. It is called the stress.
+    \end{enumerate}
+
+    \textbf{\textit{The spatial components of \(\mathbf{T}\), \(\mathbf{T^{ij}}\)}}: By definition, \(T^{ij}\) is the flux of \(i\) momentum across the \(j\) surface. Consider (Fig. 4.6) two adjacent fluid elements, represented as cubes, having the common interface \(S\). In general, they exert forces on each other. Shown in the diagram is the force \(F\) exerted by \(A\) on \(B\) Since force equals the rate of change of momentum (by Newton’s law, which is valid here, since we are in the MCRF where velocities are zero), \(A\) (and so are the other neighboring elements) is pouring momentum into \(B\) at the rate \(F\) per unit time.  There is therefore a flow of momentum across \(S\) from \(A\) to \(B\) at the rate \(F\). If \(S\) has area \(A\), then the flux of momentum across \(S\) is \(F/A\). If \(S\) is a surface of constant \(x^j\), then \(T^{ij}\) for fluid element \(A\) is \(F^i / A\).
+
+    This is a brief illustration of the meaning of \(T^{ij}\): it represents forces between adjacent fluid elements. As mentioned before, these forces need not be perpendicular to the surfaces between the elements (i.e. viscosity or other kinds of rigidity give forces parallel to the interface). But if the forces are perpendicular to the interfaces, then \(T^{ij}\) will be zero unless \(i = j\). 
+
+    \textbf{\textit{Symmetry of \(T^{\alpha \beta}\) in MCRF}}:
+    (a) Symmetry of \(T^{ij}\). Consider Fig. 4.7 in which we have drawn a fluid element as a cube of side \(l\). The forces on the fluid element are, respectively, \(-F_i^1, -F_i^2\), etc. The first point is that \(F_i^3 \approx -F_i^1\) in order that the sum of the forces on the element should vanish when \(l \to 0\) (otherwise the tiny mass obtained as \(l \to 0\) would have an infinite acceleration). The next point is to compute torques about the \(z\)-axis through the center of the fluid element. For the torque calculation, it is convenient to place the origin of coordinates at the center of the cube. Therefore, the angular acceleration is
+    \[
+    \ddot{\theta} = \frac{\tau}{I} = \frac{T^{xy} - T^{yx}}{\alpha \rho l^2}. \tag{4.28}
+    \]
+    Since \(\alpha\) is a number and \(\rho\) is independent of the size of the element, as are \(T^{xy}\) and \(T^{yx}\), this will go to infinity as \(l \to 0\) unless
+    \[
+    T^{xy} = T^{yx}.
+    \]
+    Thus, since it is obviously not true that fluid elements are whirling around inside fluids, smaller ones whirling ever faster, we have that the stresses are always symmetric:
+    \[
+    T^{ij} = T^{ji}. \tag{4.29}
+    \]
+    Since we made no use of any property of the substance, this is true of solids as well as fluids.
+    
+    (b) Equality of momentum density and energy flux. This is much easier to demonstrate. The energy flux is the density of energy times the speed it flows at. But since energy and mass are the same, this is the density of mass times the speed it is moving at; in other words, the density of momentum. Therefore, \(T^{0i} = T^{i0}\).
+
+    \textbf{\textit{Conservation of energy-momentum:}}
+    In Fig. 4.8 we see a cubical fluid element. The rate of flow across face (4) is \(l^2 T^{0x}(x = 0)\), and across face (2) is \(-l^2 T^{0x}(x = l)\); the second term has a minus sign, since \(T^{0x}\) represents energy flowing in the positive \(x\) direction, which is out of the volume across face (2). Similarly, energy flowing in the \(y\) direction is \(l^2 T^{0y}(y = 0) - l^2 T^{0y}(y = l)\). The sum of these rates must be the rate of increase in the energy inside, \(\partial(T^{00} l^3)/\partial t\) (statement of conservation of energy). Therefore we have
+    \[
+    \frac{\partial}{\partial t} l^3 T^{00} = l^2 \left[ T^{0x}(x = 0) - T^{0x}(x = l) + T^{0y}(y = 0) - T^{0y}(y = l) + T^{0z}(z = 0) - T^{0z}(z = l) \right]. \tag{4.30}
+    \]
+    Dividing by \(l^3\) and taking the limit \(l \to 0\) gives
+    \[
+    \frac{\partial}{\partial t} T^{00} = - \frac{\partial}{\partial x} T^{0x} - \frac{\partial}{\partial y} T^{0y} - \frac{\partial}{\partial z} T^{0z}. \tag{4.31}
+    \]
+    In deriving this, we use the definition of the derivative:
+    \[
+    \lim_{l \to 0} \frac{T^{0x}(x = 0) - T^{0x}(x = l)}{l} \equiv - \frac{\partial}{\partial x} T^{0x}. \tag{4.32}
+    \]
+    Eq. (4.31) can be written as
+    \[
+    T^{00}_{,0} + T^{0x}_{,x} + T^{0y}_{,y} + T^{0z}_{,z} = 0,
+    \]
+    or
+    \[
+    T^{0\alpha}_{,\alpha} = 0. \tag{4.33}
+    \]
+    This is the statement of the law of conservation of energy. Similarly, momentum is conserved. The same mathematics applies, with the index ‘0’ changed to whatever spatial index corresponds to the component of momentum whose conservation is being considered. The general conservation law is, then,
+    \[
+    T^{\alpha\beta}_{,\beta} = 0. \tag{4.34}
+    \]
+    This applies to any material in special relativity. Notice it is just a four-dimensional divergence. Its relation to Gauss’ theorem, which gives an integral form of the conservation law, will be discussed later.
+
+    \textbf{\textit{Conservation of particles:}}
+    In particular, in Fig. 4.8 the rate of change of the number of particles in a fluid element will be due only to loss or gain across the boundaries, i.e., to net fluxes out or in. This conservation law is derivable in the same way as Eq. (4.34) was. We can then write that
+    \[
+    \frac{\partial}{\partial t} N^0 = - \frac{\partial}{\partial x} N^x - \frac{\partial}{\partial y} N^y - \frac{\partial}{\partial z} N^z,
+    \]
+    or
+    \[
+    N^{\alpha}_{,\alpha} = (n U^\alpha)_{,\alpha} = 0. \tag{4.35}
+    \]
+
+    \subsection{4.6 Perfect fluids}
+
+    \textit{A perfect fluid in relativity is defined as a fluid that has no viscosity and no heat conduction in the MCRF.}
+
+    \textit{No heat conduction:} From the definition of \(T\), we see that this immediately implies that, in the MCRF, \(T^{0i} = T^{i0} = 0\). Energy can flow only if particles flow. Recall that in our discussion of the first law of thermodynamics, we showed that if the number of particles was conserved, then the specific entropy was related to heat flow by Eq. (4.26). This means that in a perfect fluid, if Eq. (4.35) for conservation of particles is obeyed, then we should also have that \(S\) is a constant in time during the flow of the fluid.
+
+    \textit{No viscosity:} Viscosity is a force parallel to the interface between particles. Its absence means that the forces should always be perpendicular to the interface, i.e., that \(T^{ij}\) should be zero unless \(i = j\). This means that \(T^{ij}\) should be a diagonal matrix. Moreover, it must be diagonal in all MCRF frames, since ‘no viscosity’ is a statement independent of the spatial axes. So we have \(T^{ij} = p \delta^{ij}\) these forces-per-unit-area are all equal, and are called the pressure, \(p\).
+
+    \textit{Form of  \(T\)}: In the MCRF, \(T\) has the components we have just deduced:
+    \[
+    (T^{\alpha\beta}) =
+    \begin{pmatrix}
+    \rho & 0 & 0 & 0 \\
+    0 & p & 0 & 0 \\
+    0 & 0 & p & 0 \\
+    0 & 0 & 0 & p
+    \end{pmatrix}.
+    \tag{4.36}
+    \]
+    It is not hard to show that in the MCRF
+    \[
+    T^{\alpha\beta} = (\rho + p) U^\alpha U^\beta + p \eta^{\alpha\beta}. \tag{4.37}
+    \]
+    By trying all possible \(\alpha\) and \(\beta\), you can verify that Eq. (4.37) gives Eq. (4.36). But Eq. (4.37) is a frame-invariant formula in the sense that it uniquely implies
+    \[
+    T = (\rho + p) \, \vec{U} \otimes \vec{U} + p \, g^{-1}. \tag{4.38}
+    \]
+    This is the stress–energy tensor of a perfect fluid.
+
+    \textit{Aside on the meaning of pressure:}
+    A comparison of Eq.(4.38) with Eq.(4.19) shows that ‘dust’ is the special case of a pressure-free perfect fluid. This means that a perfect fluid can be pressure free only if its particles have no random motion at all. Pressure arises in the random velocities of the particles. Even a gas so dilute as to be virtually collisionless has pressure. This is because pressure is the flux of momentum; whether this comes from forces or from particles crossing a boundary is immaterial.
+
+    \textit{The conservation laws:} 
+    Eq. (4.34) gives us
+    \[
+    T^{\alpha\beta}_{,\beta} = \left[ (\rho + p) U^\alpha U^\beta + p \eta^{\alpha\beta} \right]_{,\beta} = 0. \tag{4.39}
+    \]
+    There are four equations in Eq. (4.39), one for each \(\alpha\). After some manipulations, we get:
+    \[
+    - U^\beta \left( \rho_{,\beta} - \frac{\rho + p}{n} n_{,\beta} \right) = 0. \tag{4.48}
+    \]
+    (Recall: \(p_{,\beta} U^\beta\), which we know to be the derivative of \(p\) along the world line of the fluid element, \(\frac{dp}{d\tau}\).) Written another way, 
+    \[
+    \frac{d \rho}{d \tau} - \frac{\rho + p}{n} \frac{d n}{d \tau} = 0. \tag{4.49}
+    \]
+    This is to be compared with Eq. (4.25). It means
+    \[
+    U^\alpha S_{,\alpha} = \frac{dS}{d \tau} = 0. \tag{4.50}
+    \]
+    Thus, the flow of a particle-conserving perfect fluid conserves specific entropy. This is called adiabatic. It is important to remember that the law of conservation of energy in thermodynamics is embodied in the component of the conservation equations, Eq. (4.39), parallel to \(U^\alpha\). The remaining three components of Eq. (4.39) are derivable in the following way. We consider Eq. (4.45), and go to the MCRF, where \(U^i = 0\) but \(U^i_{,\beta} \neq 0\). In the MCRF, the zero component of this equation is the same as its contraction with \(U^\alpha\), which we have just examined. So we only need the \(i\) components. Since \(U^i = 0\), the \(\beta\) derivative of \((\rho + p)/n\) contributes nothing, and we get:
+    \[
+    (\rho + p) U^i_{,\beta} U^\beta = p_{,\beta} \eta^{i\beta} = 0. \tag{4.52}
+    \]
+    Lowering the index \(i\) makes this easier to read (and changes nothing). Since \(\eta^{i\beta} = \delta^i_\beta\), we get
+    \[
+    (\rho + p) U^i_{,\beta} U^\beta + p_{,i} = 0. \tag{4.53}
+    \]
+    Finally, we recall that \(U^i_{,\beta} U^\beta\) is the definition of the four-acceleration \(a^i\):
+    \[
+    (\rho + p) a^i + p_{,i} = 0. \tag{4.54}
+    \]
+    In relativity, \((\rho + p)\) plays the role of ‘inertial mass density,’ in that, from Eq. (4.54), the larger \((\rho + p)\), the harder it is to accelerate the object. Eq. (4.54) is essentially \(F = ma\), with \(-p_{,i}\) being the force per unit volume on a fluid element. Roughly speaking, \(p\) is the force a fluid element exerts on its neighbor, so \(-p\) is the force on the element. But the neighbor on the opposite side of the element is pushing the other way, so only if there is a change in \(p\) across the fluid element will there be a net force causing it to accelerate. That is why \(-\nabla p\) gives the force.
+    
+    \subsection{4.7 Importance for general relativity}
+    
+    \subsection{4.8 Gauss' law}
+
+    The integral form of the conservation laws, which are expressed in differential form in Eqs. (4.34) and (4.35), is given by
+    \[
+    \int V^\alpha_{,\alpha} \, d^4x = \int V^\alpha n_\alpha \, d^3 S, \tag{4.57}
+    \]
+    where \(\tilde{n}\) is the unit-normal one-form discussed in § 4.3, and \(d^3 S\) denotes the three-volume of the three-dimensional hypersurface bounding the four-dimensional volume of integration. In Fig. 4.9, a simple volume is drawn to illustrate the meaning of Eq. (4.57). The surface integral in Eq. (4.57) is
+    \begin{align}
+    \int_{t_2} V^0 \, dx \, dy \, dz + \int_{t_1} (-V^0) \, dx \, dy \, dz + \int_{x_2} V^x \, dt \, dy \, dz + \int_{x_1} (-V^x) \, dt \, dy \, dz
+    \\
+    + \text{similar terms for the other surfaces in the boundary}.
+    \end{align}
+    We can rewrite this as
+    \[
+    \int \left( V^0(t_2) - V^0(t_1) \right) \, dx \, dy \, dz + \int \left( V^x(x_2) - V^x(x_1) \right) \, dt \, dy \, dz + \cdots. \tag{4.58}
+    \]
+    If we let \(V^\alpha\) be \(N^\alpha\), then \(N^\alpha_{,\alpha} = 0\) means that the above expression vanishes, which has the interpretation that the change in the number of particles in the three-volume (first integral) is due to the flux across its boundaries (second and subsequent terms). If we are talking about energy conservation, we replace \(N^\alpha\) with \(T^{0\alpha}\), and use \(T^{0\alpha}_{,\alpha} = 0\).
+    
+    
+    
+
+
+\chapter{A General Relativity Workbook}
+\section{Introduction}
+If we examine the definition for Newtonian Gravity
 
 
 
 
-
-
-
-
-
-
+        
 
 
 
