@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\pagestyle{empty}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{latexsym, epsfig, ulem, cancel, multicol, hyperref}
+\usepackage{graphicx, tikz, subfigure,pgfplots}
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\setlength{\parskip}{1ex}
+
+\newcommand{\T}[0]{\top}
+\newcommand{\F}[0]{\bot}
+\newcommand{\liminfty}[1]{\lim_{#1 \to \infty}}
+\newcommand{\limzero}[1]{\lim_{#1 \to 0}}
+\newcommand{\limto}[1]{\lim_{#1}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\odd}[0]{\mathbb{Z} - 2\mathbb{Z}}
+\newcommand{\lineint}[1]{\int_{#1}}
+\newcommand{\pypx}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\divg}{\nabla \cdot}
+\newcommand{\curl}{\nabla \times}
+\newcommand{\dydx}[2]{\frac{d #1}{d #2}}
+\newcommand{\sqbkt}[1]{\left[ #1 \right]}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\tribkt}[1]{\left< #1 \right>}
+\newcommand{\abso}[1]{\left|#1 \right|}
+\newcommand{\zero}{\{0\}}
+\newcommand{\then}{\rightarrow}
+\newcommand{\nonneg}{\Z^+ \cup \{0\}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand{\union}[2]{\bigcup_{#1}^{#2}}
+\newcommand{\inter}[2]{\bigcap_{#1}^{#2}}
+\newcommand{\openclose}[1]{\left( #1 \right]}
+\newcommand{\closeopen}[1]{\left[ #1 \right)}
+\newcommand{\compo}[2]{#1 e^{i #2}}
+\newcommand{\laplase}{\bigtriangleup}
+\newcommand{\bra}[1]{\left< #1 \right|}
+\newcommand{\ket}[1]{\left| #1 \right>}
+\newcommand{\braket}[2]{\left< #1 \mid #2 \right>}
+\newcommand{\ketbra}[2]{\left| #1 \right> \left< #2 \right|}
+\newcommand{\ketpsit}{\ket{\psi(t)}}
+\newcommand{\ketphit}{\ket{\phi(t)}}
+\newcommand{\ham}{\mathbf{H}}
+\newcommand{\unx}{\hat{\mathbf{x}}}
+\newcommand{\uny}{\hat{\mathbf{y}}}
+\newcommand{\unz}{\hat{\mathbf{z}}}
+\newcommand{\uni}{\hat{\mathbf{i}}}
+\newcommand{\unj}{\hat{\mathbf{j}}}
+\newcommand{\unk}{\hat{\mathbf{k}}}
+\newcommand{\uns}{\hat{\mathbf{s}}}
+\newcommand{\unr}{\hat{\mathbf{r}}}
+\newcommand{\untheta}{\hat{\boldsymbol\theta}}
+\newcommand{\unphi}{\hat{\boldsymbol\phi}}
+\newcommand{\unrho}{\hat{\boldsymbol\rho}}
+
+
+
+\newcommand{\wsnumber}{1}
+\newcommand{\wstopic}{Vectors}
+\pgfplotsset{
+    every linear axis/.append style={
+       axis x line=center,
+       axis y line=center,
+       xlabel={$x$},
+       ylabel={$y$}
+    },
+    every axis plot/.append style={thick,mark=none}
+}
+\tikzset{
+    point/.style={circle,draw,fill,minimum width=0.3ex,inner sep=0pt,outer sep=0pt},
+    every label/.append style={black}
+}
+
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, graphicx, hyperref}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{multirow, multicol}
+\usepackage{tikz}
+\pagestyle{fancy}
+\fancyhead[RO]{Dennis Li}
+\fancyhead[LO]{GR Independent Study}
+\usepackage{comment}
+\newif\ifshow
+\showfalse
+
+\ifshow
+  \newenvironment{solution}{\textbf{Solution.}}{}
+\else
+  \excludecomment{solution}
+\fi
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\usepackage{comment}
+
+
+\newtheorem*{remark}{Remark}
+
+\newcommand*{\GridSize}{4}
+
+\newcommand*{\ColorCells}[1]{% #1 = list of x/y/color
+  \foreach \x/\y/\color in {#1} {
+    \node [fill=\color, draw=none, thick, minimum size=1cm] 
+      at (\x-.5,\GridSize+0.5-\y) {};
+    }%
+}%
+
+\begin{document}
+
+\begin{center}
+\ifshow
+  \textbf{\Large GRW Workbook}\\
+\else
+  \textbf{\Large General Relativity Workbook}\\
+\fi
+Dennis Li\\Prof. Gabe\\
+\end{center}
+
+\hrule
+
+\vspace{0.2cm}
+
+
+
+
+\end{document}
