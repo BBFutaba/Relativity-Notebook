@@ -7,10 +7,20 @@
 \setlength{\parindent}{0pt}
 \usepackage{multirow}
 \usepackage{mathtools}
+\usepackage{authblk}
 \pgfplotsset{width=10cm,compat=1.9}
+\setlength{\parskip}{1ex}
 
 \title{\textbf{Theory of Relativity Notebook}}
-\author{Dennis Li \thanks{Prof. Gabriel Perez-Giz \and Manu Dorghabekov}}
+\author[$\dagger$]{
+Dennis Li 
+\thanks{Special thanks to \textit{Junyao Xu}}
+}
+\author[$\dagger$]{
+Manu Dorghabekov 
+}
+\affil[$\dagger$]{Prof. Gabriel Perez-Giz}
+
 
 
 \newcommand{\liminfty}[1]{\lim_{#1 \to \infty}}
@@ -33,7 +43,6 @@
 
 \maketitle
 \tableofcontents
-
 \part{Special Relativity}
 \chapter{Spacetime - Taylor and Wheeler}
 \section{Invariance of Spacetime Interval}
@@ -1449,6 +1458,7 @@ WIP
         
         \textit{\textbf{Suggestion 4.} If a problem seems cumbersome in the lab frame, try analyzing it in the center-of-momentum (CM) (\(\bm{p_{total}=0}\)) system. (In the CM frame, \( \vec{p}'_{\text{total}} = 0 \implies 0 = \gamma_{\text{CM}} \left( \vec{p}_{\text{total}} - \frac{E_{\text{total}} \vec{v}_{\text{CM}}}{c^2} \right) \implies \vec{v}_{\text{CM}} = \frac{\vec{p}_{\text{total}} c^2}{E_{\text{total}}} \))}
 
+
 \chapter{A First Course in GR - Schultz}
 
 \section{Chapter 1. Special relativity}
@@ -2685,12 +2695,55 @@ WIP
     If we let \(V^\alpha\) be \(N^\alpha\), then \(N^\alpha_{,\alpha} = 0\) means that the above expression vanishes, which has the interpretation that the change in the number of particles in the three-volume (first integral) is due to the flux across its boundaries (second and subsequent terms). If we are talking about energy conservation, we replace \(N^\alpha\) with \(T^{0\alpha}\), and use \(T^{0\alpha}_{,\alpha} = 0\).
     
     
-    
+\part{General Relativity}
+
 
 
 \chapter{A General Relativity Workbook}
 \section{Introduction}
 If we examine the definition for Newtonian Gravity
+\[
+F_G = G\frac{Mm_g}{r^2}
+\]
+We can relate it to the Newton's second law
+\[
+F = m_I a
+\]
+Note that $m_g$ and $m_I$, although describing the same object, represents very different things. $m_g$ represents the mass of the object that interacts with the gravitational field, and $m_I$ is the inertial mass of the object. They are very different properties. But if we are to relate the two expression, we have
+\[
+a = G\paren{\frac{m_g}{m_i}}\frac{Mm_g}{r^2}
+\]
+If $m_g$ is not the same as $m_I$, that means object may trace out different path in a gravitational field depending on this ratio. But experimental results showed that they are equal, at least the uncertainty is below our precision of measurement. This brings us the the important concept in GR, the \textbf{Geodesics}.
+
+A Geodesic is the shortest path connecting two points in the space. It is usually unique, but can sometimes be non-unique, such as going from one pole the other in a spherical system. 
+
+But in GR, we cannot just look at the layout of space, we have to examine the geometry of \textbf{spacetime} itself. 
+
+Imagine a bullet and a baseball, seen in \textit{Figure} \ref{fig:5.1.1}. They will travel different parabolic path from a point to the other depending on their initial speed. But we have to note that they arrive at the other point at different \textit{time}. This is very important, since if they want to travel from A to B in the same exact time, then the trajectory would be identical. 
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{picture/GRW1-1.png}
+    \caption{A bullet and a baseball}
+    \label{fig:5.1.1}
+\end{figure}
+
+This is because they are tracing out a \textbf{geodesic in spacetime}.They are both going the shortest \textit{distance} between the two points. 
+
+Now with this knowledge, we assert that the gravitational mass and the inertial mass of an object is the same thing. Because according to the geodesic theory, the path that satisfy Newton's second law is precisely the path of the geodesic. 
+
+Imagine an object sitting stationary on the earth surface, we would think of it as the normal force canceling the gravitational force. But in GR, the \textit{only} real force acting on the object is just the normal force that is holding it still. And we are just resisting the acceleration. Therefore \textit{weight} as measured by a scale is not real. 
+
+\section{Spacetime interval}
+The definition of a spacetime interval can be seen earlier in this note so redundant information is not articulated. 
+
+If we define the \textbf{proper time} between 2 events as $\boldsymbol\Delta\boldsymbol\tau$, then we can define it as follows
+\[
+\boldsymbol\Delta\boldsymbol\tau = \int_{\Delta t }\sqrt{-ds^2} =\int_{\Delta t} \frac{1}{\gamma}\,dt
+\]
+
+
+
 
 
 
