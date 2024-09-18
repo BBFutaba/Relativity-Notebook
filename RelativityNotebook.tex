@@ -8,6 +8,8 @@
 \usepackage{multirow}
 \usepackage{mathtools}
 \usepackage{authblk}
+\usepackage{moresize}
+\usepackage{makecell}
 \pgfplotsset{width=10cm,compat=1.9}
 \setlength{\parskip}{1ex}
 
@@ -1456,7 +1458,7 @@ WIP
         
         \textit{\textbf{Suggestion 3.} Use four-vector notation, and exploit the invariant dot product. Remember that \(p^2=mc^2\) for any real particle}\\
         
-        \textit{\textbf{Suggestion 4.} If a problem seems cumbersome in the lab frame, try analyzing it in the center-of-momentum (CM) (\(\bm{p_{total}=0}\)) system. (In the CM frame, \( \vec{p}'_{\text{total}} = 0 \implies 0 = \gamma_{\text{CM}} \left( \vec{p}_{\text{total}} - \frac{E_{\text{total}} \vec{v}_{\text{CM}}}{c^2} \right) \implies \vec{v}_{\text{CM}} = \frac{\vec{p}_{\text{total}} c^2}{E_{\text{total}}} \))}
+        \textit{\textbf{Suggestion 4.} If a problem seems cumbersome in the lab frame, try analyzing it in the center-of-momentum (CM) (\(\bm{p_{total}=0}\)) system. (In the CM frame, \( \mathbf{p}'_{\text{total}} = 0 \implies 0 = \gamma_{\text{CM}} \left( \mathbf{p}_{\text{total}} - \frac{E_{\text{total}} \mathbf{v}_{\text{CM}}}{c^2} \right) \implies \mathbf{v}_{\text{CM}} = \frac{\mathbf{p}_{\text{total}} c^2}{E_{\text{total}}} \))}
 
 
 \chapter{A First Course in GR - Schultz}
@@ -1596,36 +1598,36 @@ WIP
 
         The definition of the basis vectors of the frame \( \mathcal{O} \) is equivalent to
         \[
-        (\vec{e}_\alpha)^\beta = \delta_\alpha^\beta.
+        (\mathbf{e}_\alpha)^\beta = \delta_\alpha^\beta.
         \]
         Then any vector \(A\) can be written as:
         \[
-        \vec{A}= A^0 \vec{e}_0 + A^1 \vec{e}_1 + A^2 \vec{e}_2 + A^3 \vec{e}_3 = A^\alpha \vec{e}_\alpha.
+        \mathbf{A}= A^0 \mathbf{e}_0 + A^1 \mathbf{e}_1 + A^2 \mathbf{e}_2 + A^3 \mathbf{e}_3 = A^\alpha \mathbf{e}_\alpha.
         \]
         In the last line we use the summation convention.
     
-        \textit{Transformation of Basis Vectors}: \quad \( \vec{e}_\alpha=\Lambda^{\bar{\beta}}_\alpha \vec{e}_{\bar{\beta}}\)
+        \textit{Transformation of Basis Vectors}: \quad \( \mathbf{e}_\alpha=\Lambda^{\bar{\beta}}_\alpha \mathbf{e}_{\bar{\beta}}\)
 
-        \textit{Inverse transformation}: The only thing the Lorentz transformation depends on is the relative velocity of the two frames. Hence: \(    \vec{e}_\alpha=\Lambda^{\bar{\beta}}_\alpha(\bm{v}) \vec{e}_{\bar{\beta}}\). If the basis of \(\mathcal{O}\) is obtained from that of \(\mathcal{\bar{O}}\) by the transformation with velocity \(v\), then the reverse must be true if we use \(-v\):
+        \textit{Inverse transformation}: The only thing the Lorentz transformation depends on is the relative velocity of the two frames. Hence: \(    \mathbf{e}_\alpha=\Lambda^{\bar{\beta}}_\alpha(\bm{v}) \mathbf{e}_{\bar{\beta}}\). If the basis of \(\mathcal{O}\) is obtained from that of \(\mathcal{\bar{O}}\) by the transformation with velocity \(v\), then the reverse must be true if we use \(-v\):
         \[
-            \vec{e}_\bar{\mu}=\Lambda^{\nu}_\bar{\mu}(\bm{-v}) \vec{e}_{\nu}
+            \mathbf{e}_\bar{\mu}=\Lambda^{\nu}_\bar{\mu}(\bm{-v}) \mathbf{e}_{\nu}
         \]
         Combining the two equations we get:
         \[
             \Lambda^{\nu}_\bar{\beta} (\bm{-v}) \Lambda^{\bar{\beta}}_\alpha (\bm{v}) = \delta^\nu_\alpha
         \]
-        This expresses the fact that the matrix \([\Lambda^\nu_{\ \bar{\beta}}(-v)]\) is the inverse of \([\Lambda^{\bar{\beta}}_{\ \alpha}(v)]\), because the sum on \(\bar{\beta}\) is exactly the operation we perform when we multiply two matrices. The matrix \((\delta^\nu_{\ \alpha})\) is, of course, the identity matrix. Also, note that the component transformation is \(A^{\bar{\alpha}}=\Lambda^{\bar{\alpha}}_\beta A^\beta\) and the basis transformation is \(\vec{e}_\bar{\mu}=\Lambda^{\nu}_\bar{\mu}(\bm{-v}) \vec{e}_{\nu}\)
+        This expresses the fact that the matrix \([\Lambda^\nu_{\ \bar{\beta}}(-v)]\) is the inverse of \([\Lambda^{\bar{\beta}}_{\ \alpha}(v)]\), because the sum on \(\bar{\beta}\) is exactly the operation we perform when we multiply two matrices. The matrix \((\delta^\nu_{\ \alpha})\) is, of course, the identity matrix. Also, note that the component transformation is \(A^{\bar{\alpha}}=\Lambda^{\bar{\alpha}}_\beta A^\beta\) and the basis transformation is \(\mathbf{e}_\bar{\mu}=\Lambda^{\nu}_\bar{\mu}(\bm{-v}) \mathbf{e}_{\nu}\)
 
     \subsection{2.4 The four-vector}
 
-        Define the four-velocity \( \vec{U} \) to be a vector tangent to the world line of the particle, and of such a length that it stretches one unit of time in that particle’s frame. For a uniformly moving particle, let us look at this definition in the inertial frame in which it is at rest. Then the four-velocity points parallel to the time axis and is one unit of time long. That is, it is identical with \( \vec{e}_0 \) of that frame. Thus we could also use as our definition of the four-velocity of a uniformly moving particle that it is the vector \( \vec{e}_0 \) in its inertial rest frame.
+        Define the four-velocity \( \mathbf{U} \) to be a vector tangent to the world line of the particle, and of such a length that it stretches one unit of time in that particle’s frame. For a uniformly moving particle, let us look at this definition in the inertial frame in which it is at rest. Then the four-velocity points parallel to the time axis and is one unit of time long. That is, it is identical with \( \mathbf{e}_0 \) of that frame. Thus we could also use as our definition of the four-velocity of a uniformly moving particle that it is the vector \( \mathbf{e}_0 \) in its inertial rest frame.
 
-        An accelerated particle has no inertial frame in which it is always at rest. However, there is an inertial frame which momentarily has the same velocity as the particle, but which a moment later is of course no longer comoving with it. This frame is the momentarily comoving reference frame (MCRF), and is an important concept. The four-velocity of an accelerated particle is defined as the \( \vec{e}_0 \) basis vector of its MCRF at that event. This vector is tangent to the (curved) world line of the particle.
+        An accelerated particle has no inertial frame in which it is always at rest. However, there is an inertial frame which momentarily has the same velocity as the particle, but which a moment later is of course no longer comoving with it. This frame is the momentarily comoving reference frame (MCRF), and is an important concept. The four-velocity of an accelerated particle is defined as the \( \mathbf{e}_0 \) basis vector of its MCRF at that event. This vector is tangent to the (curved) world line of the particle.
 
     \subsection{2.4 The four-momentum}
-        The four-momentum \(\vec{p}\) is defined as:
+        The four-momentum \(\mathbf{p}\) is defined as:
         \[
-            \vec{p} = m \vec{U} \hspace{2cm} \implies \hspace{2cm} \vec{p} \underset{\mathcal{O}}{\rightarrow} (E, p^1, p^2, p^3)
+            \mathbf{p} = m \mathbf{U} \hspace{2cm} \implies \hspace{2cm} \mathbf{p} \underset{\mathcal{O}}{\rightarrow} (E, p^1, p^2, p^3)
         \]
         Where \(m\) is the rest mass of the particle, which is its mass as measured in its rest frame. We call \(p^0\) the energy \(E\) of the particle in the frame \(\mathcal{O}\). The other components are its spatial momentum \(p^i\).
         
@@ -1641,14 +1643,14 @@ WIP
     
         \textit{Example:} An orthonormal tetrad is a set of four vectors that are orthogonal and normalized to unit magnitude. (A timelike vector has "unit magnitude" if its magnitude is \(-1\).) The relations above can be summarized as
         \[
-        \vec{e}_\alpha \cdot \vec{e}_\beta = \eta_{\alpha\beta},
+        \mathbf{e}_\alpha \cdot \mathbf{e}_\beta = \eta_{\alpha\beta},
         \]
         
         where \(\eta_{\alpha\beta}\) is similar to a Kronecker delta in that it is zero when \(\alpha \neq \beta\), but it differs in that \(\eta_{00} = -1\), while \(\eta_{11} = \eta_{22} = \eta_{33} = +1\).
     
-         \textit{Example:} The four-velocity \(\vec{U}\) of a particle is just the time basis vector of its MCRF, so we have:
+         \textit{Example:} The four-velocity \(\mathbf{U}\) of a particle is just the time basis vector of its MCRF, so we have:
         \[
-            \vec{U}\cdot \vec{U} = -1
+            \mathbf{U}\cdot \mathbf{U} = -1
         \]
         
         
@@ -1665,55 +1667,55 @@ WIP
         (d\tau)^2 = -d\mathbf{x} \cdot d\mathbf{x}
         \]
         
-        Now consider the vector \( \frac{d\mathbf{x}}{d\tau} \), where \( d\tau \) is the square root of \((d\tau)^2\). This vector is tangent to the world line since it is a multiple of \( d\vec{x} \). Its magnitude is
+        Now consider the vector \( \frac{d\mathbf{x}}{d\tau} \), where \( d\tau \) is the square root of \((d\tau)^2\). This vector is tangent to the world line since it is a multiple of \( d\mathbf{x} \). Its magnitude is
         \[
-        \frac{d\vec{x}}{d\tau} \cdot \frac{d\vec{x}}{d\tau} = \frac{d\vec{x} \cdot d\vec{x}}{(d\tau)^2} = -1.
+        \frac{d\mathbf{x}}{d\tau} \cdot \frac{d\mathbf{x}}{d\tau} = \frac{d\mathbf{x} \cdot d\mathbf{x}}{(d\tau)^2} = -1.
         \]
         It is therefore a timelike vector of unit magnitude tangent to the world line. In an MCRF,
         \[
-        \vec{dx} \underset{\stackrel{\text{MCRF}}{\text{\(d\tau = dt\)}}}{\longrightarrow}(dt, 0, 0, 0),
+        \mathbf{dx} \underset{\stackrel{\text{MCRF}}{\text{\(d\tau = dt\)}}}{\longrightarrow}(dt, 0, 0, 0),
         \]
         so that
         \[
-        \frac{d\vec{x}}{d\tau} \underset{MCRF}{\longrightarrow} (1, 0, 0, 0)
+        \frac{d\mathbf{x}}{d\tau} \underset{MCRF}{\longrightarrow} (1, 0, 0, 0)
         \]
         or
         \[
-        \frac{d\vec{x}}{d\tau} = (\vec{e}_0)_{\text{MCRF}}.
+        \frac{d\mathbf{x}}{d\tau} = (\mathbf{e}_0)_{\text{MCRF}}.
         \]
         This was the definition of the four-velocity. So we have the useful expression:
         \[
-        \vec{U} = \frac{d\vec{x}}{d\tau}
+        \mathbf{U} = \frac{d\mathbf{x}}{d\tau}
         \]
         Moreover, let us examine
         \[
-        \frac{d\vec{U}}{d\tau} = \frac{d^2\vec{x}}{d\tau^2},
+        \frac{d\mathbf{U}}{d\tau} = \frac{d^2\mathbf{x}}{d\tau^2},
         \]
         which is some sort of four-acceleration:
         \[
-        \frac{d}{d\tau} (\vec{U} \cdot \vec{U}) = 2\vec{U} \cdot \frac{d\vec{U}}{d\tau}.
+        \frac{d}{d\tau} (\mathbf{U} \cdot \mathbf{U}) = 2\mathbf{U} \cdot \frac{d\mathbf{U}}{d\tau}.
         \]
-        But since \( \vec{U} \cdot \vec{U} = -1 \) is a constant, we have
+        But since \( \mathbf{U} \cdot \mathbf{U} = -1 \) is a constant, we have
         \[
-        \vec{U} \cdot \frac{d\vec{U}}{d\tau} = 0.
+        \mathbf{U} \cdot \frac{d\mathbf{U}}{d\tau} = 0.
         \]
-        Since, in the MCRF, \( \vec{U} \) has only a zero component, this orthogonality means that
+        Since, in the MCRF, \( \mathbf{U} \) has only a zero component, this orthogonality means that
         \[
-        \frac{d\vec{U}}{d\tau} \underset{MCRF}{\longrightarrow} (0, a^1, a^2, a^3).
+        \frac{d\mathbf{U}}{d\tau} \underset{MCRF}{\longrightarrow} (0, a^1, a^2, a^3).
         \]
-        This vector is defined as the acceleration four-vector \( \vec{a} \):
+        This vector is defined as the acceleration four-vector \( \mathbf{a} \):
         \[
-        \vec{a} = \frac{d\vec{U}}{d\tau}, \quad \vec{U} \cdot \vec{a} = 0.
+        \mathbf{a} = \frac{d\mathbf{U}}{d\tau}, \quad \mathbf{U} \cdot \mathbf{a} = 0.
         \]
 
     \textit{\textbf{Energy and Momentum}}\\
-        Consider a particle whose momentum is \( \vec{p} \). Then
+        Consider a particle whose momentum is \( \mathbf{p} \). Then
         \[
-        \vec{p} \cdot \vec{p} = m^2 \vec{U} \cdot \vec{U} = -m^2
+        \mathbf{p} \cdot \mathbf{p} = m^2 \mathbf{U} \cdot \mathbf{U} = -m^2
         \]
         But
         \[
-        \vec{p} \cdot \vec{p} = -E^2 + (p^1)^2 + (p^2)^2 + (p^3)^2
+        \mathbf{p} \cdot \mathbf{p} = -E^2 + (p^1)^2 + (p^2)^2 + (p^3)^2
         \]
         Therefore,
         \[
@@ -1721,34 +1723,34 @@ WIP
         \]
         This is the familiar expression for the total energy of a particle.
         
-        Suppose an observer \( \bar{O} \) moves with four-velocity \( \vec{U}_{\text{obs}} \) not necessarily equal to the particle’s four-velocity. Then
+        Suppose an observer \( \bar{O} \) moves with four-velocity \( \mathbf{U}_{\text{obs}} \) not necessarily equal to the particle’s four-velocity. Then
         \[
-        \vec{p} \cdot \vec{U}_{\text{obs}} = \vec{p} \cdot \vec{e}_{\bar{0}},
+        \mathbf{p} \cdot \mathbf{U}_{\text{obs}} = \mathbf{p} \cdot \mathbf{e}_{\bar{0}},
         \]
-        where \( \vec{e}_{\bar{0}} \) is the basis vector of the frame of the observer. In that frame, the four-momentum has components
+        where \( \mathbf{e}_{\bar{0}} \) is the basis vector of the frame of the observer. In that frame, the four-momentum has components
         \[
-        \vec{p} \underset{\mathcal{O}}{\rightarrow} (\bar{E}, p^\bar{1}, p^\bar{2}, p^\bar{3}).
+        \mathbf{p} \underset{\mathcal{O}}{\rightarrow} (\bar{E}, p^\bar{1}, p^\bar{2}, p^\bar{3}).
         \]
         Therefore, we obtain:
         \[
-        - \vec{p} \cdot \vec{U}_{\text{obs}} = \bar{E}
+        - \mathbf{p} \cdot \mathbf{U}_{\text{obs}} = \bar{E}
         \]
-        This is an important equation. It says that the energy of the particle relative to the observer, \( \bar{E} \), can be computed by anyone in any frame by taking the scalar product \( \vec{p} \cdot \vec{U}_{\text{obs}} \). This is called a ‘frame-invariant’ expression for the energy relative to the observer. It is almost always helpful in calculations to use such expressions.\\
+        This is an important equation. It says that the energy of the particle relative to the observer, \( \bar{E} \), can be computed by anyone in any frame by taking the scalar product \( \mathbf{p} \cdot \mathbf{U}_{\text{obs}} \). This is called a ‘frame-invariant’ expression for the energy relative to the observer. It is almost always helpful in calculations to use such expressions.\\
 
     \subsection{2.7 Photons }
 
         \textit{\textbf{No four-velocity}}: Photons move on null lines, so, for a photon path,
         \[
-        d\vec{x} \cdot d\vec{x} = 0.
+        d\mathbf{x} \cdot d\mathbf{x} = 0.
         \]
-        Therefore, \( d\tau \) is zero and Eq. (2.31) shows that the four-velocity cannot be defined. Another way of saying the same thing is to note that there is no frame in which light is at rest (the second postulate of SR), so there is no MCRF for a photon. Thus, no \( \vec{e}_0 \) in any frame will be tangent to a photon’s world line.
+        Therefore, \( d\tau \) is zero and Eq. (2.31) shows that the four-velocity cannot be defined. Another way of saying the same thing is to note that there is no frame in which light is at rest (the second postulate of SR), so there is no MCRF for a photon. Thus, no \( \mathbf{e}_0 \) in any frame will be tangent to a photon’s world line.
         
-        Note carefully that it is still possible to find vectors tangent to a photon’s path (which, being a straight line, has the same tangent everywhere): \( d\vec{x} \) is one. The problem is finding a tangent of unit magnitude, since they all have vanishing magnitude.
+        Note carefully that it is still possible to find vectors tangent to a photon’s path (which, being a straight line, has the same tangent everywhere): \( d\mathbf{x} \) is one. The problem is finding a tangent of unit magnitude, since they all have vanishing magnitude.
 
         \textit{\textbf{Four-momentum}}:
         The four-momentum of a particle is not a unit vector. Instead, it is a vector where the components in some frame give the particle energy and momentum relative to that frame. If a photon carries energy \( E \) in some frame, then in that frame \( p^0 = E \). If it moves in the \( x \) direction, then \( p^y = p^z = 0 \), and in order for the four-momentum to be parallel to its world line (hence be null) we must have \( p^x = E \). This ensures that
         \[
-        \vec{p} \cdot \vec{p} = -E^2 + E^2 = 0.
+        \mathbf{p} \cdot \mathbf{p} = -E^2 + E^2 = 0.
         \]
         So we conclude that photons have spatial momentum equal to their energy.
         
@@ -1761,7 +1763,7 @@ WIP
         \textit{\textbf{Zero rest-mass particles}}:
         The rest mass of a photon must be zero, since
         \[
-        m^2 = -\vec{p} \cdot \vec{p} = 0.
+        m^2 = -\mathbf{p} \cdot \mathbf{p} = 0.
         \]
         Any particle whose four-momentum is null must have rest mass zero, and conversely. The only known zero rest-mass particle is the photon.
 
@@ -1850,12 +1852,12 @@ WIP
 
             Consider a particle in the MCRF, where the particle is at rest. The four-velocity in this frame is given by:
             \[
-            \vec{U}_{\text{MCRF}} = \vec{e}_{\bar{0}} = (1, 0, 0, 0)
+            \mathbf{U}_{\text{MCRF}} = \mathbf{e}_{\bar{0}} = (1, 0, 0, 0)
             \]
             
-            where \( \vec{e}_{\bar{0}} \) is the time basis vector in the MCRF.
+            where \( \mathbf{e}_{\bar{0}} \) is the time basis vector in the MCRF.
             
-            Now, suppose the particle is observed from another frame that is moving with velocity \( \vec{v} = (v_x, v_y, v_z) \) relative to the MCRF. The Lorentz transformation matrix \( \Lambda^\mu_{\ \nu} \) for a boost in the direction of \( \vec{v} \) is given by:
+            Now, suppose the particle is observed from another frame that is moving with velocity \( \mathbf{v} = (v_x, v_y, v_z) \) relative to the MCRF. The Lorentz transformation matrix \( \Lambda^\mu_{\ \nu} \) for a boost in the direction of \( \mathbf{v} \) is given by:
             \[
             \Lambda^\mu_{\ \nu} =
             \begin{pmatrix}
@@ -1869,10 +1871,10 @@ WIP
             where:
             \begin{align*}
             \gamma &= \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}, \\
-            \vec{n} &= \frac{\vec{v}}{|\vec{v}|} = (n_x, n_y, n_z).
+            \mathbf{n} &= \frac{\mathbf{v}}{|\mathbf{v}|} = (n_x, n_y, n_z).
             \end{align*}
             
-            The Lorentz transformation relates the coordinates in the MCRF to those in the moving frame. When applied to the time basis vector \( \vec{e}_{\bar{0}} \) of the MCRF, the resulting four-velocity \( \vec{U} \) in the new frame is given by:  
+            The Lorentz transformation relates the coordinates in the MCRF to those in the moving frame. When applied to the time basis vector \( \mathbf{e}_{\bar{0}} \) of the MCRF, the resulting four-velocity \( \mathbf{U} \) in the new frame is given by:  
             \[
             U^\alpha = \Lambda^\alpha_{\ \bar{\beta}} (e_{\bar{0}})^{\bar{\beta}} = \Lambda^\alpha_{\ \bar{0}}
             \]
@@ -1889,55 +1891,55 @@ WIP
 \section{Chapter 3. Tensor analysis in special relativity}
 
     \subsection{3.1 The metric tensor}
-        Consider the representation of two vectors $\vec{A} = A^\alpha \vec{e}_\alpha$ and $\vec{B} = B^\beta \vec{e}_\beta$ on the basis $\{ \vec{e}_\alpha \}$ of some frame $O$. Their scalar product is:
+        Consider the representation of two vectors $\mathbf{A} = A^\alpha \mathbf{e}_\alpha$ and $\mathbf{B} = B^\beta \mathbf{e}_\beta$ on the basis $\{ \mathbf{e}_\alpha \}$ of some frame $O$. Their scalar product is:
         \[
-        \vec{A} \cdot \vec{B} = A^\alpha B^\beta (\vec{e}_\alpha \cdot \vec{e}_\beta) = A^\alpha B^\beta \eta_{\alpha\beta}. \tag{3.1}
+        \mathbf{A} \cdot \mathbf{B} = A^\alpha B^\beta (\mathbf{e}_\alpha \cdot \mathbf{e}_\beta) = A^\alpha B^\beta \eta_{\alpha\beta}. \tag{3.1}
         \]
-        Right now we observe that they essentially give a ‘rule’ for associating with two vectors $\vec{A}$ and $\vec{B}$ with a single number, which we call their scalar product. The rule is that the number is the double sum $A^\alpha B^\beta \eta_{\alpha\beta}$. Such a rule is at the heart of the meaning of ‘tensor’, as we now discuss.
+        Right now we observe that they essentially give a ‘rule’ for associating with two vectors $\mathbf{A}$ and $\mathbf{B}$ with a single number, which we call their scalar product. The rule is that the number is the double sum $A^\alpha B^\beta \eta_{\alpha\beta}$. Such a rule is at the heart of the meaning of ‘tensor’, as we now discuss.
 
     \subsection{3.2 Definition of tensors}
         A tensor of type $\binom{0}{N}$ is a function of $N$ vectors into the real numbers, which is linear in each of its $N$ arguments.
         We let $g$ be the metric tensor and write, by definition,
         \[
-        g(\vec{A}, \vec{B}) := \vec{A} \cdot \vec{B}. \tag{3.3}
+        g(\mathbf{A}, \mathbf{B}) := \mathbf{A} \cdot \mathbf{B}. \tag{3.3}
         \]
         Then we regard $g(\ ,\ )$ as a function which can take two arguments, and which is linear in that
         \[
-        g(\alpha \vec{A} + \beta \vec{B}, \vec{C}) = \alpha g(\vec{A}, \vec{C}) + \beta g(\vec{B}, \vec{C}), \tag{3.4}
+        g(\alpha \mathbf{A} + \beta \mathbf{B}, \mathbf{C}) = \alpha g(\mathbf{A}, \mathbf{C}) + \beta g(\mathbf{B}, \mathbf{C}), \tag{3.4}
         \]
-        and similarly for the second argument. The value of $g$ on two arguments, denoted by $g(\vec{A}, \vec{B})$, is their dot product, a real number. 
+        and similarly for the second argument. The value of $g$ on two arguments, denoted by $g(\mathbf{A}, \mathbf{B})$, is their dot product, a real number. 
 
-        \textit{\textbf{Components of a tensor}}: The components in a frame \(O\) of a tensor of type $\binom{0}{N}$ are the values of the function when its arguments are the basis vectors \(\{ \vec{e}_\alpha \}\) of the frame \(O\). For the metric tensor, this gives the components as:
+        \textit{\textbf{Components of a tensor}}: The components in a frame \(O\) of a tensor of type $\binom{0}{N}$ are the values of the function when its arguments are the basis vectors \(\{ \mathbf{e}_\alpha \}\) of the frame \(O\). For the metric tensor, this gives the components as:
          \[
-         g(\vec{e}_\alpha, \vec{e}_\beta) = \vec{e}_\alpha \cdot \vec{e}_\beta = \eta_{\alpha\beta} \tag{3.5}
+         g(\mathbf{e}_\alpha, \mathbf{e}_\beta) = \mathbf{e}_\alpha \cdot \mathbf{e}_\beta = \eta_{\alpha\beta} \tag{3.5}
          \]
 
     \subsection{3.3 The \(\binom{0}{1}\) tensors: one-forms}
 
-    \textit{\textbf{General properties}}: Let an arbitrary one-form be called \(\tilde{p}\). Then \(\tilde{p}\), supplied with one vector argument, gives a real number: \(\tilde{p}(\vec{A})\) is a real number. Suppose \(\tilde{q}\) is another one-form. Then we can define
+    \textit{\textbf{General properties}}: Let an arbitrary one-form be called \(\tilde{p}\). Then \(\tilde{p}\), supplied with one vector argument, gives a real number: \(\tilde{p}(\mathbf{A})\) is a real number. Suppose \(\tilde{q}\) is another one-form. Then we can define
     \[
     \tilde{s} = \tilde{p} + \tilde{q}, \quad \tilde{r} = \alpha \tilde{p},
     \]
-    to be the one-forms that take the following values for an argument \(\vec{A}\):
+    to be the one-forms that take the following values for an argument \(\mathbf{A}\):
     \[
-    \tilde{s}(\vec{A}) = \tilde{p}(\vec{A}) + \tilde{q}(\vec{A}), \quad \tilde{r}(\vec{A}) = \alpha \tilde{p}(\vec{A}).
+    \tilde{s}(\mathbf{A}) = \tilde{p}(\mathbf{A}) + \tilde{q}(\mathbf{A}), \quad \tilde{r}(\mathbf{A}) = \alpha \tilde{p}(\mathbf{A}).
     \]
-    With these rules, the set of all one-forms satisfies the axioms for a vector space. This space is called the ‘dual vector space’ to distinguish it from the space of all vectors such as \(\vec{A}\).
+    With these rules, the set of all one-forms satisfies the axioms for a vector space. This space is called the ‘dual vector space’ to distinguish it from the space of all vectors such as \(\mathbf{A}\).
     The components of \(\tilde{p}\) are called \(p_\alpha\):
     \[
-    p_\alpha := \tilde{p}(\vec{e}_\alpha). \tag{3.7}
+    p_\alpha := \tilde{p}(\mathbf{e}_\alpha). \tag{3.7}
     \]
-    Any component with a single lower index is, by convention, the component of a one-form; an upper index denotes the component of a vector. In terms of components, \(\tilde{p}(\vec{A})\) is
+    Any component with a single lower index is, by convention, the component of a one-form; an upper index denotes the component of a vector. In terms of components, \(\tilde{p}(\mathbf{A})\) is
     \[
-    \tilde{p}(\vec{A}) = \tilde{p}(A^\alpha \vec{e}_\alpha)
-    = A^\alpha \tilde{p}(\vec{e}_\alpha)= A^\alpha p_\alpha. \tag{3.8}
+    \tilde{p}(\mathbf{A}) = \tilde{p}(A^\alpha \mathbf{e}_\alpha)
+    = A^\alpha \tilde{p}(\mathbf{e}_\alpha)= A^\alpha p_\alpha. \tag{3.8}
     \]
-    So the real number \(\tilde{p}(\vec{A})\) is easily found to be the sum \(A^0p_0 + A^1p_1 + A^2p_2 + A^3p_3\). Notice that all terms have plus signs: this operation is called the contraction of \(\vec{A}\) and \(\tilde{p}\). The components of \(\tilde{p}\) on a basis \(\{\vec{e}_{\bar{\beta}}\}\) are
+    So the real number \(\tilde{p}(\mathbf{A})\) is easily found to be the sum \(A^0p_0 + A^1p_1 + A^2p_2 + A^3p_3\). Notice that all terms have plus signs: this operation is called the contraction of \(\mathbf{A}\) and \(\tilde{p}\). The components of \(\tilde{p}\) on a basis \(\{\mathbf{e}_{\bar{\beta}}\}\) are
     \[
-    p_{\bar{\beta}} := \tilde{p}(\vec{e}_{\bar{\beta}}) = \tilde{p}(\Lambda^\alpha_{\ \bar{\beta}} \vec{e}_\alpha)
-    = \Lambda^\alpha_{\ \bar{\beta}} \tilde{p}(\vec{e}_\alpha) = \Lambda^\alpha_{\ \bar{\beta}} p_\alpha. \tag{3.9}
+    p_{\bar{\beta}} := \tilde{p}(\mathbf{e}_{\bar{\beta}}) = \tilde{p}(\Lambda^\alpha_{\ \bar{\beta}} \mathbf{e}_\alpha)
+    = \Lambda^\alpha_{\ \bar{\beta}} \tilde{p}(\mathbf{e}_\alpha) = \Lambda^\alpha_{\ \bar{\beta}} p_\alpha. \tag{3.9}
     \]
-    Comparing this with  \(\vec{e}_{\bar{\beta}} = \Lambda^\alpha_{\ \bar{\beta}} \vec{e}_\alpha\) we see that components of one-forms transform in exactly the same manner as basis vectors and in the opposite manner to components of vectors. By ‘opposite’, we mean using the inverse transformation. This use of the inverse guarantees that \(A^\alpha p_\alpha\) is frame-independent for any vector \(\vec{A}\) and one-form \(\tilde{p}\). This is such an important observation that we shall prove it explicitly:    \[
+    Comparing this with  \(\mathbf{e}_{\bar{\beta}} = \Lambda^\alpha_{\ \bar{\beta}} \mathbf{e}_\alpha\) we see that components of one-forms transform in exactly the same manner as basis vectors and in the opposite manner to components of vectors. By ‘opposite’, we mean using the inverse transformation. This use of the inverse guarantees that \(A^\alpha p_\alpha\) is frame-independent for any vector \(\mathbf{A}\) and one-form \(\tilde{p}\). This is such an important observation that we shall prove it explicitly:    \[
     A^{\bar{\alpha}} p_{\bar{\alpha}} = (\Lambda^{\bar{\alpha}}_{\ \beta} A^\beta)(\Lambda^\mu_{\ \bar{\alpha}} p_\mu), \tag{3.10a}
     \]
     \[
@@ -1949,20 +1951,20 @@ WIP
     \[
     = A^\beta p_\beta. \tag{3.10d}
     \]
-    (This is the same way in which the vector \(A^\alpha \vec{e}_\alpha\) is kept frame-independent.) This inverse transformation gives rise to the word ‘dual’ in ‘dual vector space’. \textbf{Note:} the transformation of a basis is the expression of new vectors in terms of old ones (Recall: \(\vec{e}_{\bar{\beta}} = \Lambda^\alpha_{\ \bar{\beta}} \vec{e}_\alpha\)); the transformation of components is the expression of the same object in terms of the new basis (Recall: \(A^\bar{\alpha}=\Lambda^{\bar{\alpha}}_{\ \beta} A^\beta\) where $A^\bar{\alpha}$ is in basis $e^\bar{\alpha}$).
+    (This is the same way in which the vector \(A^\alpha \mathbf{e}_\alpha\) is kept frame-independent.) This inverse transformation gives rise to the word ‘dual’ in ‘dual vector space’. \textbf{Note:} the transformation of a basis is the expression of new vectors in terms of old ones (Recall: \(\mathbf{e}_{\bar{\beta}} = \Lambda^\alpha_{\ \bar{\beta}} \mathbf{e}_\alpha\)); the transformation of components is the expression of the same object in terms of the new basis (Recall: \(A^\bar{\alpha}=\Lambda^{\bar{\alpha}}_{\ \beta} A^\beta\) where $A^\bar{\alpha}$ is in basis $e^\bar{\alpha}$).
 
-    \textit{\textbf{Basis one-forms}}: Since the set of all one-forms is a vector space, we can use any set of four linearly independent one-forms as a basis. Define an associated one-form basis \(\{ \tilde{\omega}^\alpha, \alpha = 0, \dots, 3 \}\), which we shall call the basis dual to \(\{\vec{e}_\alpha\}\), upon which a one-form has the components defined above. That is, we want a set \(\{\tilde{\omega}^\alpha\}\) such that    \[
+    \textit{\textbf{Basis one-forms}}: Since the set of all one-forms is a vector space, we can use any set of four linearly independent one-forms as a basis. Define an associated one-form basis \(\{ \tilde{\omega}^\alpha, \alpha = 0, \dots, 3 \}\), which we shall call the basis dual to \(\{\mathbf{e}_\alpha\}\), upon which a one-form has the components defined above. That is, we want a set \(\{\tilde{\omega}^\alpha\}\) such that    \[
     \tilde{p} = p_\alpha \tilde{\omega}^\alpha. \tag{3.11}
     \]
-    (Notice that using a raised index on \(\tilde{\omega}^\alpha\) permits the summation convention to operate.) The \(\{\tilde{\omega}^\alpha\}\) are four distinct one-forms, just as the \(\{\vec{e}_\alpha\}\) are four distinct vectors. This equation must imply Eq. (3.8) for any vector \(\vec{A}\) and one-form \(\tilde{p}\):
+    (Notice that using a raised index on \(\tilde{\omega}^\alpha\) permits the summation convention to operate.) The \(\{\tilde{\omega}^\alpha\}\) are four distinct one-forms, just as the \(\{\mathbf{e}_\alpha\}\) are four distinct vectors. This equation must imply Eq. (3.8) for any vector \(\mathbf{A}\) and one-form \(\tilde{p}\):
     \[
-    \tilde{p}(\vec{A}) = p_\alpha A^\alpha= p_\alpha \tilde{\omega}^\alpha(\vec{A})
-    = p_\alpha \tilde{\omega}^\alpha(A^\beta \vec{e}_\beta)
-    = p_\alpha A^\beta \tilde{\omega}^\alpha(\vec{e}_\beta).
+    \tilde{p}(\mathbf{A}) = p_\alpha A^\alpha= p_\alpha \tilde{\omega}^\alpha(\mathbf{A})
+    = p_\alpha \tilde{\omega}^\alpha(A^\beta \mathbf{e}_\beta)
+    = p_\alpha A^\beta \tilde{\omega}^\alpha(\mathbf{e}_\beta).
     \]
     Now, this final line can only equal \(p_\alpha A^\alpha\) for all \(A^\beta\) and \(p_\alpha\) if
     \[
-    \tilde{\omega}^\alpha(\vec{e}_\beta) = \delta^\alpha_\beta. \tag{3.12}
+    \tilde{\omega}^\alpha(\mathbf{e}_\beta) = \delta^\alpha_\beta. \tag{3.12}
     \]
     Comparing with Eq. (3.7), we see that this equation gives the \(\beta\)th component of the \(\alpha\)th basis one-form. It therefore defines the \(\alpha\)th basis one-form. We can write out these components as
     \[
@@ -1977,17 +1979,17 @@ WIP
     \[
     \tilde{\omega}^3 \rightarrow_O (0, 0, 0, 1).
     \]
-    It is important to understand two points here. The relationship, Eq. (3.12), is between the two bases, not between individual pairs, such as \(\tilde{\omega}^0\) and \(\vec{e}_0\). That is, if we change \(\vec{e}_0\), while leaving \(\vec{e}_1\), \(\vec{e}_2\), and \(\vec{e}_3\) unchanged, then in general this induces changes not only in \(\tilde{\omega}^0\) but also in \(\tilde{\omega}^1\), \(\tilde{\omega}^2\), and \(\tilde{\omega}^3\). The second point to understand is that, although we can describe both vectors and one-forms by giving a set of four components, their geometrical significance is very different. The student should not lose sight of the fact that the components tell only part of the story. The basis contains the rest of the information.
+    It is important to understand two points here. The relationship, Eq. (3.12), is between the two bases, not between individual pairs, such as \(\tilde{\omega}^0\) and \(\mathbf{e}_0\). That is, if we change \(\mathbf{e}_0\), while leaving \(\mathbf{e}_1\), \(\mathbf{e}_2\), and \(\mathbf{e}_3\) unchanged, then in general this induces changes not only in \(\tilde{\omega}^0\) but also in \(\tilde{\omega}^1\), \(\tilde{\omega}^2\), and \(\tilde{\omega}^3\). The second point to understand is that, although we can describe both vectors and one-forms by giving a set of four components, their geometrical significance is very different. The student should not lose sight of the fact that the components tell only part of the story. The basis contains the rest of the information.
     It remains to determine how \(\{\tilde{\omega}^\alpha\}\) transforms under a change of basis. That is, each frame has its own unique set \(\{\tilde{\omega}^\alpha\}\); how are those of two frames related?
     \[
-    \tilde{\omega}^{\bar{\alpha}} = \Lambda^{\bar{\alpha}}_{\ \beta} \tilde{\omega}^\beta. \quad \tag{3.13}
+    \tilde{\omega}^{\bar{\alpha}} = \Lambda^{\bar{\alpha}}_{\beta} \tilde{\omega}^\beta. \quad \tag{3.13}
     \]
 
-    \textit{\textbf{Recall basis transformation: }} The transformation matrix \( T \) is a matrix that relates the coordinates of a vector in one basis to its coordinates in another basis. Given two bases \(\{\vec{e}_\alpha\}\) (the original basis) and \(\{\tilde{\lambda}_\alpha\}\) (the new basis), the transformation matrix \( T \) is constructed by expressing each new basis vector \(\tilde{\lambda}_\alpha\) as a linear combination of the original basis vectors \(\vec{e}_\alpha\). 
+    \textit{\textbf{Recall basis transformation: }} The transformation matrix \( T \) is a matrix that relates the coordinates of a vector in one basis to its coordinates in another basis. Given two bases \(\{\mathbf{e}_\alpha\}\) (the original basis) and \(\{\tilde{\lambda}_\alpha\}\) (the new basis), the transformation matrix \( T \) is constructed by expressing each new basis vector \(\tilde{\lambda}_\alpha\) as a linear combination of the original basis vectors \(\mathbf{e}_\alpha\). 
 
-    If \( \tilde{\lambda}_\alpha = T_{\alpha\beta} \vec{e}_\beta \), the matrix \( T \) has the components \( T_{\alpha\beta} \), where each column corresponds to the coordinates of one of the new basis vectors in terms of the original basis. 
+    If \( \tilde{\lambda}_\alpha = T_{\alpha\beta} \mathbf{e}_\beta \), the matrix \( T \) has the components \( T_{\alpha\beta} \), where each column corresponds to the coordinates of one of the new basis vectors in terms of the original basis. 
         
-    To transform the coordinates of a vector \( \vec{v} \) from the original basis to the new basis, the inverse of the transformation matrix is applied: \( \vec{v}_{\tilde{\lambda}} = T^{-1} \vec{v} \). Conversely, applying \( T \) to a vector's coordinates in the new basis will transform them back to the original basis.
+    To transform the coordinates of a vector \( \mathbf{v} \) from the original basis to the new basis, the inverse of the transformation matrix is applied: \( \mathbf{v}_{\tilde{\lambda}} = T^{-1} \mathbf{v} \). Conversely, applying \( T \) to a vector's coordinates in the new basis will transform them back to the original basis.
 
     \textbf{\textit{Recall frame transformation:}} In special relativity, the Lorentz transformation matrix \(\Lambda^\mu_\nu\) relates the coordinates of vectors between two inertial frames. The matrix multiplication for transforming vector components sums across the columns of the Lorentz matrix, while transforming basis vectors sums across the rows of the inverse Lorentz matrix. The Lorentz transformation matrix \(\Lambda^\mu_\nu\) and its inverse \(\Lambda^{-1} = \Lambda(-v)\) satisfy:
 
@@ -2003,34 +2005,34 @@ WIP
     \textbf{Vector Components:}
     The components of a vector \(V^\mu\) transform from frame \(O\) to frame \(O'\) using the Lorentz transformation:
     \[
-    (V)^\bar{\mu} = \Lambda^\bar{\mu}_\nu V^\nu
+    (V)^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu V^\nu
     \]
     \textbf{Basis Vectors:}
-    The basis vectors \(\vec{e}_\nu\) transform using the inverse Lorentz transformation, which corresponds to a velocity \(-v\):
+    The basis vectors \(\mathbf{e}_\nu\) transform using the inverse Lorentz transformation, which corresponds to a velocity \(-v\):
     \[
-    (\vec{e})_\bar{\mu} = \Lambda(-v)^\nu_\bar{\mu} \vec{e}_\nu
+    (\mathbf{e})_{\bar{\mu}} = \Lambda(-v)^{\nu}_{\bar{\mu}} \mathbf{e}_\nu
     \]
     \textbf{One-Form Components:}
     The components of a one-form \(\tilde{p}_\mu\) transform similarly to vectors, using the Lorentz transformation:
     \[
-    \tilde{p}_\bar{\mu} = \Lambda(-v)_\bar{\mu}^\nu \tilde{p}_\nu
+    \tilde{p}_{\bar{\mu} }= \Lambda(-v)_{\bar{\mu}}^{\nu} \tilde{p}_\nu
     \]
     \textbf{One-Form Basis:}
     The basis one-forms \(\tilde{\lambda}^\mu\) transform using the Lorentz transformation, i.e. same as for components of a vector:
     \[
-    \tilde{\lambda}^\bar{\mu} = \Lambda^\bar{\mu}_\nu \tilde{\lambda}^\nu
+    \tilde{\lambda}^{\bar{\mu} }= \Lambda^{\bar{\mu}}_\nu \tilde{\lambda}^\nu
     \]
     These relationships ensure the consistency of transformations between vector and one-form components and their respective bases across different reference frames, preserving the structure of spacetime.
     
     \textit{\textbf{Picture of a one-form}}: The one generally used by mathematicians is shown in Fig. 3.1. The one-form consists of a series of surfaces. The ‘magnitude’ of it is given by the spacing between the surfaces: the larger the spacing the smaller the magnitude. In this picture, the number produced when a one-form acts on a vector is the number of surfaces that the arrow of the vector pierces.
 
-    \textit{\textbf{Gradient of a function is a one-form}}: Consider a scalar field \(\phi(\vec{x})\) defined at every event \(\vec{x}\). The world line of some particle encounters a value of \(\phi\) at each event on it (see Fig. 3.2), and this value changes from event to event. If we label (parametrize) each point on the curve by the value of proper time \(\tau\) along it, then we can express the coordinates of events on the curve as functions of \(\tau\):
+    \textit{\textbf{Gradient of a function is a one-form}}: Consider a scalar field \(\phi(\mathbf{x})\) defined at every event \(\mathbf{x}\). The world line of some particle encounters a value of \(\phi\) at each event on it (see Fig. 3.2), and this value changes from event to event. If we label (parametrize) each point on the curve by the value of proper time \(\tau\) along it, then we can express the coordinates of events on the curve as functions of \(\tau\):
     \[
     [t = t(\tau), x = x(\tau), y = y(\tau), z = z(\tau)].
     \]
     The four-velocity has components:
     \[
-    \vec{U} \rightarrow \left(\frac{d t}{d\tau}, \frac{d x}{d\tau}, \ldots\right).
+    \mathbf{U} \rightarrow \left(\frac{d t}{d\tau}, \frac{d x}{d\tau}, \ldots\right).
     \]
     Since \(\phi\) is a function of \(t\), \(x\), \(y\), and \(z\), it is implicitly a function of \(\tau\) on the curve:
     \[
@@ -2044,7 +2046,7 @@ WIP
     + \frac{\partial \phi}{\partial z} \frac{d z}{d\tau}
     = \frac{\partial \phi}{\partial t} U^t + \frac{\partial \phi}{\partial x} U^x + \frac{\partial \phi}{\partial y} U^y + \frac{\partial \phi}{\partial z} U^z. \tag{3.14}
     \]
-    It is clear from this that in the last equation we have devised a means of producing from the vector \(\vec{U}\) the number \( \frac{d\phi}{d\tau} \) that represents the rate of change of \(\phi\) on a curve on which \(\vec{U}\) is the tangent. This number \( \frac{d\phi}{d\tau} \) is clearly a linear function of \(\vec{U}\), so we have defined a one-form. 
+    It is clear from this that in the last equation we have devised a means of producing from the vector \(\mathbf{U}\) the number \( \frac{d\phi}{d\tau} \) that represents the rate of change of \(\phi\) on a curve on which \(\mathbf{U}\) is the tangent. This number \( \frac{d\phi}{d\tau} \) is clearly a linear function of \(\mathbf{U}\), so we have defined a one-form. 
     By comparison with Eq. (3.8), we see that this one-form has components \(\left(\frac{\partial \phi}{\partial t}, \frac{\partial \phi}{\partial x}, \frac{\partial \phi}{\partial y}, \frac{\partial \phi}{\partial z}\right)\). This one-form is called the gradient of \(\phi\), denoted by \(\tilde{d}\phi\):
     \[
     \tilde{d}\phi \rightarrow_O \left(\frac{\partial \phi}{\partial t}, \frac{\partial \phi}{\partial x}, \frac{\partial \phi}{\partial y}, \frac{\partial \phi}{\partial z}\right). \tag{3.15}
@@ -2093,16 +2095,16 @@ WIP
     \textit{\textbf{Normal one-forms}}: A one-form is said to be normal to a surface if its value is zero on every vector tangent to the surface. If the surface is closed and divides spacetime into an ‘inside’ and ‘outside’, a normal is said to be an outward normal one-form if it is a normal one-form and its value on vectors which point outwards from the surface is positive.
 
     \subsection{3.4 The \(\binom{0}{2}\) tensors}
-    Tensors of type \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) have two vector arguments. We have encountered the metric tensor already, but the simplest of this type is the product of two one-forms, formed according to the following rule: if \(\tilde{p}\) and \(\tilde{q}\) are one-forms, then \(\tilde{p} \otimes \tilde{q}\) is the \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor which, when supplied with vectors \(\vec{A}\) and \(\vec{B}\) as arguments, produces the number \(\tilde{p}(\vec{A}) \tilde{q}(\vec{B})\), i.e., just the product of the numbers produced by the \(\left(\begin{array}{c} 0 \\ 1 \end{array}\right)\) tensors. The symbol \(\otimes\) is called an ‘outer product sign’ and is a formal notation to show how the \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor is formed from the one-forms. Notice that \(\otimes\) is not commutative: \(\tilde{p} \otimes \tilde{q}\) and \(\tilde{q} \otimes \tilde{p}\) are different tensors. The first gives the value \(\tilde{p}(\vec{A}) \tilde{q}(\vec{B})\), the second the value \(\tilde{q}(\vec{A}) \tilde{p}(\vec{B})\).
+    Tensors of type \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) have two vector arguments. We have encountered the metric tensor already, but the simplest of this type is the product of two one-forms, formed according to the following rule: if \(\tilde{p}\) and \(\tilde{q}\) are one-forms, then \(\tilde{p} \otimes \tilde{q}\) is the \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor which, when supplied with vectors \(\mathbf{A}\) and \(\mathbf{B}\) as arguments, produces the number \(\tilde{p}(\mathbf{A}) \tilde{q}(\mathbf{B})\), i.e., just the product of the numbers produced by the \(\left(\begin{array}{c} 0 \\ 1 \end{array}\right)\) tensors. The symbol \(\otimes\) is called an ‘outer product sign’ and is a formal notation to show how the \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor is formed from the one-forms. Notice that \(\otimes\) is not commutative: \(\tilde{p} \otimes \tilde{q}\) and \(\tilde{q} \otimes \tilde{p}\) are different tensors. The first gives the value \(\tilde{p}(\mathbf{A}) \tilde{q}(\mathbf{B})\), the second the value \(\tilde{q}(\mathbf{A}) \tilde{p}(\mathbf{B})\).
     
     \textit{\textbf{Components}}: The most general \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor is not a simple outer product, but it can always be represented as a sum of such tensors. To see this we must first consider the components of an arbitrary \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor \(f\):
     \[
-    f_{\alpha\beta} := f(\vec{e}_\alpha, \vec{e}_\beta). \tag{3.21}
+    f_{\alpha\beta} := f(\mathbf{e}_\alpha, \mathbf{e}_\beta). \tag{3.21}
     \]
     Since each index can have four values, there are 16 components, and they can be thought of as being arrayed in a matrix. The value of \(f\) on arbitrary vectors is
     \[
-    f(\vec{A},\vec{B}) = f(A^\alpha \vec{e}_\alpha, B^\beta \vec{e}_\beta)
-    = A^\alpha B^\beta f(\vec{e}_\alpha, \vec{e}_\beta)
+    f(\mathbf{A},\mathbf{B}) = f(A^\alpha \mathbf{e}_\alpha, B^\beta \mathbf{e}_\beta)
+    = A^\alpha B^\beta f(\mathbf{e}_\alpha, \mathbf{e}_\beta)
     = A^\alpha B^\beta f_{\alpha\beta}. \tag{3.22}
     \]
     (Again notice that two different dummy indices are used to keep the different summations distinct.) Can we form a basis for these tensors? That is, can we define a set of 16 \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensors \(\tilde{\omega}^{\alpha\beta}\) such that, analogous to Eq. (3.11),
@@ -2111,13 +2113,13 @@ WIP
     \]
     For this to be the case we would have to have
     \[
-    f_{\mu\nu} = f(\vec{e}_\mu, \vec{e}_\nu) = f_{\alpha\beta} \tilde{\omega}^{\alpha\beta}(\vec{e}_\mu, \vec{e}_\nu)
+    f_{\mu\nu} = f(\mathbf{e}_\mu, \mathbf{e}_\nu) = f_{\alpha\beta} \tilde{\omega}^{\alpha\beta}(\mathbf{e}_\mu, \mathbf{e}_\nu)
     \]
     and this would imply, as before, that
     \[
-    \tilde{\omega}^{\alpha\beta}(\vec{e}_\mu, \vec{e}_\nu) = \delta^\alpha_\mu \delta^\beta_\nu. \tag{3.24}
+    \tilde{\omega}^{\alpha\beta}(\mathbf{e}_\mu, \mathbf{e}_\nu) = \delta^\alpha_\mu \delta^\beta_\nu. \tag{3.24}
     \]
-    But \(\delta^\alpha_\mu\) is (by Eq. (3.12)) the value of \(\tilde{\omega}^\alpha\) on \(\vec{e}_\mu\), and analogously for \(\delta^\beta_\nu\). Therefore, \(\tilde{\omega}^{\alpha\beta}\) is a tensor whose value is just the product of the values of two basis one-forms, and we therefore conclude
+    But \(\delta^\alpha_\mu\) is (by Eq. (3.12)) the value of \(\tilde{\omega}^\alpha\) on \(\mathbf{e}_\mu\), and analogously for \(\delta^\beta_\nu\). Therefore, \(\tilde{\omega}^{\alpha\beta}\) is a tensor whose value is just the product of the values of two basis one-forms, and we therefore conclude
     \[
     \tilde{\omega}^{\alpha\beta} = \tilde{\omega}^\alpha \otimes \tilde{\omega}^\beta. \tag{3.25}
     \]
@@ -2129,15 +2131,15 @@ WIP
     
     \textit{\textbf{Symmetries:}} A \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor takes two arguments, and their order is important, as we have seen. The behavior of the value of a tensor under an interchange of its arguments is an important property of it. A tensor \(f\) is called symmetric if
     \[
-    f(\vec{A},\vec{B}) = f(\vec{B},\vec{A}) \quad \forall \, \vec{A}, \vec{B}. \tag{3.27}
+    f(\mathbf{A},\mathbf{B}) = f(\mathbf{B},\mathbf{A}) \quad \forall \, \mathbf{A}, \mathbf{B}. \tag{3.27}
     \]
-    Setting \(\vec{A} = \vec{e}_\alpha\) and \(\vec{B} = \vec{e}_\beta\), this implies of its components that
+    Setting \(\mathbf{A} = \mathbf{e}_\alpha\) and \(\mathbf{B} = \mathbf{e}_\beta\), this implies of its components that
     \[
     f_{\alpha\beta} = f_{\beta\alpha}. \tag{3.28}
     \]
     This is the same as the condition that the matrix array of the elements is symmetric. An arbitrary \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor \(h\) can define a new symmetric \(h^{(s)}\) by the rule
     \[
-    h^{(s)}(\vec{A},\vec{B}) = \frac{1}{2} \left[ h(\vec{A},\vec{B}) + h(\vec{B},\vec{A}) \right]. \tag{3.29}
+    h^{(s)}(\mathbf{A},\mathbf{B}) = \frac{1}{2} \left[ h(\mathbf{A},\mathbf{B}) + h(\mathbf{B},\mathbf{A}) \right]. \tag{3.29}
     \]
     This is such an important mathematical property that a special notation is used for it:
     \[
@@ -2146,14 +2148,14 @@ WIP
     Therefore, the numbers \(h_{(\alpha\beta)}\) are the components of the symmetric tensor formed from \(h\).
     Similarly, a tensor \(f\) is called antisymmetric if
     \[
-    f(\vec{A},\vec{B}) = -f(\vec{B},\vec{A}) \quad \forall \, \vec{A}, \vec{B}, \tag{3.32}
+    f(\mathbf{A},\mathbf{B}) = -f(\mathbf{B},\mathbf{A}) \quad \forall \, \mathbf{A}, \mathbf{B}, \tag{3.32}
     \]
     \[
     f_{\alpha\beta} = -f_{\beta\alpha}. \tag{3.33}
     \]
     An antisymmetric \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor can always be formed as
     \[
-    h^{(A)}(\vec{A},\vec{B}) = \frac{1}{2} \left[ h(\vec{A},\vec{B}) - h(\vec{B},\vec{A}) \right],
+    h^{(A)}(\mathbf{A},\mathbf{B}) = \frac{1}{2} \left[ h(\mathbf{A},\mathbf{B}) - h(\mathbf{B},\mathbf{A}) \right],
     \]
     \[
     h_{[\alpha\beta]} = \frac{1}{2} \left( h_{\alpha\beta} - h_{\beta\alpha} \right). \tag{3.34}
@@ -2166,28 +2168,28 @@ WIP
     So any \(\left(\begin{array}{c} 0 \\ 2 \end{array}\right)\) tensor can be split uniquely into its symmetric and antisymmetric parts.
     
     \subsection{3.5 Metric as a mapping of vectors into one-forms}
-    We now introduce what we shall later see is the fundamental role of the metric in differential geometry: to act as a mapping between vectors and one-forms. To see how this works, consider \(g\) and a single vector \(\vec{V}\). Since \(g\) requires two vectorial arguments, the expression \(g(\vec{V}, \,)\) still lacks one: when another one is supplied, it becomes a number. Therefore, \(g(\vec{V}, \,)\), considered as a function of vectors, is a linear function of vectors producing real numbers: a one-form. We call it \(\tilde{V}\):
+    We now introduce what we shall later see is the fundamental role of the metric in differential geometry: to act as a mapping between vectors and one-forms. To see how this works, consider \(g\) and a single vector \(\mathbf{V}\). Since \(g\) requires two vectorial arguments, the expression \(g(\mathbf{V}, \,)\) still lacks one: when another one is supplied, it becomes a number. Therefore, \(g(\mathbf{V}, \,)\), considered as a function of vectors, is a linear function of vectors producing real numbers: a one-form. We call it \(\tilde{V}\):
     \[
-    g(\vec{V}, \,) := \tilde{V}( \,). \tag{3.37}
+    g(\mathbf{V}, \,) := \tilde{V}( \,). \tag{3.37}
     \]
-    Then \(\tilde{V}\) is the one-form that evaluates on a vector \(\vec{A}\) to \(\vec{V} \cdot \vec{A}\):
+    Then \(\tilde{V}\) is the one-form that evaluates on a vector \(\mathbf{A}\) to \(\mathbf{V} \cdot \mathbf{A}\):
     \[
-    \tilde{V}(\vec{A}) := g(\vec{V},\vec{A}) = \vec{V} \cdot \vec{A}. \tag{3.38}
+    \tilde{V}(\mathbf{A}) := g(\mathbf{V},\mathbf{A}) = \mathbf{V} \cdot \mathbf{A}. \tag{3.38}
     \]
     Note that since \(g\) is symmetric, we also can write
     \[
-    g( \,, \vec{V}) := \tilde{V}( \,).
+    g( \,, \mathbf{V}) := \tilde{V}( \,).
     \]
     What are the components of \(\tilde{V}\)? They are
     \[
-    V_\alpha := \tilde{V}(\vec{e}_\alpha) = \vec{V} \cdot \vec{e}_\alpha = \vec{e}_\alpha \cdot \vec{V}
-    = \vec{e}_\alpha \cdot (V^\beta \vec{e}_\beta)
-    = (\vec{e}_\alpha \cdot \vec{e}_\beta)V^\beta,
+    V_\alpha := \tilde{V}(\mathbf{e}_\alpha) = \mathbf{V} \cdot \mathbf{e}_\alpha = \mathbf{e}_\alpha \cdot \mathbf{V}
+    = \mathbf{e}_\alpha \cdot (V^\beta \mathbf{e}_\beta)
+    = (\mathbf{e}_\alpha \cdot \mathbf{e}_\beta)V^\beta,
     \]
     \[
     V_\alpha = \eta_{\alpha\beta}V^\beta. \tag{3.39}
     \]
-    It is important to notice here that we distinguish the components \(V_\alpha\) of \(\vec{V}\) from the components \(V^\beta\) of \(\tilde{V}\) only by the position of the index. Then, from Eq. (3.39), we have as a special case
+    It is important to notice here that we distinguish the components \(V_\alpha\) of \(\mathbf{V}\) from the components \(V^\beta\) of \(\tilde{V}\) only by the position of the index. Then, from Eq. (3.39), we have as a special case
     \[
     V_0 = V^\beta \eta_{\beta 0} = V^0 \eta_{00} + V^1 \eta_{10} + \dots 
     = V^0(-1) + 0 + 0 + 0 
@@ -2199,25 +2201,25 @@ WIP
     \]
     etc. This may be summarized as: 
     \[
-    \text{ if } \vec{V} \rightarrow (a, b, c, d),
+    \text{ if } \mathbf{V} \rightarrow (a, b, c, d),
     \text{ then } \tilde{V} \rightarrow (-a, b, c, d). \tag{3.42}
     \]
-    The components of \(\tilde{V}\) are obtained from those of \(\vec{V}\) by changing the sign of the time component. 
+    The components of \(\tilde{V}\) are obtained from those of \(\mathbf{V}\) by changing the sign of the time component. 
     
-    \textit{\textbf{The inverse: going from $\tilde{A}$ to $\vec{A}$}}: Consider Eq. (3.39). if \((\eta_{\alpha\beta})\) this matrix has an inverse, then we could use it to obtain \(\{V^\beta\}\) from \(\{V_\alpha\}\). This inverse exists if and only if \((\eta_{\alpha\beta})\) has a nonvanishing determinant. But since \((\eta_{\alpha\beta})\) is a diagonal matrix with entries \((-1, 1, 1, 1)\), its determinant is \(-1\). An inverse does exist, and we call its components \(\eta^{\alpha\beta}\). Then, given \(\{A_\beta\}\) we can find \(\{A^\alpha\}\):
+    \textit{\textbf{The inverse: going from $\tilde{A}$ to $\mathbf{A}$}}: Consider Eq. (3.39). if \((\eta_{\alpha\beta})\) this matrix has an inverse, then we could use it to obtain \(\{V^\beta\}\) from \(\{V_\alpha\}\). This inverse exists if and only if \((\eta_{\alpha\beta})\) has a nonvanishing determinant. But since \((\eta_{\alpha\beta})\) is a diagonal matrix with entries \((-1, 1, 1, 1)\), its determinant is \(-1\). An inverse does exist, and we call its components \(\eta^{\alpha\beta}\). Then, given \(\{A_\beta\}\) we can find \(\{A^\alpha\}\):
     \[
     A^\alpha := \eta^{\alpha\beta}A_\beta. \tag{3.43}
     \]
     The use of the inverse guarantees that the two sets of components satisfy Eq. (3.39). So the mapping provided by \(g\) between vectors and one-forms is one-to-one and invertible. 
-    In particular, with \(\tilde{d}\phi\) we can associate a vector \(\vec{d}\phi\), which is the one usually associated with the gradient. We can see that this vector is orthogonal to surfaces of constant \(\phi\) as follows: its inner product with a vector in a surface of constant \(\phi\) is, by this mapping, identical with the value of the one-form \(\tilde{d}\phi\) on that vector. This, in turn, must be zero since \(\tilde{d}\phi(\vec{V})\) is the rate of change of \(\phi\) along \(\vec{V}\), which in this case is zero since \(\vec{V}\) is taken to be in a surface of constant \(\phi\).
+    In particular, with \(\tilde{d}\phi\) we can associate a vector \(\mathbf{d}\phi\), which is the one usually associated with the gradient. We can see that this vector is orthogonal to surfaces of constant \(\phi\) as follows: its inner product with a vector in a surface of constant \(\phi\) is, by this mapping, identical with the value of the one-form \(\tilde{d}\phi\) on that vector. This, in turn, must be zero since \(\tilde{d}\phi(\mathbf{V})\) is the rate of change of \(\phi\) along \(\mathbf{V}\), which in this case is zero since \(\mathbf{V}\) is taken to be in a surface of constant \(\phi\).
     It is important to know what \(\{\eta^{\alpha\beta}\}\) is identical to \((\eta_{\alpha\beta})\). Thus, to go from a one-form to a vector, simply change the sign of the time component.
     
     \textit{\textbf{Why distinguish one-form from vectors?}}: 
     
     \textit{\textbf{Magnitudes and scalar products of the one-forms}}: 
-    A one-form \(\tilde{p}\) is defined to have the same magnitude as its associated vector \(\vec{p}\). Thus we write
+    A one-form \(\tilde{p}\) is defined to have the same magnitude as its associated vector \(\mathbf{p}\). Thus we write
     \[
-    \tilde{p}^2 = \vec{p}^2 = \eta_{\alpha\beta} p^\alpha p^\beta = \eta_{\alpha\beta} (\eta^{\alpha\mu} p_\mu)(\eta^{\beta\nu} p_\nu) = \tilde{p}^2 = \eta^{\alpha\mu} p_\mu p_\alpha. \tag{3.50}
+    \tilde{p}^2 = \mathbf{p}^2 = \eta_{\alpha\beta} p^\alpha p^\beta = \eta_{\alpha\beta} (\eta^{\alpha\mu} p_\mu)(\eta^{\beta\nu} p_\nu) = \tilde{p}^2 = \eta^{\alpha\mu} p_\mu p_\alpha. \tag{3.50}
     \]
     Since \(\eta_{\alpha\beta}\) and \(\eta^{\beta\nu}\) are inverse matrices to each other, the sum over \(\beta\) collapses \((\eta_{\alpha\beta}\eta^{\beta\nu} = \delta^\nu_\alpha)\). Thus, the inverse metric tensor can be used directly to find the magnitude of \(\tilde{p}\) from its components.
     As with vectors, we can now define an inner product of one-forms. This is
@@ -2236,29 +2238,29 @@ WIP
     \subsection{3.6 Finally: \(\binom{M}{N}\) tensors}
 
     \textit{\textbf{Vector as a function of one-forms}}
-    The dualism discussed above is in fact complete.Given a vector \(\vec{V}\), once we supply a one-form we get a real number:
+    The dualism discussed above is in fact complete.Given a vector \(\mathbf{V}\), once we supply a one-form we get a real number:
     \[
-    \vec{V}(\tilde{p}) \equiv \tilde{p}(\vec{V}) \equiv p_\alpha V^\alpha \equiv \langle \tilde{p}, \vec{V} \rangle. \tag{3.54}
+    \mathbf{V}(\tilde{p}) \equiv \tilde{p}(\mathbf{V}) \equiv p_\alpha V^\alpha \equiv \langle \tilde{p}, \mathbf{V} \rangle. \tag{3.54}
     \]
     In this way we dethrone vectors from their special position as things ‘acted on’ by tensors, and regard them as tensors themselves, specifically as linear functions of single one-forms into real numbers.
     
     \textit{\textbf{\(\binom{M}{0}\) tensors}}
     Generalizing this, we define:
-    An \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensor is a linear function of \(M\) one-forms into the real numbers. All our previous discussions of \(\left(\begin{array}{c} 0 \\ N \end{array}\right)\) tensors apply here. A simple \(\left(\begin{array}{c} 2 \\ 0 \end{array}\right)\) tensor is \(\vec{V} \otimes \vec{W}\), which, when supplied with two arguments \(\tilde{p}\) and \(\tilde{q}\), gives the number \(\vec{V}(\tilde{p})\vec{W}(\tilde{q}) := \tilde{p}(\vec{V})\tilde{q}(\vec{W}) = V^\alpha p_\alpha W^\beta q_\beta\). So \(\vec{V} \otimes \vec{W}\) has components \(V^\alpha W^\beta\). A basis for \(\left(\begin{array}{c} 2 \\ 0 \end{array}\right)\) tensors is \(\vec{e}_\alpha \otimes \vec{e}_\beta\). The components of an \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensor are its values when the basis one-forms \(\tilde{\omega}^\alpha\) are its arguments. Notice that \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensors have components all of whose indices are superscripts.
+    An \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensor is a linear function of \(M\) one-forms into the real numbers. All our previous discussions of \(\left(\begin{array}{c} 0 \\ N \end{array}\right)\) tensors apply here. A simple \(\left(\begin{array}{c} 2 \\ 0 \end{array}\right)\) tensor is \(\mathbf{V} \otimes \mathbf{W}\), which, when supplied with two arguments \(\tilde{p}\) and \(\tilde{q}\), gives the number \(\mathbf{V}(\tilde{p})\mathbf{W}(\tilde{q}) := \tilde{p}(\mathbf{V})\tilde{q}(\mathbf{W}) = V^\alpha p_\alpha W^\beta q_\beta\). So \(\mathbf{V} \otimes \mathbf{W}\) has components \(V^\alpha W^\beta\). A basis for \(\left(\begin{array}{c} 2 \\ 0 \end{array}\right)\) tensors is \(\mathbf{e}_\alpha \otimes \mathbf{e}_\beta\). The components of an \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensor are its values when the basis one-forms \(\tilde{\omega}^\alpha\) are its arguments. Notice that \(\left(\begin{array}{c} M \\ 0 \end{array}\right)\) tensors have components all of whose indices are superscripts.
 
     \textit{\textbf{\(\binom{M}{N}\) tensors}}
     The final generalization is:
     An \(\left(\begin{array}{c} M \\ N \end{array}\right)\) tensor is a linear function of \(M\) one-forms and \(N\) vectors into the real numbers.
     In general, the components of a \(\left(\begin{array}{c} M \\ N \end{array}\right)\) tensor will have \(M\) indices up and \(N\) down. In a new frame, the components transform as:
     \[
-    R^{\bar{\alpha}}_{\ \bar{\beta}} = R(\tilde{\omega}^{\bar{\alpha}}; \vec{e}_{\bar{\beta}})
-    = R\left(\Lambda^{\bar{\alpha}}_{\ \mu} \tilde{\omega}^{\mu}; \Lambda^{\nu}_{\ \bar{\beta}} \vec{e}_{\nu}\right)
+    R^{\bar{\alpha}}_{\ \bar{\beta}} = R(\tilde{\omega}^{\bar{\alpha}}; \mathbf{e}_{\bar{\beta}})
+    = R\left(\Lambda^{\bar{\alpha}}_{\ \mu} \tilde{\omega}^{\mu}; \Lambda^{\nu}_{\ \bar{\beta}} \mathbf{e}_{\nu}\right)
     = \Lambda^{\bar{\alpha}}_{\ \mu} \Lambda^{\nu}_{\ \bar{\beta}} R^{\mu}_{\ \nu}. \tag{3.55}
     \]
     Some old names that are still in current use are: upper indices are called ‘contravariant’ (because they transform contrary to basis vectors) and lower ones ‘covariant’.
 
     \subsection{3.7 Index raising and lowering}
-    In the same way that the metric maps a vector \(\vec{V}\) into a one-form \(\tilde{V}\), it maps an \(\left(\begin{array}{c} N \\ M \end{array}\right)\) tensor into an \(\left(\begin{array}{c} N-1 \\ M+1 \end{array}\right)\) tensor. Similarly, the inverse maps an \(\left(\begin{array}{c} N \\ M \end{array}\right)\) tensor into an \(\left(\begin{array}{c} N+1 \\ M-1 \end{array}\right)\) tensor.
+    In the same way that the metric maps a vector \(\mathbf{V}\) into a one-form \(\tilde{V}\), it maps an \(\left(\begin{array}{c} N \\ M \end{array}\right)\) tensor into an \(\left(\begin{array}{c} N-1 \\ M+1 \end{array}\right)\) tensor. Similarly, the inverse maps an \(\left(\begin{array}{c} N \\ M \end{array}\right)\) tensor into an \(\left(\begin{array}{c} N+1 \\ M-1 \end{array}\right)\) tensor.
 
     \textit{\textbf{Mixed components of metric}}
     The numbers \(\{\eta_{\alpha\beta}\}\) are the components of the metric, and \(\{\eta^{\alpha\beta}\}\) those of its inverse. Suppose we raise an index of \(\eta_{\alpha\beta}\) using the inverse. Then we get the ‘mixed’ components of the metric,
@@ -2274,7 +2276,7 @@ WIP
     A function \(f\) is a \(\left(\begin{array}{c} 0 \\ 0 \end{array}\right)\) tensor, and its gradient \(\tilde{d}f\) is a \(\left(\begin{array}{c} 0 \\ 1 \end{array}\right)\) tensor. Differentiation of a function produces a tensor of one higher (covariant) rank. We shall now see that this applies as well to the differentiation of tensors of any rank. 
     Consider a \(\left(\begin{array}{c} 1 \\ 1 \end{array}\right)\) tensor \(T\) whose components \(\{T^\alpha_{\ \beta}\}\) are functions of position. We can write \(T\) as
     \[
-    T = T^\alpha_{\ \beta} \tilde{\omega}^\beta \otimes \vec{e}_\alpha. \tag{3.61}
+    T = T^\alpha_{\ \beta} \tilde{\omega}^\beta \otimes \mathbf{e}_\alpha. \tag{3.61}
     \]
     Suppose, as we did for functions, that we move along a world line with parameter \(\tau\) (proper time). The rate of change of \(T\),
     \[
@@ -2282,28 +2284,28 @@ WIP
     \]
     is not hard to calculate. Since the basis one-forms and vectors are the same everywhere (i.e., \(\tilde{\omega}^\alpha(\tau + \Delta \tau) = \tilde{\omega}^\alpha(\tau)\)), it follows that
     \[
-    \frac{dT}{d\tau} = \left(\frac{dT^\alpha_{\ \beta}}{d\tau}\right) \tilde{\omega}^\beta \otimes \vec{e}_\alpha, \tag{3.63}
+    \frac{dT}{d\tau} = \left(\frac{dT^\alpha_{\ \beta}}{d\tau}\right) \tilde{\omega}^\beta \otimes \mathbf{e}_\alpha, \tag{3.63}
     \]
     where \(dT^\alpha_{\ \beta}/d\tau\) is the ordinary derivative of the function \(T^\alpha_{\ \beta}\) along the world line:
     \[
     \frac{dT^\alpha_{\ \beta}}{d\tau} = T^\alpha_{\ \beta, \gamma} U^\gamma. \tag{3.64}
     \]
-    Now, the object \(dT/d\tau\) is a \(\left(\begin{array}{c} 1 \\ 1 \end{array}\right)\) tensor, since in Eq. (3.62) it is defined to be just the difference between two such tensors. From Eqs. (3.63) and (3.64) we have, for any vector \(\vec{U}\),
+    Now, the object \(dT/d\tau\) is a \(\left(\begin{array}{c} 1 \\ 1 \end{array}\right)\) tensor, since in Eq. (3.62) it is defined to be just the difference between two such tensors. From Eqs. (3.63) and (3.64) we have, for any vector \(\mathbf{U}\),
     \[
-    \frac{dT}{d\tau} = \left(T^\alpha_{\ \beta, \gamma} \tilde{\omega}^\beta \otimes \vec{e}_\alpha\right) U^\gamma, \tag{3.65}
+    \frac{dT}{d\tau} = \left(T^\alpha_{\ \beta, \gamma} \tilde{\omega}^\beta \otimes \mathbf{e}_\alpha\right) U^\gamma, \tag{3.65}
     \]
     from which we can deduce that
     \[
-    \nabla T := \left(T^\alpha_{\ \beta, \gamma} \tilde{\omega}^\beta \otimes \tilde{\omega}^\gamma \otimes \vec{e}_\alpha\right) \tag{3.66}
+    \nabla T := \left(T^\alpha_{\ \beta, \gamma} \tilde{\omega}^\beta \otimes \tilde{\omega}^\gamma \otimes \mathbf{e}_\alpha\right) \tag{3.66}
     \]
     is a \(\left(\begin{array}{c} 1 \\ 2 \end{array}\right)\) tensor. This tensor is called the gradient of \(T\).
     
     We use the notation \(\nabla T\) rather than \(\tilde{d}T\) because the latter notation is usually reserved by mathematicians for something else. We also have a convenient notation for Eq. (3.65):
     \[
-    \frac{dT}{d\tau} = \nabla_{\vec{U}} T, \tag{3.67}
+    \frac{dT}{d\tau} = \nabla_{\mathbf{U}} T, \tag{3.67}
     \]
     \[
-    \nabla_{\vec{U}} T \rightarrow \left(T^\alpha_{\ \beta, \gamma} U^\gamma\right). \tag{3.68}
+    \nabla_{\mathbf{U}} T \rightarrow \left(T^\alpha_{\ \beta, \gamma} U^\gamma\right). \tag{3.68}
     \]
     This derivation made use of the fact that the basis vectors (and therefore the basis one-forms) were constant everywhere. We will find that we can’t assume this in the curved spacetime of GR, and taking this into account will be our entry point into the theory!
     
@@ -2314,7 +2316,7 @@ WIP
         An \textbf{"element"} is a collection of particles large enough so that the individual particles don’t matter, but it is small enough so that it is relatively homogeneous: the average velocity, kinetic energy, and interparticle spacing must be the same everywhere in the collection.\\
         Note that \textbf{rigidity} comes from forces parallel to the interface between two elements. Two adjacent elements can push and pull on each other, but the continuum won’t be rigid unless they can also prevent each other from sliding along their common boundary. A \textbf{fluid} is characterized by the weakness of such antislipping forces compared to the direct push–pull force, which is called pressure. A \textbf{perfect fluid} is defined as one in which all antislipping forces are zero, and the only force between neighboring fluid elements is pressure.
 
-    \subsection{4.2 Dust: the number-flux vector $\vec{N}$}
+    \subsection{4.2 Dust: the number-flux vector $\mathbf{N}$}
     
     \textbf{‘Dust’} is defined to be a collection of particles, all of which are at rest in some one Lorentz frame.
 
@@ -2330,18 +2332,18 @@ WIP
 
     Suppose the particles had $x-y$ components of velocity in \(\bar{O}\) and let us for simplicity consider a surface $S$ perpendicular to $\bar{x}$. Then the dashed line in Fig. 4.3 encloses all and only those particles that cross \(A\) in \(S\) in the time \(\bar{t}\). This is a ‘parallelepiped’, whose volume is the area of its base times its height. But its height – its extent in the \(x\) direction – is just \(\bar{v}_x \bar{t}\). Therefore we get:
     \[
-    (\text{flux})^{\bar{x}} = \frac{n \bar{v}^x }{\sqrt{1 - v^2}}.
+    (\text{flux})^{\bar{x}} = \frac{n \bar{v}^x }{\sqrt{1 - v^2}}
     \tag{4.3}
     \]
 
-    \textit{The number-flux four-vector $\vec{N}$}: 
+    \textit{The number-flux four-vector $\mathbf{N}$}: 
     Defined by:
     \[
-        \vec{N}=n\vec{U} \tag{4.4}
+        \mathbf{N}=n\mathbf{U} \tag{4.4}
     \]
-    where \(\vec{U}\) is the four-velocity of the particles. It follows that
+    where \(\mathbf{U}\) is the four-velocity of the particles. It follows that
     \[
-    \vec{N}_{\rightarrow \bar{O}} =
+    \mathbf{N}_{\rightarrow \bar{O}} =
     \left(
     \frac{n}{\sqrt{1 - v^2}},
     \frac{n v^x}{\sqrt{1 - v^2}},
@@ -2350,9 +2352,9 @@ WIP
     \right).
     \tag{4.5}
     \]
-    Thus, in any frame, the time component of $\vec{N}$ is the number density and the spatial components are the fluxes across surfaces of the various coordinates.
+    Thus, in any frame, the time component of $\mathbf{N}$ is the number density and the spatial components are the fluxes across surfaces of the various coordinates.
     \[
-    \vec{N} \cdot \vec{N} = -n^2, \quad n = \left(-\vec{N} \cdot \vec{N}\right)^{1/2}.     \tag{4.6}
+    \mathbf{N} \cdot \mathbf{N} = -n^2, \quad n = \left(-\mathbf{N} \cdot \mathbf{N}\right)^{1/2}.     \tag{4.6}
     \]
 
     \subsection{4.3 One-forms and surfaces}
@@ -2380,10 +2382,10 @@ WIP
     and a unit volume (\(dx^\alpha = dx^\beta = dx^\gamma = 1\)) is just \(\tilde{n}\). (These \(dx\)s are the infinitesimals that we integrate over, not the gradients.)
 
     \textit{The flux across the surface:} 
-    Let \(\phi\) be a coordinate, say \(\bar{x}\). Then a surface of constant \(\bar{x}\) has normal \(\tilde{d} \bar{x}\), which is a unit normal already since \(\tilde{d} \bar{x} \rightarrow \bar{O} (0, 1, 0, 0)\). Then \(\langle \tilde{d} \bar{x}, \vec{N} \rangle = N^\alpha (\tilde{d} \bar{x})_\alpha = N^{\bar{x}}\), which is what we have already seen is the flux across \(\bar{x}\) surfaces. Clearly, had we chosen \(\phi = \bar{t}\), then we would have wound up with \(N^{\bar{0}}\), the number density, or flux across a surface of constant \(\bar{t}\). Thus, the flux (of particles) across a surface of constant \(\phi\) is \(\langle \tilde{n}, \vec{N} \rangle\).
+    Let \(\phi\) be a coordinate, say \(\bar{x}\). Then a surface of constant \(\bar{x}\) has normal \(\tilde{d} \bar{x}\), which is a unit normal already since \(\tilde{d} \bar{x} \rightarrow \bar{O} (0, 1, 0, 0)\). Then \(\langle \tilde{d} \bar{x}, \mathbf{N} \rangle = N^\alpha (\tilde{d} \bar{x})_\alpha = N^{\bar{x}}\), which is what we have already seen is the flux across \(\bar{x}\) surfaces. Clearly, had we chosen \(\phi = \bar{t}\), then we would have wound up with \(N^{\bar{0}}\), the number density, or flux across a surface of constant \(\bar{t}\). Thus, the flux (of particles) across a surface of constant \(\phi\) is \(\langle \tilde{n}, \mathbf{N} \rangle\).
 
     \textit{Representation of a frame by a one-form:} 
-    An inertial frame, which up to now has been defined by its four-velocity, can be defined also by a one-form, namely that associated with its four-velocity \(g(\vec{U}, \cdot)\). This has components
+    An inertial frame, which up to now has been defined by its four-velocity, can be defined also by a one-form, namely that associated with its four-velocity \(g(\mathbf{U}, \cdot)\). This has components
     \[
     U_\alpha = \eta_{\alpha\beta} U_\beta
     \]
@@ -2415,7 +2417,7 @@ WIP
     \[
     T(\tilde{d}x^\alpha, \tilde{d}x^\beta) = T^{\alpha\beta} := \text{flux of \(\alpha\) momentum across a surface of constant \(x^\beta\)}. \tag{4.14}
     \]
-    (By \(\alpha\) momentum we mean, of course, the \(\alpha\) component of four-momentum: \(p^\alpha := \langle \tilde{d}x^\alpha, \vec{p} \rangle\).)
+    (By \(\alpha\) momentum we mean, of course, the \(\alpha\) component of four-momentum: \(p^\alpha := \langle \tilde{d}x^\alpha, \mathbf{p} \rangle\).)
 
     Let us see how this definition fits in with our discussion above. Consider \(T^{00}\). This is defined as the flux of zero momentum (energy) across a surface \(t = \text{constant}\). This is just the energy density:
     \[
@@ -2440,17 +2442,17 @@ WIP
     \[
     (T^{0i})_{\text{MCRF}} = (T^{i0})_{\text{MCRF}} = (T^{ij})_{\text{MCRF}} = 0.
     \]
-    It is easy to see that the tensor \(\vec{p} \otimes \vec{N}\) has exactly these components in the MCRF, where \(\vec{p} = m\vec{U}\) is the four-momentum of a particle. Therefore we have
+    It is easy to see that the tensor \(\mathbf{p} \otimes \mathbf{N}\) has exactly these components in the MCRF, where \(\mathbf{p} = m\mathbf{U}\) is the four-momentum of a particle. Therefore we have
     \[
-    \text{Dust}: \quad T = \vec{p} \otimes \vec{N} = mn \, \vec{U} \otimes \vec{U} = \rho \, \vec{U} \otimes \vec{U}. \tag{4.19}
+    \text{Dust}: \quad T = \mathbf{p} \otimes \mathbf{N} = mn \, \mathbf{U} \otimes \mathbf{U} = \rho \, \mathbf{U} \otimes \mathbf{U}. \tag{4.19}
     \]
     From this we can conclude
     \[
-    T^{\alpha\beta} = T(\tilde{\omega}^\alpha, \tilde{\omega}^\beta) = \rho \, \vec{U}(\tilde{\omega}^\alpha) \, \vec{U}(\tilde{\omega}^\beta) = \rho U^\alpha U^\beta. \tag{4.20}
+    T^{\alpha\beta} = T(\tilde{\omega}^\alpha, \tilde{\omega}^\beta) = \rho \, \mathbf{U}(\tilde{\omega}^\alpha) \, \mathbf{U}(\tilde{\omega}^\beta) = \rho U^\alpha U^\beta. \tag{4.20}
     \]
     In the frame \(\bar{O}\), where
     \[
-    \vec{U} \rightarrow \left(\frac{1}{\sqrt{1 - v^2}}, \frac{v_x}{\sqrt{1 - v^2}}, \ldots \right),
+    \mathbf{U} \rightarrow \left(\frac{1}{\sqrt{1 - v^2}}, \frac{v_x}{\sqrt{1 - v^2}}, \ldots \right),
     \]
     we therefore have
     \[
@@ -2472,25 +2474,26 @@ WIP
 
     \textit{Definition of macroscopic quantities:}
     MCRF is specific to a single fluid element, and which frame is the MCRF is a function of position and time. All scalar quantities associated with a fluid element in relativity (such as number density, energy density, and temperature) are defined to be their values in the MCRF. Thus we make the definitions displayed in Table 4.1.
+
     \begin{table}[h]
     \centering
     \begin{tabular}{|c|l|l|}
     \hline
     \textbf{Symbol} & \textbf{Name} & \textbf{Definition} \\ \hline
-    \(\vec{U}\) & Four-velocity of fluid element & Four-velocity of MCRF \\ \hline
-    \(n\) & Number density & Number of particles per unit volume in MCRF \\ \hline
-    \(\vec{N}\) & Flux vector & \(\vec{N} := n\vec{U}\) \\ \hline
-    \(\rho\) & Energy density & Density of total mass energy (rest mass, random kinetic, chemical, $\dots$)\\ \hline
-    \(\Pi\) & Internal energy per particle & \(\Pi := \frac{\rho}{n} - m \Rightarrow \rho = n(m + \Pi)\). Thus \(\Pi\) is a general name for all energies other than the rest mass.\\ \hline
-    \(\rho_0\) & Rest-mass density & \(\rho_0 := mn\). Since \(m\) is a constant, this is the 'energy' associated with the rest mass only. Thus, \(\rho = \rho_0 + n\Pi\).\\ \hline
-    \(T\) & Temperature & Usual thermodynamic definition in MCRF (see below). \\ \hline
-    \(p\) & Pressure & Usual fluid-dynamical notion in MCRF. More about this later. \\ \hline
-    \(S\) & Specific entropy & Entropy per particle (see below). \\ \hline
+    \(\mathbf{U}\) & \footnotesize Four-velocity of fluid element &\footnotesize Four-velocity of MCRF\par \\ \hline
+    \(n\) & \footnotesize Number density &\footnotesize Number of particles per unit volume in MCRF \par \\ \hline
+    \(\mathbf{N}\) &\footnotesize Flux vector &\footnotesize \(\mathbf{N} := n\mathbf{U}\) \\ \hline
+    \(\rho\) &\footnotesize Energy density & \thead{\footnotesize Density of total mass energy \\(rest mass, random kinetic, chemical, $\dots$)}\\ \hline
+    \(\Pi\) &\footnotesize Internal energy per particle &\thead{\footnotesize \(\Pi := \frac{\rho}{n} - m \Rightarrow \rho = n(m + \Pi)\). \\ Thus \(\Pi\) is a general name for all energies \\other than the rest mass.}\\ \hline
+    \(\rho_0\) &\footnotesize Rest-mass density &\thead{\footnotesize \(\rho_0 := mn\). Since \(m\) is a constant,\\ this is the 'energy' associated with the rest mass only. \\Thus, \(\rho = \rho_0 + n\Pi\).}\\ \hline
+    \(T\) &\footnotesize Temperature &\footnotesize Usual thermodynamic definition in MCRF (see below). \\ \hline
+    \(p\) &\footnotesize Pressure & \thead{\footnotesize Usual fluid-dynamical notion in MCRF. \\More about this later.} \\ \hline
+    \(S\) &\footnotesize Specific entropy &\footnotesize Entropy per particle (see below). \\ \hline
     \end{tabular}
     \caption{Macroscopic quantities for single-component fluids}
     \label{table 4.1}
     \end{table}
-    
+
     \textit{\textbf{First law of thermodynamics:}}
     In the MCRF, we imagine that the fluid element is able to exchange energy with its surroundings in only two ways: by heat conduction (absorbing an amount of heat \(\delta Q\)) and by work (doing an amount of work \(p \delta V\), where \(V\) is the three-volume of the element). If we let \(E\) be the total energy of the element, then since \(\delta Q\) is energy gained and \(p \delta V\) is energy lost, we can write (assuming small changes)
     \[
@@ -2636,7 +2639,7 @@ WIP
     \]
     By trying all possible \(\alpha\) and \(\beta\), you can verify that Eq. (4.37) gives Eq. (4.36). But Eq. (4.37) is a frame-invariant formula in the sense that it uniquely implies
     \[
-    T = (\rho + p) \, \vec{U} \otimes \vec{U} + p \, g^{-1}. \tag{4.38}
+    T = (\rho + p) \, \mathbf{U} \otimes \mathbf{U} + p \, g^{-1}. \tag{4.38}
     \]
     This is the stress–energy tensor of a perfect fluid.
 

@@ -192,6 +192,131 @@ G = 1477 \, \text{m} / M_\odot
 
 
 
+\subsection{BOX 2.3}
+    \subsubsection{Exercise}
+    We are given the following two equations:
+
+\[
+t_E - x_E = \gamma (1 - \beta)(t'_E - x'_E) \tag{2.13a}
+\]
+\[
+t_E + x_E = \gamma (1 + \beta)(t'_E + x'_E) \tag{2.13b}
+\]
+
+We are tasked with verifying the following equations:
+
+\[
+t_E = \gamma t'_E + \gamma \beta x'_E
+\]
+\[
+x_E = \gamma \beta t'_E + \gamma x'_E
+\]
+
+### Step 1: Adding equations (2.13a) and (2.13b)
+
+By adding equations (2.13a) and (2.13b), we get:
+\[
+(t_E - x_E) + (t_E + x_E) = \gamma (1 - \beta)(t'_E - x'_E) + \gamma (1 + \beta)(t'_E + x'_E)
+\]
+Simplifying both sides:
+\[
+2t_E = \gamma \left( (1 - \beta)(t'_E - x'_E) + (1 + \beta)(t'_E + x'_E) \right)
+\]
+Expanding:
+\[
+2t_E = \gamma \left( (1 - \beta)t'_E - (1 - \beta)x'_E + (1 + \beta)t'_E + (1 + \beta)x'_E \right)
+\]
+\[
+2t_E = \gamma \left( 2t'_E + 2\beta x'_E \right)
+\]
+Dividing by 2:
+\[
+t_E = \gamma (t'_E + \beta x'_E)
+\]
+Thus, we have verified the first equation:
+\[
+t_E = \gamma t'_E + \gamma \beta x'_E
+\]
+Similarly, by subtracting equation (2.13b) from (2.13a)
+
+Now subtracting equation (2.13b) from equation (2.13a), we get:
+\[
+(t_E - x_E) - (t_E + x_E) = \gamma (1 - \beta)(t'_E - x'_E) - \gamma (1 + \beta)(t'_E + x'_E)
+\]
+Simplifying both sides:
+\[
+-2x_E = \gamma \left( (1 - \beta)(t'_E - x'_E) - (1 + \beta)(t'_E + x'_E) \right)
+\]
+Expanding:
+\[
+-2x_E = \gamma \left( (1 - \beta)t'_E - (1 - \beta)x'_E - (1 + \beta)t'_E - (1 + \beta)x'_E \right)
+\]
+\[
+-2x_E = \gamma \left( -2\beta t'_E - 2x'_E \right)
+\]
+Dividing by -2:
+\[
+x_E = \gamma \beta t'_E + \gamma x'_E
+\]
+Thus, we have verified the second equation:
+\[
+x_E = \gamma \beta t'_E + \gamma x'_E
+\]
+
+
+\subsubsection{Exercise}
+We know that for a matrix $A$, and vectors $\mathbf{s}$ and $\mathbf{s}'$, the following is true
+\[
+\mathbf{s}' = A\mathbf{s} \then A^{-1}\mathbf{s}'=\mathbf{s}
+\]
+Now we look for the inverse of the Lorenz transform matrix. Since the transformation does not concern $y$ and $z$ axis, we treat it as a 2 by 2 matrix.
+\[
+A = \begin{bmatrix}
+    \gamma & -\gamma\beta\\
+    -\gamma\beta & \gamma
+\end{bmatrix}
+\]
+The inverse of this matrix can be found as
+\[
+A^{-1} = \frac{1}{\abso{A}}\begin{bmatrix}
+    \gamma & \gamma\beta\\
+    \gamma\beta & \gamma
+\end{bmatrix}
+\]
+Where $\abso{A}$ is the determinent of $A$, and is defined as
+\[
+\abso{A} = \gamma^2 -\gamma^2\beta^2 = \gamma^2\paren{1-\beta^2}
+\]
+But we know that $\frac{1}{\gamma^2} = 1 - \beta^2$, therefore
+\[
+\abso{A} = 1
+\]
+And the inverse of $A$ is simply 
+\[
+A^{-1} =\begin{bmatrix}
+    \gamma & \gamma\beta\\
+    \gamma\beta & \gamma
+\end{bmatrix}
+\]
+Now we can add the unchanged $y$ and $z$ axis in to obtain the full inverse transformation.
+\[
+\mathbf{s} = \begin{bmatrix}
+    \gamma & \gamma\beta & 0 & 0\\
+    \gamma\beta & \gamma & 0 & 0\\
+    0&0&1&0\\
+    0&0&0&1
+\end{bmatrix}\mathbf{s}'
+\]
+
+\subsection{BOX 2.4}
+No Exercise in this box. Acknowledge that Lorenz transform is the same as a hyperbolic rotation, defined by a rotation matrix
+\[
+\cosh\theta = \frac{1}{\sqrt{1-\beta^2}} \equiv \gamma \quad \sinh\theta = \frac{\beta}{\sqrt{1-\beta^2}}=\gamma \beta
+\]
+
+\subsection{BOX 2.5}
+\subsubsection{Exercise}
+We would like to show that the \textit{spacetime interval} stays invariant throughout Lorenz transformation. 
 
 
 
