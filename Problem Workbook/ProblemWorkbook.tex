@@ -316,8 +316,131 @@ No Exercise in this box. Acknowledge that Lorenz transform is the same as a hype
 
 \subsection{BOX 2.5}
 \subsubsection{Exercise}
-We would like to show that the \textit{spacetime interval} stays invariant throughout Lorenz transformation. 
+We would like to show that the \textit{spacetime interval} stays invariant throughout Lorenz transformation. First of all, we know that the spacetime interval is the magnitude of the 4-vector that we would denote as $\Delta s$. We know that the magnitude squared can be found by performing an inner product. We know that
+\[
+\mathbf{s'} = A\mathbf{s}
+\]
+Therefore
+\[
+(\mathbf{s}')^2 = \paren{\mathbf{s}'}^T\mathbf{s} = \paren{A\mathbf{s}}^TA\mathbf{s} = \mathbf{s}^TA^TA\mathbf{s}
+\]
+This would be true in 4-D Euclidean space, but we are working with a hyperbolic spacetime structure, so we have to incorporate another vector to adjust how we calculate the magnitude. The correct inner product should be
+\[
+\paren{\mathbf{s}'}^T\eta\mathbf{s}' = \paren{A\mathbf{s}}^T\eta A\mathbf{s} = \mathbf{s}^TA^T\eta A\mathbf{s}
+\]
+Where 
+\[
+\eta = \begin{bmatrix}
+    -1&0&0&0\\
+    0&1&0&0\\
+    0&0&1&0\\
+    0&0&0&1
+\end{bmatrix}
+\]
+Now we can correctly obtain the magnitude of the 4-vector. Let's define
+\[
+\paren{\mathbf{s}'}^2 = \paren{\mathbf{s}'}^T\eta\mathbf{s}'
+\]
+We can examine the term $\mathbf{s}^TA^T$. Since $A$ is symmetric, then we have 
+\[
+\mathbf{s}^TA^T = \begin{bmatrix}
+    t&x&y&z
+\end{bmatrix}\begin{bmatrix}
+\gamma & -\gamma\beta & 0 & 0 \\
+-\gamma\beta & \gamma & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix} = \left[\begin{matrix}
+t\gamma-x\beta\gamma & x\gamma-t\beta\gamma & y & z
+\end{matrix}\right]
+\]
+We see that this is simply
+\[
+\mathbf{s}^TA^T = \left[\begin{matrix}
+t' & x' & y' & z'
+\end{matrix}\right] = \paren{\mathbf{s}'}^T
+\]
+Also, by definition, we have that
+\[
+A\mathbf{s} = s'
+\]
+Therefore we have
+\[
+\paren{\mathbf{s}'}^T\eta\mathbf{s}' = \paren{\mathbf{s}'}^T\eta\mathbf{s}'
+\]
+This shows that the magnitude of spacetime 4-vector stays the same before and after the Lorenz transformation. Consequently, $\Delta s$ stays the same. 
 
+\subsection{BOX 2.6}
+    \subsubsection{Exercise}
+    We start by writing out the Lorenz transformation between frame $S$ and $S'$.
+    \[
+    \Delta x' = \gamma\paren{\Delta x - \beta \Delta t}
+    \]
+    \[
+    \Delta t' = \gamma\paren{\Delta t - \beta \Delta x}
+    \]
+    If the order of two events happened in opposite order, we have $\Delta t' < 0$. This means that
+    \[
+    \gamma\paren{\Delta t - \beta \Delta x} < 0
+    \]
+    Move things around, we have
+    \[
+    \frac{\Delta t}{\Delta x} < \beta 
+    \]
+    This is certainly possible if $\Delta x$ is sufficiently large, or $\beta$ is sufficiently large. And we know this is allowed since 
+    \[
+    -\Delta t^2 + \Delta x^2 > 0
+    \]
+    This tells us
+    \[
+    \Delta x^2 > \Delta t^2
+    \]
+    But if we examine timelike interval, we have
+    \[
+    \Delta x^2 < \Delta t^2
+    \]
+    This lead us back to where we were when we assumed $\Delta t' < 0$, or reversed order in time
+    \[
+    \frac{\Delta t}{\Delta x} > \beta 
+    \]
+    We know this is not possible since $\beta \in \sqbkt{0,1}$, this simply means nothing can travel faster than light, since $\beta$ is defined to be $\frac{v}{c}$. And we have shown that spacelike events does not have causal relationship, therefore the sequence of which they happened can be reversed, and vice versa. 
+
+    \subsection{BOX 2.7}
+        \subsubsection{Exercise}
+        Since we are interested in the proper time on the clock carried on this differential step, we have
+        \[
+        dt' = \sqrt{dt^2 - dx^2 -dy^2 -dz^2}
+        \]
+        If we are to factor $dt^2$ out, we have
+        \[
+        dt' = dt\sqrt{1- \paren{\dydx{x^2}{t^2}+\dydx{y^2}{t^2}+\dydx{z^2}{t^2}}} = dt\sqrt{1-v^2}
+        \]
+
+    \subsection{BOX 2.8}
+        \subsubsection{Exercise}
+        We can use Lorenz transformation to prove length contraction by defining 2 events happening at the same time in frame $S$. This means a separation of time $0$. We have Lorenz transformation
+        \[
+        \Delta x' = \gamma\paren{\Delta x - \beta\Delta t}
+        \]
+        But we know that $\Delta t = 0$. Therefore
+        \[
+        \Delta x' = \gamma\Delta x
+        \]
+        This means
+        \[
+        \Delta x = \frac{1}{\gamma}\Delta x' = \Delta x'\sqrt{1-\beta^2}
+        \]
+        This shows that length is contracted compare to the proper length as measured in the frame where the events happened simultaneously. This means
+        \[
+        L = L_R\sqrt{1-\beta^2}
+        \]
+
+    \subsection{BOX 2.9}
+        \subsubsection{Exercise}
+        We can obtain $v_x$ by the following operation
+        \[
+        v_x' = \dydx{x'}{t'} = \frac{dx}{\gamma\paren{dt - \beta dx}} = \frac{dx}{dt}\frac{1}{\gamma\paren{1-\beta\dydx{x}{t}}} = \frac{v_x}{\gamma\paren{1-\beta v_x}} = \frac{v_x\paren{1-\beta^2}}{1-\beta v_x}
+        \]
 
 
 

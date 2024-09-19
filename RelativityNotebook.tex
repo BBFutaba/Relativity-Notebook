@@ -2758,7 +2758,134 @@ If we define the \textbf{proper time} between 2 events as $\boldsymbol\Delta\bol
 
 
 
+\section{Four Vectors}
+Introductory level for four vectors has been covered previously. We define \textbf{4 velocity} as follows
+\[
+d\mathbf{s} = \begin{bmatrix}
+    dt\\dx\\dy\\dz
+\end{bmatrix}
+\]
+And the 4 velocity is defined as
+\[
+\mathbf{u}\equiv \frac{d\mathbf{s}}{d\tau}=
+\begin{bmatrix}
+    u_t\\u_x\\u_y\\u_z
+\end{bmatrix}
+\]
+We can also convert the differentials between frame with Lorenz Transform.
 
+\[
+\begin{bmatrix}
+dt' \\
+dx' \\
+dy' \\
+dz'
+\end{bmatrix}
+=
+\begin{bmatrix}
+\gamma & -\gamma\beta & 0 & 0 \\
+-\gamma\beta & \gamma & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+dt \\
+dx \\
+dy \\
+dz
+\end{bmatrix}
+\]
+And consequently
+\[
+\mathbf{u}' = \begin{bmatrix}
+\gamma & -\gamma\beta & 0 & 0 \\
+-\gamma\beta & \gamma & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}\mathbf{u}
+\]
+Also, when we are taking the magnitude of a 4 vector, do not forget that we are dealing with Minkowski space. So when we are defining dot product in this space, what we are really doing is as follows
+\[
+\mathbf{u}\cdot \mathbf{v} = \mathbf{u}^T\eta\mathbf{v}
+\]
+Where $\eta$ is the Minkowski measure, and is defined as
+\[
+\eta = \begin{bmatrix}
+    -1&0&0&0\\
+    0&1&0&0\\
+    0&0&1&0\\
+    0&0&0&1
+\end{bmatrix}
+\]
+this is also true for differentials
+\[
+d\mathbf{s}\cdot d\mathbf{s} = d\mathbf{s}^T\eta d\mathbf{s}
+\]
+And important result to know is that, for any 4 velocity, the magnitude is always
+\begin{align}
+\mathbf{u}\cdot \mathbf{u} = -1
+\end{align}
+We can prove this easily. For any object moving with velocity $v$ in a given frame, the components of our 4 velocity is always
+\[
+\mathbf{u}=\begin{bmatrix}
+    \gamma\\ \gamma u_x \\ \gamma u_y \\\gamma u_z 
+\end{bmatrix}
+\]
+And if we would carry out its dot product, we get the power result of $5.1$. And if we would look at our definition for 4 velocity
+\[
+\mathbf{u} = \dydx{\mathbf{s}}{\tau}
+\]
+We also know from BOX 2.7 that
+\[
+d\tau = \frac{dt}{\gamma}
+\]
+Therefore we can convert 4 velocity to ordinary velocity.
+\begin{align}
+\mathbf{u}= 
+\begin{bmatrix}
+u^t \\
+u^x \\
+u^y \\
+u^z
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{dt}{dt\sqrt{1 - v^2}} \\
+\frac{dx}{dt\sqrt{1 - v^2}} \\
+\frac{dy}{dt\sqrt{1 - v^2}} \\
+\frac{dz}{dt\sqrt{1 - v^2}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{1 - v^2}} \\
+\frac{v_x}{\sqrt{1 - v^2}} \\
+\frac{v_y}{\sqrt{1 - v^2}} \\
+\frac{v_z}{\sqrt{1 - v^2}}
+\end{bmatrix}
+\end{align}
+The conversion between ordinary velocity and 4 velocity is then written as
+\[
+\mathbf{v} = \frac{1}{u_t}\mathbf{u}_{xyz}
+\]
+Here $\mathbf{u}_{xyz}$ just means the 4 velocity without the time component. An object at rest will have 4 velocity of $u_t = 1$ and everything else $0$. When an object is moving slowly compare to the speed of light, we can in fact just approximate the 4 velocity with ordinary velocity.
+\begin{align}
+\mathbf{u} = 
+\begin{bmatrix}
+u^t \\
+u^x \\
+u^y \\
+u^z
+\end{bmatrix}
+\approx
+\begin{bmatrix}
+1 \\
+v_x \\
+v_y \\
+v_z
+\end{bmatrix}
+\quad \text{when } v \ll 1
+\end{align}
+With this newly defined 4 velocity, we can define our \textbf{4 momentum}. 
 
 
 
