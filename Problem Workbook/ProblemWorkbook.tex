@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{book}
 \pagestyle{empty}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{latexsym, epsfig, ulem, cancel, multicol, hyperref}
@@ -129,7 +129,7 @@ Dennis Li\\Prof. Gabe\\
 \hrule
 
 \vspace{0.2cm}
-
+\chapter{Problem Boxes}
 \section{Introduction}
 There are no boxes in this chapter, but selected problem will be done.
 
@@ -150,45 +150,45 @@ g &= 1.09 \times 10^{-16} \, \text{m}^{-1} = 1 / (9.17 \times 10^{15} \, \text{m
 G &= 7.426 \times 10^{-28} \, \text{m/kg} = 1477 \, \text{m} / M_\odot
 \end{align*}
 We start by verifying $g$. We start from $g = 9.8 \,\text{m/s$^2$}$. We introduce the conversion factor
-\[
+\begin{align}
 1\, \text{s} = 3\times 10^{8} \,\text{m}
-\]
+\end{align}
 The constant can be rewritten as
-\[
+\begin{align}
 9.8 \times \frac{\text{m}}{\paren{3\times 10^{8}}^2\text{m}^2} =  1.09 \times 10^{-16} \, \text{m}^{-1} = \frac{1}{1.09 \times 10^{-16}\,\text{m}}
-\]
+\end{align}
 We notice that
-\[
+\begin{align}
 1\,\text{ly} = \paren{365\times 24\times 60\times 60}\text{s} \times \paren{3\times 10^{8} \,\text{m/s}} \simeq 1\,\text{ly}
-\]
+\end{align}
 Therefore we arrived 
-\[
+\begin{align}
 g = 1 / (1 \, \text{ly})
-\]
+\end{align}
 Now we work on $G$. We know that 
-\[
+\begin{align}
 G = 6.67 \times 10^{-11} \frac{\text{N}\cdot\text{m}^2}{\text{kg}^2}
-\]
+\end{align}
 We know that \textit{N} can be expressed in SI unit as $1\,$N$= 1\frac{\text{kg}\cdot\text{m}}{\text{s}^2}$. And the units simplifies to
-\[
+\begin{align}
 G = 6.67 \times 10^{-11} \frac{\text{m}^3}{\text{kg}\cdot \text{s}^2}
-\]
+\end{align}
 We use the same conversion unit as before to rewrite the unit of time in meters, we will yield
-\[
+\begin{align}
 G = 6.67 \times 10^{-11} \frac{\text{m}}{\text{kg}\cdot \paren{3\times 10^{8}}^2}
-\]
+\end{align}
 This gives us
-\[
+\begin{align}
 G = 7.426 \times 10^{-28}\, \text{m/kg}
-\]
+\end{align}
 We know that the mass of the sun is
-\[
+\begin{align}
 M_\odot = 1.99 \times 10^{30}\,\text{kg}
-\]
+\end{align}
 Then we can rewrite the expression as
-\[
+\begin{align}
 G = 1477 \, \text{m} / M_\odot
-\]
+\end{align}
 
 
 
@@ -196,154 +196,154 @@ G = 1477 \, \text{m} / M_\odot
     \subsubsection{Exercise}
     We are given the following two equations:
 
-\[
+\begin{align}
 t_E - x_E = \gamma (1 - \beta)(t'_E - x'_E) \tag{2.13a}
-\]
-\[
+\end{align}
+\begin{align}
 t_E + x_E = \gamma (1 + \beta)(t'_E + x'_E) \tag{2.13b}
-\]
+\end{align}
 
 We are tasked with verifying the following equations:
 
-\[
+\begin{align}
 t_E = \gamma t'_E + \gamma \beta x'_E
-\]
-\[
+\end{align}
+\begin{align}
 x_E = \gamma \beta t'_E + \gamma x'_E
-\]
+\end{align}
 
-### Step 1: Adding equations (2.13a) and (2.13b)
+Step 1:  Adding equations (2.13a) and (2.13b)
 
 By adding equations (2.13a) and (2.13b), we get:
-\[
+\begin{align}
 (t_E - x_E) + (t_E + x_E) = \gamma (1 - \beta)(t'_E - x'_E) + \gamma (1 + \beta)(t'_E + x'_E)
-\]
+\end{align}
 Simplifying both sides:
-\[
+\begin{align}
 2t_E = \gamma \left( (1 - \beta)(t'_E - x'_E) + (1 + \beta)(t'_E + x'_E) \right)
-\]
+\end{align}
 Expanding:
-\[
+\begin{align}
 2t_E = \gamma \left( (1 - \beta)t'_E - (1 - \beta)x'_E + (1 + \beta)t'_E + (1 + \beta)x'_E \right)
-\]
-\[
+\end{align}
+\begin{align}
 2t_E = \gamma \left( 2t'_E + 2\beta x'_E \right)
-\]
+\end{align}
 Dividing by 2:
-\[
+\begin{align}
 t_E = \gamma (t'_E + \beta x'_E)
-\]
+\end{align}
 Thus, we have verified the first equation:
-\[
+\begin{align}
 t_E = \gamma t'_E + \gamma \beta x'_E
-\]
+\end{align}
 Similarly, by subtracting equation (2.13b) from (2.13a)
 
 Now subtracting equation (2.13b) from equation (2.13a), we get:
-\[
+\begin{align}
 (t_E - x_E) - (t_E + x_E) = \gamma (1 - \beta)(t'_E - x'_E) - \gamma (1 + \beta)(t'_E + x'_E)
-\]
+\end{align}
 Simplifying both sides:
-\[
+\begin{align}
 -2x_E = \gamma \left( (1 - \beta)(t'_E - x'_E) - (1 + \beta)(t'_E + x'_E) \right)
-\]
+\end{align}
 Expanding:
-\[
+\begin{align}
 -2x_E = \gamma \left( (1 - \beta)t'_E - (1 - \beta)x'_E - (1 + \beta)t'_E - (1 + \beta)x'_E \right)
-\]
-\[
+\end{align}
+\begin{align}
 -2x_E = \gamma \left( -2\beta t'_E - 2x'_E \right)
-\]
+\end{align}
 Dividing by -2:
-\[
+\begin{align}
 x_E = \gamma \beta t'_E + \gamma x'_E
-\]
+\end{align}
 Thus, we have verified the second equation:
-\[
+\begin{align}
 x_E = \gamma \beta t'_E + \gamma x'_E
-\]
+\end{align}
 
 
 \subsubsection{Exercise}
-We know that for a matrix $A$, and vectors $\mathbf{s}$ and $\mathbf{s}'$, the following is true
-\[
-\mathbf{s}' = A\mathbf{s} \then A^{-1}\mathbf{s}'=\mathbf{s}
-\]
+We know that for a matrix $\Lambda$, and vectors $\mathbf{s}$ and $\mathbf{s}'$, the following is true
+\begin{align}
+\mathbf{s}' = \Lambda\mathbf{s} \then \Lambda^{-1}\mathbf{s}'=\mathbf{s}
+\end{align}
 Now we look for the inverse of the Lorenz transform matrix. Since the transformation does not concern $y$ and $z$ axis, we treat it as a 2 by 2 matrix.
-\[
-A = \begin{bmatrix}
+\begin{align}
+\Lambda = \begin{bmatrix}
     \gamma & -\gamma\beta\\
     -\gamma\beta & \gamma
 \end{bmatrix}
-\]
+\end{align}
 The inverse of this matrix can be found as
-\[
-A^{-1} = \frac{1}{\abso{A}}\begin{bmatrix}
+\begin{align}
+\Lambda^{-1} = \frac{1}{\abso{\Lambda}}\begin{bmatrix}
     \gamma & \gamma\beta\\
     \gamma\beta & \gamma
 \end{bmatrix}
-\]
-Where $\abso{A}$ is the determinent of $A$, and is defined as
-\[
-\abso{A} = \gamma^2 -\gamma^2\beta^2 = \gamma^2\paren{1-\beta^2}
-\]
+\end{align}
+Where $\abso{\Lambda}$ is the determinent of $\Lambda$, and is defined as
+\begin{align}
+\abso{\Lambda} = \gamma^2 -\gamma^2\beta^2 = \gamma^2\paren{1-\beta^2}
+\end{align}
 But we know that $\frac{1}{\gamma^2} = 1 - \beta^2$, therefore
-\[
-\abso{A} = 1
-\]
-And the inverse of $A$ is simply 
-\[
-A^{-1} =\begin{bmatrix}
+\begin{align}
+\abso{\Lambda} = 1
+\end{align}
+And the inverse of $\Lambda$ is simply 
+\begin{align}
+\Lambda^{-1} =\begin{bmatrix}
     \gamma & \gamma\beta\\
     \gamma\beta & \gamma
 \end{bmatrix}
-\]
+\end{align}
 Now we can add the unchanged $y$ and $z$ axis in to obtain the full inverse transformation.
-\[
+\begin{align}
 \mathbf{s} = \begin{bmatrix}
     \gamma & \gamma\beta & 0 & 0\\
     \gamma\beta & \gamma & 0 & 0\\
     0&0&1&0\\
     0&0&0&1
 \end{bmatrix}\mathbf{s}'
-\]
+\end{align}
 
 \subsection{BOX 2.4}
 No Exercise in this box. Acknowledge that Lorenz transform is the same as a hyperbolic rotation, defined by a rotation matrix
-\[
+\begin{align}
 \cosh\theta = \frac{1}{\sqrt{1-\beta^2}} \equiv \gamma \quad \sinh\theta = \frac{\beta}{\sqrt{1-\beta^2}}=\gamma \beta
-\]
+\end{align}
 
 \subsection{BOX 2.5}
 \subsubsection{Exercise}
 We would like to show that the \textit{spacetime interval} stays invariant throughout Lorenz transformation. First of all, we know that the spacetime interval is the magnitude of the 4-vector that we would denote as $\Delta s$. We know that the magnitude squared can be found by performing an inner product. We know that
-\[
-\mathbf{s'} = A\mathbf{s}
-\]
+\begin{align}
+\mathbf{s'} = \Lambda\mathbf{s}
+\end{align}
 Therefore
-\[
-(\mathbf{s}')^2 = \paren{\mathbf{s}'}^T\mathbf{s} = \paren{A\mathbf{s}}^TA\mathbf{s} = \mathbf{s}^TA^TA\mathbf{s}
-\]
+\begin{align}
+(\mathbf{s}')^2 = \paren{\mathbf{s}'}^T\mathbf{s} = \paren{\Lambda\mathbf{s}}^T\Lambda\mathbf{s} = \mathbf{s}^T\Lambda^T\Lambda\mathbf{s}
+\end{align}
 This would be true in 4-D Euclidean space, but we are working with a hyperbolic spacetime structure, so we have to incorporate another vector to adjust how we calculate the magnitude. The correct inner product should be
-\[
-\paren{\mathbf{s}'}^T\eta\mathbf{s}' = \paren{A\mathbf{s}}^T\eta A\mathbf{s} = \mathbf{s}^TA^T\eta A\mathbf{s}
-\]
+\begin{align}
+\paren{\mathbf{s}'}^T\eta\mathbf{s}' = \paren{\Lambda\mathbf{s}}^T\eta \Lambda\mathbf{s} = \mathbf{s}^T\Lambda^T\eta \Lambda\mathbf{s}
+\end{align}
 Where 
-\[
+\begin{align}
 \eta = \begin{bmatrix}
     -1&0&0&0\\
     0&1&0&0\\
     0&0&1&0\\
     0&0&0&1
 \end{bmatrix}
-\]
+\end{align}
 Now we can correctly obtain the magnitude of the 4-vector. Let's define
-\[
+\begin{align}
 \paren{\mathbf{s}'}^2 = \paren{\mathbf{s}'}^T\eta\mathbf{s}'
-\]
-We can examine the term $\mathbf{s}^TA^T$. Since $A$ is symmetric, then we have 
-\[
-\mathbf{s}^TA^T = \begin{bmatrix}
+\end{align}
+We can examine the term $\mathbf{s}^T\Lambda^T$. Since $\Lambda$ is symmetric, then we have 
+\begin{align}
+\mathbf{s}^T\Lambda^T = \begin{bmatrix}
     t&x&y&z
 \end{bmatrix}\begin{bmatrix}
 \gamma & -\gamma\beta & 0 & 0 \\
@@ -353,94 +353,223 @@ We can examine the term $\mathbf{s}^TA^T$. Since $A$ is symmetric, then we have
 \end{bmatrix} = \left[\begin{matrix}
 t\gamma-x\beta\gamma & x\gamma-t\beta\gamma & y & z
 \end{matrix}\right]
-\]
+\end{align}
 We see that this is simply
-\[
-\mathbf{s}^TA^T = \left[\begin{matrix}
+\begin{align}
+\mathbf{s}^T\Lambda^T = \left[\begin{matrix}
 t' & x' & y' & z'
 \end{matrix}\right] = \paren{\mathbf{s}'}^T
-\]
+\end{align}
 Also, by definition, we have that
-\[
-A\mathbf{s} = s'
-\]
+\begin{align}
+\Lambda\mathbf{s} = s'
+\end{align}
 Therefore we have
-\[
+\begin{align}
 \paren{\mathbf{s}'}^T\eta\mathbf{s}' = \paren{\mathbf{s}'}^T\eta\mathbf{s}'
-\]
+\end{align}
 This shows that the magnitude of spacetime 4-vector stays the same before and after the Lorenz transformation. Consequently, $\Delta s$ stays the same. 
 
 \subsection{BOX 2.6}
     \subsubsection{Exercise}
     We start by writing out the Lorenz transformation between frame $S$ and $S'$.
-    \[
+    \begin{align}
     \Delta x' = \gamma\paren{\Delta x - \beta \Delta t}
-    \]
-    \[
+    \end{align}
+    \begin{align}
     \Delta t' = \gamma\paren{\Delta t - \beta \Delta x}
-    \]
+    \end{align}
     If the order of two events happened in opposite order, we have $\Delta t' < 0$. This means that
-    \[
+    \begin{align}
     \gamma\paren{\Delta t - \beta \Delta x} < 0
-    \]
+    \end{align}
     Move things around, we have
-    \[
+    \begin{align}
     \frac{\Delta t}{\Delta x} < \beta 
-    \]
+    \end{align}
     This is certainly possible if $\Delta x$ is sufficiently large, or $\beta$ is sufficiently large. And we know this is allowed since 
-    \[
+    \begin{align}
     -\Delta t^2 + \Delta x^2 > 0
-    \]
+    \end{align}
     This tells us
-    \[
+    \begin{align}
     \Delta x^2 > \Delta t^2
-    \]
+    \end{align}
     But if we examine timelike interval, we have
-    \[
+    \begin{align}
     \Delta x^2 < \Delta t^2
-    \]
+    \end{align}
     This lead us back to where we were when we assumed $\Delta t' < 0$, or reversed order in time
-    \[
+    \begin{align}
     \frac{\Delta t}{\Delta x} > \beta 
-    \]
+    \end{align}
     We know this is not possible since $\beta \in \sqbkt{0,1}$, this simply means nothing can travel faster than light, since $\beta$ is defined to be $\frac{v}{c}$. And we have shown that spacelike events does not have causal relationship, therefore the sequence of which they happened can be reversed, and vice versa. 
 
     \subsection{BOX 2.7}
         \subsubsection{Exercise}
         Since we are interested in the proper time on the clock carried on this differential step, we have
-        \[
+        \begin{align}
         dt' = \sqrt{dt^2 - dx^2 -dy^2 -dz^2}
-        \]
+        \end{align}
         If we are to factor $dt^2$ out, we have
-        \[
+        \begin{align}
         dt' = dt\sqrt{1- \paren{\dydx{x^2}{t^2}+\dydx{y^2}{t^2}+\dydx{z^2}{t^2}}} = dt\sqrt{1-v^2}
-        \]
+        \end{align}
 
     \subsection{BOX 2.8}
         \subsubsection{Exercise}
         We can use Lorenz transformation to prove length contraction by defining 2 events happening at the same time in frame $S$. This means a separation of time $0$. We have Lorenz transformation
-        \[
+        \begin{align}
         \Delta x' = \gamma\paren{\Delta x - \beta\Delta t}
-        \]
+        \end{align}
         But we know that $\Delta t = 0$. Therefore
-        \[
+        \begin{align}
         \Delta x' = \gamma\Delta x
-        \]
+        \end{align}
         This means
-        \[
+        \begin{align}
         \Delta x = \frac{1}{\gamma}\Delta x' = \Delta x'\sqrt{1-\beta^2}
-        \]
+        \end{align}
         This shows that length is contracted compare to the proper length as measured in the frame where the events happened simultaneously. This means
-        \[
+        \begin{align}
         L = L_R\sqrt{1-\beta^2}
-        \]
+        \end{align}
 
     \subsection{BOX 2.9}
         \subsubsection{Exercise}
         We can obtain $v_x$ by the following operation
-        \[
+        \begin{align}
         v_x' = \dydx{x'}{t'} = \frac{dx}{\gamma\paren{dt - \beta dx}} = \frac{dx}{dt}\frac{1}{\gamma\paren{1-\beta\dydx{x}{t}}} = \frac{v_x}{\gamma\paren{1-\beta v_x}} = \frac{v_x\paren{1-\beta^2}}{1-\beta v_x}
-        \]
+        \end{align}
+
+
+    \section{Four vectors}
+        \subsection{BOX 3.1}
+            \subsubsection{Exercise}
+            In this exercise, we want to show that
+            \begin{align}
+            \mathbf{a}\cdot \mathbf{b} = \mathbf{a}' \cdot \mathbf{b}'
+            \end{align}
+            To do so, use the Lorenz transformation to rewrite the 4 vector. 
+            \begin{align}
+            \mathbf{a}' = \mathbf{\Lambda}a \quad \mathbf{b}' = \mathbf{b}
+            \end{align}
+            Where $\Lambda$ is the Lorenz transform matrix. We have
+            \begin{align}
+            \mathbf{a}'\cdot \mathbf{b} = \Lambda\mathbf{a}\cdot \Lambda\mathbf{b}
+            \end{align}
+            This is essentially
+            \begin{align}
+            \paren{\Lambda \mathbf{a}}^T\eta\Lambda\mathbf{b}
+            \end{align}
+            Applying some properties of transpose, this is
+            \begin{align}
+            \paren{\mathbf{a}}^T\paren{\Lambda^T\eta\Lambda}\mathbf{b}
+            \end{align}
+            But we know that the Lorenz transform is preserved, and we have shown previously that $\Lambda^T\eta\Lambda = \eta$, we simply yield
+            \begin{align}
+            \mathbf{a}^T\eta\mathbf{b} = \mathbf{a}\cdot\mathbf{b}
+            \end{align}
+            We have shown that
+            \begin{align}
+            \mathbf{a}'\cdot\mathbf{b}' =\mathbf{a}\cdot\mathbf{b}
+            \end{align}
+
+        \subsection{BOX 3.2}
+            \subsubsection{Exercise}
+                Show that
+                \begin{align}
+                d\tau = \sqrt{-ds^2} = \sqrt{dt^2 - dx^2 - dy^2 - dz^2}
+                \end{align}
+                Use this to show that $\mathbf{u}\cdot\mathbf{u} = -1$. 
+                We start by rewriting the proper time differential. And we have previously shown that
+                \begin{align}
+                d\tau = dt\sqrt{1-v^2}
+                \end{align}
+                Recall that the definition of $\mathbf{u}$, the 4 vector is that 
+                \begin{align}
+                \mathbf{u}= 
+                \begin{bmatrix}
+                u^t \\
+                u^x \\
+                u^y \\
+                u^z
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                \frac{dt}{dt\sqrt{1 - v^2}} \\
+                \frac{dx}{dt\sqrt{1 - v^2}} \\
+                \frac{dy}{dt\sqrt{1 - v^2}} \\
+                \frac{dz}{dt\sqrt{1 - v^2}}
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                \frac{1}{\sqrt{1 - v^2}} \\
+                \frac{v_x}{\sqrt{1 - v^2}} \\
+                \frac{v_y}{\sqrt{1 - v^2}} \\
+                \frac{v_z}{\sqrt{1 - v^2}}
+                \end{bmatrix}
+                \end{align}
+            Now we can try to define $\mathbf{u}\cdot\mathbf{u}$. We do this by
+            \begin{align}
+            \mathbf{u}\cdot\mathbf{u}= \mathbf{u}^T\eta \mathbf{u}
+            \end{align}
+            If we carry our this inner product, we end up with
+            \begin{align}
+            \mathbf{u}\cdot\mathbf{u} = \frac{-1 + v_x^2+v_y^2+v_z^2}{1-v^2} = -\frac{1-v^2}{1-v^2} = -1
+            \end{align}
+            We know that $v^2$ is the magnitude of velocity, which can be found by adding the square of each components. And this result is consistent with our expectation.
+
+        \subsection{BOX 3.3}
+        \subsubsection{Exercise}
+        This is simply using binomial expansion to show that $\gamma$ can be approximated by $1+\frac{1}{v^2}$ by removing higher order terms and end up with $1+\frac{1}{2}v^2$, meaning the error is in order of $v^2$, where $v$ is actually $\beta$.
+
+        \subsection{BOX 3.4}
+        \subsubsection{Exercise}
+        First we define frame $S$ to be the frame that sees 2 balls going at opposite direction. Then we define a frame $S'$ where mass 1 is stationary, or in other word, the frame is moving to the $+\unx$ direction at speed $v=\beta$. We can use the Speed transformation to find the speed of mass 2 in this new frame. 
+        Since the motion is 1 dimensional and straight, $y$ and $z$ component of the velocity is not of our concern. The speed can be obtained by
+        \begin{align}
+        u'_2 = \frac{-\beta - \beta}{1-\paren{-\beta}\beta} = \frac{-2\beta}{1+\beta^2}
+        \end{align}
+        Use it again for mass 3, the collided mass, to obtain the final speed
+        \begin{align}
+        u'_3 = \frac{0-\beta}{1-0\cdot\beta} = -\beta
+        \end{align}
+        This finishes the proof. 
+        
+        \subsubsection{Exercise}
+        Let us substitute the result into the given expression
+        \begin{align}
+        \frac{1}{\sqrt{1-\paren{u'_2}^2}} = \frac{1}{\sqrt{1-\paren{\frac{-2\beta}{1+\beta^2}}^2}}
+        \end{align}
+        We can break this down
+        \begin{align}
+            \frac{1}{\sqrt{1-\paren{\frac{-2\beta}{1+\beta^2}}^2}}\\
+            =& \frac{1}{\sqrt{\paren{1+\frac{-2\beta}{1+\beta^2}}\paren{1-\frac{-2\beta}{1+\beta^2}}}}\\
+            =&\frac{1}{\sqrt{\frac{(1-\beta)^2}{1+\beta^2}\cdot \frac{(1+\beta)^2}{1+\beta^2}}}\\
+            =&\frac{1+\beta^2}{\paren{1-\beta}\paren{1+\beta}}\\
+            =&\frac{1+\beta^2}{1-\beta^2}
+        \end{align}
+        We can now use this result to how the conservation of 4 momentum.
+        \begin{align}
+        \begin{bmatrix}
+            m\\0\\0\\0
+        \end{bmatrix}
+        +
+        \frac{1+\beta^2}{1-\beta^2}\begin{bmatrix}
+            m\\-m\paren{u'_2}^2\\0\\0
+        \end{bmatrix}=
+        \begin{bmatrix}
+            2m\\ \frac{-2m\beta}{1-\beta^2}
+        \end{bmatrix}
+        \end{align}
+        Since $u'_2 = \frac{-2\beta}{1+\beta^2}$, the denominator cancels, and we are left with
+        
+        
+
+        
+            
+            
 
 
 
