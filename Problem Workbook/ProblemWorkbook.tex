@@ -1,16 +1,18 @@
-\documentclass[12pt]{book}
+\documentclass[12pt]{memoir}
 \pagestyle{empty}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{latexsym, epsfig, ulem, cancel, multicol, hyperref}
 \usepackage{graphicx, tikz, subfigure,pgfplots}
 \usepackage[margin=1in]{geometry}
-\setlength{\parindent}{0pt}
 \usepackage{multirow}
 \usepackage{mathtools}
 \usepackage{verbatim}
 \usepackage{tikz}
 \usepackage{pgfplots}
 
+
+\setcounter{secnumdepth}{3}
+\setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex}
 
 \newcommand{\T}[0]{\top}
@@ -61,6 +63,7 @@
 \newcommand{\untheta}{\hat{\boldsymbol\theta}}
 \newcommand{\unphi}{\hat{\boldsymbol\phi}}
 \newcommand{\unrho}{\hat{\boldsymbol\rho}}
+
 
 
 
@@ -129,21 +132,26 @@ Dennis Li\\Prof. Gabe\\
 \hrule
 
 \vspace{0.2cm}
-\chapter{Problem Boxes}
-\section{Introduction}
+\begingroup
+\let\clearpage\relax
+\chapter{Introduction}
+\endgroup
 There are no boxes in this chapter, but selected problem will be done.
 
-\section{Special Relativity}
-\subsection{BOX 2.1}
-\subsubsection{Exercise}
+\begingroup
+\let\clearpage\relax
+\chapter{Special Relativity}
+\endgroup
+\section{BOX 2.1}
+\subsection{Exercise}
 In the space below, prove the "only if" clause; that is, assume that S' is inertial and show that it must move at a constant velocity relative to S. Start by considering a free object at rest in S'.
 
 \begin{proof}
     Suppose $S'$ is inertial and a \textbf{free} object is observed to at rest in $S'$. An object being free is mutually agreed upon by both $S$ and $S'$. By Newton's first law, the object will remain at rest in $S'$ since it is inertial by hypothesis. Now, if there is a second frame $S$ moving relative to $S'$, and observers in $S$ also observes the free object, then it will see the object moving along with $S'$ since the object is at rest with respect to $S'$. Since the object is free, it cannot participate in any interaction and therefore cannot change its state of motion. Therefore the only way for $S$ to be inertial is if it is moving at a constant velocity with respect to $S'$, otherwise it will observe a change in velocity in the free object.  
 \end{proof}
 
-\subsection{BOX 2.2}
-\subsubsection{Exercise}
+\section{BOX 2.2}
+\subsection{Exercise}
 Verify that the following conversion is true. $M_\odot$ represents the solar mass.
 \begin{align*}
 g &= 1.09 \times 10^{-16} \, \text{m}^{-1} = 1 / (9.17 \times 10^{15} \, \text{m}) \approx 1 / (1 \, \text{ly})\\
@@ -192,15 +200,15 @@ G = 1477 \, \text{m} / M_\odot
 
 
 
-\subsection{BOX 2.3}
-    \subsubsection{Exercise}
+\section{BOX 2.3}
+    \subsection{Exercise}
     We are given the following two equations:
 
 \begin{align}
-t_E - x_E = \gamma (1 - \beta)(t'_E - x'_E) \tag{2.13a}
+t_E - x_E = \gamma (1 - \beta)(t'_E - x'_E) 
 \end{align}
 \begin{align}
-t_E + x_E = \gamma (1 + \beta)(t'_E + x'_E) \tag{2.13b}
+t_E + x_E = \gamma (1 + \beta)(t'_E + x'_E) 
 \end{align}
 
 We are tasked with verifying the following equations:
@@ -264,7 +272,7 @@ x_E = \gamma \beta t'_E + \gamma x'_E
 \end{align}
 
 
-\subsubsection{Exercise}
+\subsection{Exercise}
 We know that for a matrix $\Lambda$, and vectors $\mathbf{s}$ and $\mathbf{s}'$, the following is true
 \begin{align}
 \mathbf{s}' = \Lambda\mathbf{s} \then \Lambda^{-1}\mathbf{s}'=\mathbf{s}
@@ -308,14 +316,14 @@ Now we can add the unchanged $y$ and $z$ axis in to obtain the full inverse tran
 \end{bmatrix}\mathbf{s}'
 \end{align}
 
-\subsection{BOX 2.4}
+\section{BOX 2.4}
 No Exercise in this box. Acknowledge that Lorenz transform is the same as a hyperbolic rotation, defined by a rotation matrix
 \begin{align}
 \cosh\theta = \frac{1}{\sqrt{1-\beta^2}} \equiv \gamma \quad \sinh\theta = \frac{\beta}{\sqrt{1-\beta^2}}=\gamma \beta
 \end{align}
 
-\subsection{BOX 2.5}
-\subsubsection{Exercise}
+\section{BOX 2.5}
+\subsection{Exercise}
 We would like to show that the \textit{spacetime interval} stays invariant throughout Lorenz transformation. First of all, we know that the spacetime interval is the magnitude of the 4-vector that we would denote as $\Delta s$. We know that the magnitude squared can be found by performing an inner product. We know that
 \begin{align}
 \mathbf{s'} = \Lambda\mathbf{s}
@@ -370,8 +378,8 @@ Therefore we have
 \end{align}
 This shows that the magnitude of spacetime 4-vector stays the same before and after the Lorenz transformation. Consequently, $\Delta s$ stays the same. 
 
-\subsection{BOX 2.6}
-    \subsubsection{Exercise}
+\section{BOX 2.6}
+    \subsection{Exercise}
     We start by writing out the Lorenz transformation between frame $S$ and $S'$.
     \begin{align}
     \Delta x' = \gamma\paren{\Delta x - \beta \Delta t}
@@ -405,8 +413,8 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
     \end{align}
     We know this is not possible since $\beta \in \sqbkt{0,1}$, this simply means nothing can travel faster than light, since $\beta$ is defined to be $\frac{v}{c}$. And we have shown that spacelike events does not have causal relationship, therefore the sequence of which they happened can be reversed, and vice versa. 
 
-    \subsection{BOX 2.7}
-        \subsubsection{Exercise}
+    \section{BOX 2.7}
+        \subsection{Exercise}
         Since we are interested in the proper time on the clock carried on this differential step, we have
         \begin{align}
         dt' = \sqrt{dt^2 - dx^2 -dy^2 -dz^2}
@@ -416,8 +424,8 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
         dt' = dt\sqrt{1- \paren{\dydx{x^2}{t^2}+\dydx{y^2}{t^2}+\dydx{z^2}{t^2}}} = dt\sqrt{1-v^2}
         \end{align}
 
-    \subsection{BOX 2.8}
-        \subsubsection{Exercise}
+    \section{BOX 2.8}
+        \subsection{Exercise}
         We can use Lorenz transformation to prove length contraction by defining 2 events happening at the same time in frame $S$. This means a separation of time $0$. We have Lorenz transformation
         \begin{align}
         \Delta x' = \gamma\paren{\Delta x - \beta\Delta t}
@@ -434,18 +442,24 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
         \begin{align}
         L = L_R\sqrt{1-\beta^2}
         \end{align}
-
-    \subsection{BOX 2.9}
-        \subsubsection{Exercise}
+\newpage
+    \section{BOX 2.9}
+        \subsection{Exercise}
         We can obtain $v_x$ by the following operation
         \begin{align}
-        v_x' = \dydx{x'}{t'} = \frac{dx}{\gamma\paren{dt - \beta dx}} = \frac{dx}{dt}\frac{1}{\gamma\paren{1-\beta\dydx{x}{t}}} = \frac{v_x}{\gamma\paren{1-\beta v_x}} = \frac{v_x\paren{1-\beta^2}}{1-\beta v_x}
+        v'_x = \frac{dx'}{dt'}=\frac{\gamma(dx - \beta dt)}{\gamma(dt - \beta dx)} = \dydx{x}{t}\paren{\frac{1-\beta\frac{dt}{dx}}{1-\beta\frac{dx}{dt}}}= v_x\paren{\frac{1-\frac{\beta}{v_x}}{1-\beta v_x}} = \frac{v_x - \beta}{1 - \beta v_x}
         \end{align}
+        We notice that this is exactly relativistic speed addition inverse, where we have previously defined. 
+        \[
+        v'_x = \frac{v_x - \beta}{1 - \beta v_x} \quad v_x = \frac{v'_x + \beta}{1 + \beta v'_x}
+        \]
 
-
-    \section{Four vectors}
-        \subsection{BOX 3.1}
-            \subsubsection{Exercise}
+\begingroup
+\let\clearpage\relax
+\chapter{Four Vectors}
+\endgroup
+        \section{BOX 3.1}
+            \subsection{Exercise}
             In this exercise, we want to show that
             \begin{align}
             \mathbf{a}\cdot \mathbf{b} = \mathbf{a}' \cdot \mathbf{b}'
@@ -475,8 +489,8 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
             \mathbf{a}'\cdot\mathbf{b}' =\mathbf{a}\cdot\mathbf{b}
             \end{align}
 
-        \subsection{BOX 3.2}
-            \subsubsection{Exercise}
+        \section{BOX 3.2}
+            \subsection{Exercise}
                 Show that
                 \begin{align}
                 d\tau = \sqrt{-ds^2} = \sqrt{dt^2 - dx^2 - dy^2 - dz^2}
@@ -520,12 +534,12 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
             \end{align}
             We know that $v^2$ is the magnitude of velocity, which can be found by adding the square of each components. And this result is consistent with our expectation.
 
-        \subsection{BOX 3.3}
-        \subsubsection{Exercise}
+        \section{BOX 3.3}
+        \subsection{Exercise}
         This is simply using binomial expansion to show that $\gamma$ can be approximated by $1+\frac{1}{v^2}$ by removing higher order terms and end up with $1+\frac{1}{2}v^2$, meaning the error is in order of $v^2$, where $v$ is actually $\beta$.
 
-        \subsection{BOX 3.4}
-        \subsubsection{Exercise}
+        \section{BOX 3.4}
+        \subsection{Exercise}
         First we define frame $S$ to be the frame that sees 2 balls going at opposite direction. Then we define a frame $S'$ where mass 1 is stationary, or in other word, the frame is moving to the $+\unx$ direction at speed $v=\beta$. We can use the Speed transformation to find the speed of mass 2 in this new frame. 
         Since the motion is 1 dimensional and straight, $y$ and $z$ component of the velocity is not of our concern. The speed can be obtained by
         \begin{align}
@@ -537,7 +551,7 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
         \end{align}
         This finishes the proof. 
         
-        \subsubsection{Exercise}
+        \subsection{Exercise}
         Let us substitute the result into the given expression
         \begin{align}
         \frac{1}{\sqrt{1-\paren{u'_2}^2}} = \frac{1}{\sqrt{1-\paren{\frac{-2\beta}{1+\beta^2}}^2}}
@@ -553,21 +567,110 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
         We can now use this result to how the conservation of 4 momentum.
         \begin{align}
         \begin{bmatrix}
-            m\\0\\0\\0
+            m \\
+            0 \\
+            0 \\
+            0
         \end{bmatrix}
         +
-        \frac{1+\beta^2}{1-\beta^2}\begin{bmatrix}
-            m\\-m\paren{u'_2}^2\\0\\0
-        \end{bmatrix}=
+        \frac{1 + \beta^2}{1 - \beta^2} 
         \begin{bmatrix}
-            2m\\ \frac{-2m\beta}{1-\beta^2}
+            m \\
+            -m \left(\frac{-2\beta}{1 + \beta^2}\right) \\
+            0 \\
+            0
         \end{bmatrix}
+        =
+        \begin{bmatrix}
+            m + \frac{(1 + \beta^2)m}{1 - \beta^2} \\
+            \frac{(1 + \beta^2)(2m\beta)}{(1 + \beta^2)(1 - \beta^2)} \\
+            0 \\
+            0
+        \end{bmatrix}.
         \end{align}
-        Since $u'_2 = \frac{-2\beta}{1+\beta^2}$, the denominator cancels, and we are left with
         
+        Since \( u'_2 = \frac{-2\beta}{1 + \beta^2} \), the denominator cancels, and we are left with:
         
+        \begin{align}
+        \begin{bmatrix}
+            m + \frac{(1 + \beta^2)m}{1 - \beta^2} \\
+            \frac{2m\beta}{1 - \beta^2} \\
+            0 \\
+            0
+        \end{bmatrix}.
+        \end{align}
+        
+        Simplify the time component:
+        
+        \begin{align}
+        \frac{m(1 - \beta^2) + m(1 + \beta^2)}{1 - \beta^2} = \frac{m(1 - \beta^2 + 1 + \beta^2)}{1 - \beta^2} = \frac{2m}{1 - \beta^2}.
+        \end{align}
+        
+        Thus, the four-momentum equation simplifies to:
+        
+        \begin{align}
+        \begin{bmatrix}
+            \frac{2m}{1 - \beta^2} \\
+            \frac{-2m\beta}{1 - \beta^2} \\
+            0 \\
+            0
+        \end{bmatrix},
+        \end{align}
+        
+        which matches exactly with the four-momentum of the combined mass \( M = 2m \) moving at \( u'_3 = -\beta \) in frame \( S' \):
+        
+        \begin{align}
+        \frac{1}{\sqrt{1 - \beta^2}}
+        \begin{bmatrix}
+            M \\
+            -Mv \\
+            0 \\
+            0
+        \end{bmatrix}
+        =
+        \frac{1}{\sqrt{1 - \beta^2}}
+        \begin{bmatrix}
+            2m \\
+            -2m\beta \\
+            0 \\
+            0
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \frac{2m}{1 - \beta^2} \\
+            \frac{-2m\beta}{1 - \beta^2} \\
+            0 \\
+            0
+        \end{bmatrix}.
+        \end{align}
 
-        
+    \section{BOX 3.5}
+    \subsection{Exercise}
+    From the given expression, we can obtain the result
+    \[
+    2\mathbf{p}_p\cdot \mathbf{p}_\gamma = -2E_pE-2E_pE = -4E_pE
+    \]
+    We also know that 
+    \[
+    2\mathbf{p}_p\cdot \mathbf{p}_\gamma = -2m_pm_{\pi} -m_{\pi}^2
+    \]
+    We have obtained the equation
+    \[
+     -4E_pE = -2m_pm_{\pi} -m_{\pi}^2
+    \]
+    Therefore we can solve for $E_p$, this indeed gives us
+    \[
+    E_p \approx = \frac{m_{\pi}\paren{2m_p + m_{\pi}}}{4E}
+    \]
+    If we simply plug in the numbers, we have
+    \[
+    E_p\approx \frac{135\paren{2\cdot938+135}}{4\cdot 6.4\cdot 10^{-10}}\,\text{MeV} \approx 10^{14}\,\text{MeV} >> m_p
+    \]
+
+\begingroup
+\let\clearpage\relax
+\chapter{My Chapter}
+\endgroup 
             
             
 
