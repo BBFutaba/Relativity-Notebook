@@ -63,7 +63,8 @@
 \newcommand{\untheta}{\hat{\boldsymbol\theta}}
 \newcommand{\unphi}{\hat{\boldsymbol\phi}}
 \newcommand{\unrho}{\hat{\boldsymbol\rho}}
-
+\newcommand{\etensor}[3]{#1_{#3}^{#2}}
+\newcommand{\minkow}{\eta_{\mu\nu}}
 
 
 
@@ -445,7 +446,7 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
 \newpage
     \section{BOX 2.9}
         \subsection{Exercise}
-        We can obtain $v_x$ by the following operation
+        We can obtain $v'_x$ by the following operation
         \begin{align}
         v'_x = \frac{dx'}{dt'}=\frac{\gamma(dx - \beta dt)}{\gamma(dt - \beta dx)} = \dydx{x}{t}\paren{\frac{1-\beta\frac{dt}{dx}}{1-\beta\frac{dx}{dt}}}= v_x\paren{\frac{1-\frac{\beta}{v_x}}{1-\beta v_x}} = \frac{v_x - \beta}{1 - \beta v_x}
         \end{align}
@@ -669,8 +670,36 @@ This shows that the magnitude of spacetime 4-vector stays the same before and af
 
 \begingroup
 \let\clearpage\relax
-\chapter{My Chapter}
+\chapter{Abstract Indices}
 \endgroup 
+\section{BOX 4.1}
+\subsection{Exercise}
+We want to verify
+\[
+\etensor{\delta}{\mu}{\nu}A^{\nu}=A^\nu
+\]
+We can simply think this process through. We want to multiply the $\nu$th element of the $\mu$ row in the Kronecker delta with each element in the column vector $A$. This will result in a new transformed column vector. In case of our simple 1 dimensional Lorenz transform, the first row is consisted of $\gamma, -\gamma\beta$. We multiply each term with their corresponding counterpart in the column vector $x,t$, and we have obtained the expression for $t'$. In the case of the Kronecker delta, it only pops out the term $\mu=\nu$ since it is the identity matrix, thus this is true. Now we look at
+\[
+\etensor{\delta}{\mu}{\nu}\eta_{\nu\alpha} = \eta_{\nu\alpha}
+\]
+This can be understood since the Kronecker Delta is basically the identity matrix, and is 1 when $\mu=\nu$. So we basically killed all the term that is not $\nu$ in $\eta$.
+
+
+\section{BOX 4.2}
+\subsection{Exercise}
+$N$ is $\frac{kg\cdot m}{s^2}$ but time is in unit of seconds, so the unit of electric field in GR is kg/(m\cdot C).
+\subsection{Exercise}
+Same reasoning goes to this one.
+
+\section{BOX 4.3}
+\subsection{Exercise}
+Examine the abstract equation below
+\[
+\dydx{p^{\mu}}{\tau} = qF^{\mu\nu}\eta_{\nu\alpha}u^{\alpha}
+\]
+This is basically multiplying the row vector that correspond to $\mu$ and multiply by the column vector of 4 velocity, with the Minkowski metric to make the geometry right. It is essentially the same as
+
+
             
             
 

@@ -34,12 +34,14 @@ Manu Dorghabekov
 \newcommand{\pypx}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\divg}{\nabla \cdot}
 \newcommand{\curl}{\nabla \times}
-\newcommand{\dydx}[2]{\frac{d #1}{d #2}}
+\newcommand{\dydx}[2]{\frac{\text{d} #1}{\text{d} #2}}
 \newcommand{\sqbkt}[1]{\left[ #1 \right]}
 \newcommand{\paren}[1]{\left( #1 \right)}
 \newcommand{\tribkt}[1]{\left< #1 \right>}
 \newcommand{\abso}[1]{\left|#1 \right|}
 \newcommand{\bm}[1]{\boldsymbol{#1}}
+\newcommand{\etensor}[3]{#1_{#3}^{#2}}
+\newcommand{\minkow}{\eta_{\mu\nu}}
 
 
 \begin{document}
@@ -1610,13 +1612,13 @@ WIP
         \textit{Transformation of Basis Vectors}: \quad \( \mathbf{e}_\alpha=\Lambda^{\bar{\beta}}_\alpha \mathbf{e}_{\bar{\beta}}\)
 
         \textit{Inverse transformation}: The only thing the Lorentz transformation depends on is the relative velocity of the two frames. Hence: \(    \mathbf{e}_\alpha=\Lambda^{\bar{\beta}}_\alpha(\bm{v}) \mathbf{e}_{\bar{\beta}}\). If the basis of \(\mathcal{O}\) is obtained from that of \(\mathcal{\bar{O}}\) by the transformation with velocity \(v\), then the reverse must be true if we use \(-v\):
-        \[
+        \begin{align}
             \mathbf{e}_{\bar{\mu}}=\Lambda^{\nu}_{\bar{\mu}}(\bm{-v}) \mathbf{e}_{\nu}
-        \]
+        \end{align}
         Combining the two equations we get:
-        \[
+        \begin{align}
             \Lambda^{\nu}_{\bar{\beta}} (\bm{-v}) \Lambda^{\bar{\beta}}_{\alpha} (\bm{v}) = \delta^{\nu}_{\alpha}
-        \]
+        \end{align}
         This expresses the fact that the matrix \([\Lambda^\nu_{\ \bar{\beta}}(-v)]\) is the inverse of \([\Lambda^{\bar{\beta}}_{\ \alpha}(v)]\), because the sum on \(\bar{\beta}\) is exactly the operation we perform when we multiply two matrices. The matrix \((\delta^{\nu}_{\ \alpha})\) is, of course, the identity matrix. Also, note that the component transformation is \(A^{\bar{\alpha}}=\Lambda^{\bar{\alpha}}_{\beta} A^{\beta}\) and the basis transformation is \(\mathbf{e}{_{\bar{\mu}}}=\Lambda^{\nu}_{\bar{\mu}}(\bm{-v}) \mathbf{e}_{\nu}\)
 
     \subsection{2.4 The four-vector}
@@ -1729,9 +1731,9 @@ WIP
         \mathbf{p} \cdot \mathbf{U}_{\text{obs}} = \mathbf{p} \cdot \mathbf{e}_{\bar{0}},
         \end{align}
         where \( \mathbf{e}_{\bar{0}} \) is the basis vector of the frame of the observer. In that frame, the four-momentum has components
-        \[
+        \begin{align}
         \mathbf{p} \underset{\mathcal{O}}{\rightarrow} (\bar{E}, p^{\bar{1}}, p^{\bar{2}}, p^{\bar{3}})
-        \]
+        \end{align}
         Therefore, we obtain:
         \begin{align}
         - \mathbf{p} \cdot \mathbf{U}_{\text{obs}} = \bar{E}
@@ -2947,12 +2949,162 @@ The energy in a given observer's frame is defined by
 We have found that regardless of the observer and frame where we would have different $\mathbf{p}$ and $\mathbf{u}_o$, energy calculated from this method is \textbf{always the same}. This is a very important result and we will find this helpful in future calculations. 
 
 
+\section{Index Notation}
+We will write Lorenz transform as
+\begin{align}
+\Lambda = \begin{bmatrix}
+    \Lambda^{t}_{t}&\Lambda^{t}_{x}&\Lambda^{t}_{y}&\Lambda^{t}_{z}\\
+    \Lambda^{x}_{t}&\Lambda^{x}_{x}&\Lambda^{x}_{y}&\Lambda^{x}_{z}\\
+    \Lambda^{y}_{t}&\Lambda^{y}_{x}&\Lambda^{y}_{y}&\Lambda^{y}_z{}\\
+    \Lambda^{z}_{t}&\Lambda^{z}_{x}&\Lambda^{z}_{y}&\Lambda^{z}_{z}
+\end{bmatrix}
+\end{align}
+And the inverse as everything $\Lambda$ but replaced with $\paren{\Lambda^{-1}}$ We have only looked at very special case where the non-zero term in the transformation is expressed as
+\begin{align}
+&\etensor{\Lambda}{t}{t} = \etensor{\Lambda}{x}{x}=\gamma \\
+&\etensor{\Lambda}{x}{t} = \etensor{\Lambda}{t}{x}= -\gamma\beta\\
+&\etensor{\Lambda}{y}{y} =\etensor{\Lambda}{z}{z} = 1
+\end{align}
+But for a more generalized orientation of movement, we need to legitimately define the entire thing. These notation is extremely painful to write, let along doing them in \LaTeX. And imagine doing this all the time in relativity. Therefore, we need a much more simplified tool to represent all these stuff. Let me introduce you, the \textbf{Abstract Indices}.
+\begin{align}
+A^{\mu} \in \{A^{t}, A^{x},A^{y},A^{z}\}
+\end{align}
+\begin{align}
+A_{\nu} \in \{A_{t},A_{x},A_{y},A_{z} \}
+\end{align}
+The \textbf{superscript as row} in the matrix, and \textbf{subscript as column} in the matrix. Now, we can rest assure that no more \textit{begin\{bmatrix\}} nonsense. 
+Now, if we have a for vector $\mathbf{a}$, and we would like to apply Lorenz transformation on it, like below
+\begin{align}
+\begin{bmatrix}
+    A'^t \\
+    A'^x \\
+    A'^y \\
+    A'^z
+\end{bmatrix}
+=
+\begin{bmatrix}
+    \Lambda^t_t & \Lambda^t_x & \Lambda^t_y & \Lambda^t_z \\
+    \Lambda^x_t & \Lambda^x_x & \Lambda^x_y & \Lambda^x_z \\
+    \Lambda^y_t & \Lambda^y_x & \Lambda^y_y & \Lambda^y_z \\
+    \Lambda^z_t & \Lambda^z_x & \Lambda^z_y & \Lambda^z_z
+\end{bmatrix}
+\begin{bmatrix}
+    A^t \\
+    A^x \\
+    A^y \\
+    A^z
+\end{bmatrix}
+\end{align}
+We can actually just write it as
+\begin{align}
+A'^{\mu} = \sum_{\nu=t,x,y,z} \etensor{\Lambda}{\mu}{\nu}A^\nu
+\end{align}
+The summation sign still feels annoying right? Why not get rid of it from the get go. Welcome, \textbf{Einstein Summation Convention}! Dude is so smart he figured out shortcut to do all these tensors. What a legend. This convention states that, without further explanation, and if $\mu,\nu$ appeared exactly once precisely at the superscript and subscript, we assume it is a summation. defined above. So, we can simply rewrite the transformation matrix as
+\begin{align}
+A'^{\mu} = \etensor{\Lambda}{\mu}{\nu}A^\nu
+\end{align}
+Think of it this way, you have a column vector with 4 dimensions, it means this is a $4\times 1$ tensor. And you have 4 rows, each of only 1 element. Now, you have a matrix $\Lambda$, a $4\times 4$ tensor. You would like to perform a matrix multiplication. What happens is that you multiply each element in a row, that is, if you have a $m\times n$ matrix, you fix $m$ and start counting $n$, or each element in the row, then multiply it by each element in the column of the column vector, this return you the element in the $m$ position in our new column vector.
+Now, we define something new, the \textbf{Metric Tensor}. Our Minkowski metric $\eta$ can be written as
+\begin{align}
+\eta_{\mu\nu}=
+\begin{bmatrix}
+    \eta_{tt} & \eta_{tx} & \eta_{ty} & \eta_{tz} \\
+    \eta_{xt} & \eta_{xx} & \eta_{xy} & \eta_{xz} \\
+    \eta_{yt} & \eta_{yx} & \eta_{yy} & \eta_{yz} \\
+    \eta_{zt} & \eta_{zx} & \eta_{zy} & \eta_{zz}
+\end{bmatrix}
+\equiv
+\begin{bmatrix}
+    -1 & 0 & 0 & 0 \\
+     0 & 1 & 0 & 0 \\
+     0 & 0 & 1 & 0 \\
+     0 & 0 & 0 & 1
+\end{bmatrix}
+\end{align}
+Where $\mu$ is the row, and $\nu$ is the column. Both in subscript, and a little different from before. With this in mind, we can now rewrite the metric equation as
+\begin{align}
+ds^2 = \eta_{\mu\nu}dx^{\mu}dx^{\nu}
+\end{align}
+Think of $dx^{\mu}dx^{\nu}$ as going through a permutation of $(t,x,y,z)\times(t,x,y,z)$. This will give us a complete metric that properly describes spacetime. In our flat Minkowski space, this is simply written as
+\begin{align}
+ds^2 &= \eta_{tt} dt^2 + \eta_{xx} dx^2 + \eta_{yy} dy^2 + \eta_{zz} dz^2 \nonumber \\
+     &= -dt^2 + dx^2 + dy^2 + dz^2
+\end{align}
+
+We can similarly write the dot product of two four-vectors as
+
+\begin{align}
+\mathbf{A} \cdot \mathbf{B} = \eta_{\mu \nu} A^\mu B^\nu
+\end{align}
+
+and the squared magnitude of a four-vector as
+
+\begin{align}
+A^2 = \mathbf{A} \cdot \mathbf{A} = \eta_{\mu \nu} A^\mu A^\nu. 
+\end{align}
+We seem to be making stuff more complicated, but behold. This will come in clutch in future studies. Now, we would also need some help from the \textbf{Kronecker Delta} $\etensor{\delta}{\mu}{\nu}$. In case you are not familiar with this, it simply means
+\[
+\etensor{\delta}{\mu}{\nu} = \begin{cases}
+    1 &\mu=\nu\\
+    0 &\mu\neq\nu
+\end{cases}
+\]
+If expanded, you may notice that it is just the identity matrix. Since we know that $\Lambda^{-1}\Lambda = I$, we can also write it as
+\[
+\etensor{\paren{\Lambda^{-1}}}{\mu}{\alpha}\etensor{\Lambda}{\alpha}{\nu} = \etensor{\delta}{\mu}{\nu}
+\]
+The sums are implicit over all possible value of $\alpha$. Another useful property of this notation is that
+\[
+\etensor{\delta}{\mu}{\nu}A^{\nu } = AA^{\mu}
+\]
+\[
+\etensor{\delta}{\mu}{\alpha}\eta_{\mu\nu} = \eta{\alpha\nu}
+\]
+We can also write the \textbf{Electromagnetic Field Tensor} as
+\[
+\begin{bmatrix}
+F^{tt} & F^{tx} & F^{ty} & F^{tz} \\
+F^{xt} & F^{xx} & F^{xy} & F^{xz} \\
+F^{yt} & F^{yx} & F^{yy} & F^{yz} \\
+F^{zt} & F^{zx} & F^{zy} & F^{zz}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & E_x & E_y & E_z \\
+-E_x & 0 & B_z & -B_y \\
+-E_y & -B_z & 0 & B_x \\
+-E_z & B_y & -B_x & 0
+\end{bmatrix}
+\]  
+And we can write the relativistic version of Lorentz Force Law
+\[
+\frac{\text{d}p^\mu}{\text{d}\tau}=qF^{\mu\nu}\eta_{\nu\alpha}u^{\alpha}
+\]
+And we can write the Gauss's law and the Ampere-Maxwell relation become the single equation
+\[
+\pypx{F^{\mu\nu}}{x^\nu} = 4\pi k J^\mu = \frac{J^{\mu}}{\varepsilon_0}
+\]
+Where $k = \frac{1}{4\pi\varepsilon_0}$, and $J^t = \rho,J^x=\rho v_x$ and etc. And if a subscript or superscript appeared throughout an equation for multiple times, we call it a \textbf{Free index} since we can assign a certain value to it to investigate the value we are interested. 
+And if you are not sure if working with stuff with abstract indices is legal or not, just write the entire tensor out to check, no big deal. 
+
+We wrap this up by some nice identities
+\[
+\eta_{\alpha\beta}=\eta_{\mu\nu}\etensor{\Lambda}{\mu}{\alpha}\etensor{\Lambda}{\nu}{\beta}
+\]
+\[
+\eta_{\alpha\beta}=\eta_{\mu\nu}\etensor{\paren{\Lambda^{-1}}}{\mu}{\alpha}\etensor{\paren{\Lambda^{-1}}}{\nu}{\beta}
+\]
+We also have a useful result for a given 4 vector $\mathbf{a}$
+\[
+\dydx{}{\tau}\mathbf{A}^2 = 2\eta_{\mu\nu}A^{\mu}\dydx{A^{\nu}}{\tau}
+\]
+And for electromagnetic force, since $F^{\mu\nu} = -F^{\nu\mu}$, we have
+\[
+F^{\mu\nu}\eta_{\mu\alpha}\eta_{\nu\beta}u^{\alpha}u^{\beta} = 0
+\]
+Regardless of what the four velocity $\mathbf{u}$ is, since we all know it has constant magnitude. 
 
 
-
-
-
-        
 
 
 
