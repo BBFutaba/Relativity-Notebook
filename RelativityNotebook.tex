@@ -3043,25 +3043,25 @@ and the squared magnitude of a four-vector as
 A^2 = \mathbf{A} \cdot \mathbf{A} = \eta_{\mu \nu} A^\mu A^\nu. 
 \end{align}
 We seem to be making stuff more complicated, but behold. This will come in clutch in future studies. Now, we would also need some help from the \textbf{Kronecker Delta} $\etensor{\delta}{\mu}{\nu}$. In case you are not familiar with this, it simply means
-\[
+\begin{align}
 \etensor{\delta}{\mu}{\nu} = \begin{cases}
     1 &\mu=\nu\\
     0 &\mu\neq\nu
 \end{cases}
-\]
+\end{align}
 If expanded, you may notice that it is just the identity matrix. Since we know that $\Lambda^{-1}\Lambda = I$, we can also write it as
-\[
+\begin{align}
 \etensor{\paren{\Lambda^{-1}}}{\mu}{\alpha}\etensor{\Lambda}{\alpha}{\nu} = \etensor{\delta}{\mu}{\nu}
-\]
+\end{align}
 The sums are implicit over all possible value of $\alpha$. Another useful property of this notation is that
-\[
+\begin{align}
 \etensor{\delta}{\mu}{\nu}A^{\nu } = AA^{\mu}
-\]
-\[
+\end{align}
+\begin{align}
 \etensor{\delta}{\mu}{\alpha}\eta_{\mu\nu} = \eta{\alpha\nu}
-\]
+\end{align}
 We can also write the \textbf{Electromagnetic Field Tensor} as
-\[
+\begin{align}
 \begin{bmatrix}
 F^{tt} & F^{tx} & F^{ty} & F^{tz} \\
 F^{xt} & F^{xx} & F^{xy} & F^{xz} \\
@@ -3075,36 +3075,35 @@ F^{zt} & F^{zx} & F^{zy} & F^{zz}
 -E_y & -B_z & 0 & B_x \\
 -E_z & B_y & -B_x & 0
 \end{bmatrix}
-\]  
+\end{align}  
 And we can write the relativistic version of Lorentz Force Law
-\[
+\begin{align}
 \frac{\text{d}p^\mu}{\text{d}\tau}=qF^{\mu\nu}\eta_{\nu\alpha}u^{\alpha}
-\]
+\end{align}
 And we can write the Gauss's law and the Ampere-Maxwell relation become the single equation
-\[
+\begin{align}
 \pypx{F^{\mu\nu}}{x^\nu} = 4\pi k J^\mu = \frac{J^{\mu}}{\varepsilon_0}
-\]
+\end{align}
 Where $k = \frac{1}{4\pi\varepsilon_0}$, and $J^t = \rho,J^x=\rho v_x$ and etc. And if a subscript or superscript appeared throughout an equation for multiple times, we call it a \textbf{Free index} since we can assign a certain value to it to investigate the value we are interested. 
 And if you are not sure if working with stuff with abstract indices is legal or not, just write the entire tensor out to check, no big deal. 
 
 We wrap this up by some nice identities
-\[
+\begin{align}
 \eta_{\alpha\beta}=\eta_{\mu\nu}\etensor{\Lambda}{\mu}{\alpha}\etensor{\Lambda}{\nu}{\beta}
-\]
-\[
+\end{align}
+\begin{align}
 \eta_{\alpha\beta}=\eta_{\mu\nu}\etensor{\paren{\Lambda^{-1}}}{\mu}{\alpha}\etensor{\paren{\Lambda^{-1}}}{\nu}{\beta}
-\]
+\end{align}
 We also have a useful result for a given 4 vector $\mathbf{a}$
-\[
+\begin{align}
 \dydx{}{\tau}\mathbf{A}^2 = 2\eta_{\mu\nu}A^{\mu}\dydx{A^{\nu}}{\tau}
-\]
+\end{align}
 And for electromagnetic force, since $F^{\mu\nu} = -F^{\nu\mu}$, we have
-\[
+\begin{align}
 F^{\mu\nu}\eta_{\mu\alpha}\eta_{\nu\beta}u^{\alpha}u^{\beta} = 0
-\]
+\end{align}
 Regardless of what the four velocity $\mathbf{u}$ is, since we all know it has constant magnitude. 
 
-\section{}
 
 \chapter{Spacetime and Geometry - Sean Carroll}
 \section{Manifold}
@@ -3122,21 +3121,434 @@ This is the principle that we build our inertial reference frame on.
 
 \subsection{Vectors}
 We define a vector as follows
-\[
+\begin{align}
 \dydx{}{\lambda} = \dydx{x^\mu}{\lambda}\pypx{}{x^\mu}
-\]
+\end{align}
 Where $x^\mu$ encodes certain information about the manifold or basis we are using. And to swap a base, we can use chain rule, and obtain
-\[
+\begin{align}
 \pypx{}{x^{\mu'}} = \pypx{x^{\mu}}{x^{\mu'}}\pypx{}{x^{\mu}}
-\]
+\end{align}
 We want to define a vector field as follows
-\[
+\begin{align}
 \sqbkt{X,Y}^\mu = X^{\lambda}\partial_{\lambda}Y^{\mu}-Y^{\lambda}\partial_{\lambda}X^{\mu}
+\end{align}
+
+\section{Tensor Densities and the Levi-Civita Symbol}
+
+The Levi-Civita symbol, denoted as \( \tilde{\epsilon}_{\mu_1 \mu_2 \cdots \mu_n} \), is a completely antisymmetric symbol used in various areas of tensor analysis. It is defined as follows:
+
+\begin{align}
+\tilde{\epsilon}_{\mu_1 \mu_2 \cdots \mu_n} =
+\begin{cases} 
++1 & \text{if } \mu_1 \mu_2 \cdots \mu_n \text{ is an even permutation of } 01 \cdots (n-1), \\
+-1 & \text{if } \mu_1 \mu_2 \cdots \mu_n \text{ is an odd permutation of } 01 \cdots (n-1), \\
+0  & \text{otherwise.}
+\end{cases}
+\end{align}
+This symbol is not a true tensor but a "symbol" because it does not transform as a tensor under coordinate transformations. However, in special cases such as flat spacetime in Cartesian coordinates, it can be treated like a tensor due to the invariance under Lorentz transformations.
+
+\subsection{Determinant and Levi-Civita Symbol}
+
+Given a matrix \( M^\mu_{\nu} \) of size \( n \times n \), the determinant \( |M| \) can be written using the Levi-Civita symbol as:
+\begin{align}
+|M| = \tilde{\epsilon}^{\mu_1 \mu_2 \cdots \mu_n} M^{\nu_1}_{\mu_1} M^{\nu_2}_{\mu_2} \cdots M^{\nu_n}_{\mu_n}
+\end{align}
+This expression is a streamlined form for the determinant of any matrix. It simplifies the computation by making use of the antisymmetric properties of the Levi-Civita symbol.
+
+\subsection{Transformation Properties}
+
+The Levi-Civita symbol transforms under a coordinate transformation \( x^{\mu} \rightarrow x'^{\mu} \) as follows:
+\begin{align}
+\tilde{\epsilon}_{\mu_1 \mu_2 \cdots \mu_n} = \frac{\partial x^{\nu_1}}{\partial x^{\mu_1}} \frac{\partial x^{\nu_2}}{\partial x^{\mu_2}} \cdots \frac{\partial x^{\nu_n}}{\partial x^{\mu_n}} \tilde{\epsilon}_{\nu_1 \nu_2 \cdots \nu_n}
+\end{align}
+This transformation law shows that the Levi-Civita symbol acquires a factor that depends on the Jacobian of the transformation. Unlike tensors, it includes a determinant factor, making it a **tensor density** rather than a pure tensor.
+
+\subsection{Metric Determinant and Tensor Densities}
+
+Another important tensor density is the determinant of the metric, \( g = |g_{\mu\nu}| \). Under a coordinate transformation, it transforms as:
+\begin{align}
+g(x^\mu)' = \left( \frac{\partial x^\mu}{\partial x^\nu} \right)^{-2} g(x^\mu)
+\end{align}
+Here, the determinant of the metric transforms with the square of the Jacobian determinant because it is a scalar density of weight \( -2 \).
+
+\subsection{Converting Levi-Civita Symbol into a Tensor}
+
+To convert the Levi-Civita symbol into an actual tensor, we multiply it by \( \sqrt{|g|} \), the square root of the absolute value of the metric determinant. This gives us the **Levi-Civita tensor**:
+\begin{align}
+\epsilon_{\mu_1 \mu_2 \cdots \mu_n} = \sqrt{|g|} \tilde{\epsilon}_{\mu_1 \mu_2 \cdots \mu_n}
+\end{align}
+This is now a true tensor and transforms properly under coordinate changes according to the tensor transformation laws.
+
+\subsection{Levi-Civita Tensor with Upper Indices}
+
+The Levi-Civita tensor can also be defined with upper indices by raising the indices using the inverse metric \( g^{\mu\nu} \). The relationship between the Levi-Civita tensor with lower and upper indices is:
+\begin{align}
+\epsilon^{\mu_1 \mu_2 \cdots \mu_n} = \frac{1}{\sqrt{|g|}} \tilde{\epsilon}^{\mu_1 \mu_2 \cdots \mu_n}
+\end{align}
+This shows that the Levi-Civita tensor with upper indices is related to the Levi-Civita symbol by a factor of the inverse of the square root of the metric determinant.
+
+\subsection{Contraction of Indices}
+
+A common operation in tensor calculus is the contraction of indices on the Levi-Civita tensor. For example, contracting \( p \) indices of \( \epsilon^{\mu_1 \mu_2 \cdots \mu_n} \) with another Levi-Civita tensor, we get:
+\begin{align}
+\epsilon^{\mu_1 \mu_2 \cdots \mu_{n-p} \alpha_1 \cdots \alpha_p} \epsilon_{\mu_1 \mu_2 \cdots \mu_{n-p} \beta_1 \cdots \beta_p} = (-1)^s p! (n-p)! \delta^{[\alpha_1}_{\beta_1} \cdots \delta^{\alpha_p]}_{\beta_p}
+\end{align}
+In this expression, \( s \) is the number of negative eigenvalues of the metric (for Lorentzian metrics, \( s = 1 \)), and \( \delta \) is the Kronecker delta. The result involves an antisymmetrized product of Kronecker deltas, often used in the manipulation of tensor expressions. This can be then simplified as
+\begin{align}
+\epsilon^{\mu_1 \mu_2 \cdots \mu_{n-1} \alpha} \epsilon_{\mu_1 \mu_2 \cdots \mu_{n-1} \beta} = (-1)^s (n-1)! \delta^\alpha_\beta
+\end{align}
+\section{Differential Forms}
+
+Differential forms are a special class of tensors that are completely antisymmetric. A differential \( p \)-form is simply a \( (0,p) \) tensor. This means:
+
+- Scalars are automatically 0-forms.
+- Dual vectors (1-forms) are the simplest antisymmetric objects with one index.
+
+The space of all \( p \)-forms is denoted \( \Lambda^p(M) \), where \( M \) is the manifold. For example, in a 4-dimensional spacetime, the space of \( p \)-forms contains:
+
+- One 0-form,
+
+- Four 1-forms,
+
+- Six 2-forms,
+
+- Four 3-forms,
+
+- One 4-form.
+
+There are no \( p \)-forms for \( p > n \), where \( n \) is the dimension of the space (since all components would automatically be zero due to antisymmetry).
+
+The number of linearly independent \( p \)-forms on an \( n \)-dimensional vector space is given by:
+\begin{align}
+\frac{n!}{p!(n - p)!}.
+\end{align}
+
+\subsection{Why Use Differential Forms?}
+Differential forms are useful because they can be both differentiated and integrated. They also do not rely on additional geometric structure (like a metric), which makes them very versatile in various areas of geometry and physics.
+
+\subsection{Wedge Product}
+
+Given two differential forms \( A \) (a \( p \)-form) and \( B \) (a \( q \)-form), we can construct a \( (p + q) \)-form by taking the \textbf{wedge product} \( A \wedge B \). The wedge product is an antisymmetrized tensor product:
+\begin{align}
+(A \wedge B)_{\mu_1 \dots \mu_{p+q}} = \frac{(p + q)!}{p! q!} A_{[\mu_1 \dots \mu_p} B_{\mu_{p+1} \dots \mu_{p+q}]}.
+\end{align}
+
+
+For example, the wedge product of two 1-forms \( A \) and \( B \) is:
+\begin{align}
+(A \wedge B)_{\mu\nu} = 2 A_{[\mu} B_{\nu]} = A_\mu B_\nu - A_\nu B_\mu.
+\end{align}
+
+
+This wedge product is fully antisymmetric, which means:
+\begin{align}
+A \wedge B = (-1)^{pq} B \wedge A.
+\end{align}
+
+
+The sign depends on the degrees \( p \) and \( q \) of the forms. If both forms are of odd degree, swapping them will introduce a negative sign.
+
+\subsection{Exterior Derivative}
+
+The \textbf{exterior derivative} \( d \) is an operation that generalizes the notion of differentiation to differential forms. It takes a \( p \)-form and produces a \( (p+1) \)-form. The exterior derivative of a \( p \)-form \( A \) is:
+\begin{align}
+(dA)_{\mu_1 \dots \mu_{p+1}} = (p+1) \partial_{[\mu_1} A_{\mu_2 \dots \mu_{p+1}]}.
+\end{align}
+
+This is a natural extension of the standard partial derivative, but it is fully antisymmetrized. The simplest example of this is the gradient, which is the exterior derivative of a 0-form (scalar field):
+\begin{align}
+(d\phi)_\mu = \partial_\mu \phi.
+\end{align}
+
+In this case, \( \phi \) is a scalar function (0-form), and its exterior derivative is just the gradient, a 1-form.
+
+
+
+
+
+\section{Curvature}
+Curvature in the context of differential geometry is tied to the metric \(g_{\mu\nu}\), which defines the geometry of the manifold. However, attributing curvature to a metric is not straightforward since even flat space can appear complicated in different coordinate systems.
+
+\subsection{Connection and Christoffel Symbols}
+Curvature manifests through a "connection," which allows us to relate vectors in the tangent spaces of nearby points. This connection is encapsulated in the Christoffel symbols, defined by:
+
+\begin{align}
+\Gamma^\lambda_{\mu\nu} = \frac{1}{2}g^{\lambda\sigma}\left( \partial_\mu g_{\sigma\nu} + \partial_\nu g_{\sigma\mu} - \partial_\sigma g_{\mu\nu} \right)
+\end{align}
+
+\subsection{Covariant Derivative}
+The fundamental use of the connection is in defining the covariant derivative. For a vector field \(V^\nu\), the covariant derivative is given by:
+
+\begin{align}
+\nabla_\mu V^\nu = \partial_\mu V^\nu + \Gamma^\nu_{\mu\sigma} V^\sigma
+\end{align}
+
+Covariant derivatives of other tensors follow similar rules. 
+
+In our discussion of manifolds, it became clear that the partial derivative \(\partial_\mu\) does not behave as a good tensor operator under coordinate transformations. We introduce the \emph{covariant derivative} \(\nabla_\mu\), which generalizes the partial derivative in a way that transforms properly as a tensor on a manifold.
+
+\subsubsection{Transformation Properties}
+The covariant derivative transforms according to:
+\begin{align}
+\nabla_{\mu'} V^{\nu'} = \frac{\partial x^\mu}{\partial x^{\mu'}} \frac{\partial x^{\nu'}}{\partial x^\nu} \nabla_\mu V^\nu
+\end{align}
+
+We want to examine how the covariant derivative transforms under a change of coordinates. The covariant derivative of a vector field \( V^\nu \) is given by:
+
+\begin{align}
+\nabla_\mu V^\nu = \partial_\mu V^\nu + \Gamma^\nu_{\mu\lambda} V^\lambda
+\end{align}
+
+In a new coordinate system, the components of the vector transform according to:
+
+\begin{align}
+\nabla_{\mu'} V^{\nu'} = \frac{\partial x^\mu}{\partial x^{\mu'}} \frac{\partial x^{\nu'}}{\partial x^\nu} \nabla_\mu V^\nu
+\end{align}
+Think of this like the contravariant index of $\mu$ eats the covariant index of our $\nabla$, and then it slaps a $\mu'$ on it. Same goes to the latter. Derived from the above constraints. 
+
+
+\begin{align}
+\Gamma^{\nu'}_{\mu'\lambda'} = \frac{\partial x^\mu}{\partial x^{\mu'}} \frac{\partial x^{\nu'}}{\partial x^\nu} \frac{\partial x^\lambda}{\partial x^{\lambda'}} \Gamma^\nu_{\mu\lambda} - \frac{\partial x^{\nu'}}{\partial x^\rho} \frac{\partial^2 x^\rho}{\partial x^{\mu'} \partial x^{\lambda'}}
+\end{align}
+
+This is the transformation law for the Christoffel symbols under a change of coordinates.
+
+
+The covariant derivative \( \nabla_\mu \) has the following desired properties:
+
+\begin{enumerate}
+    \item \textbf{Linearity:} 
+    \begin{align}
+    \nabla_\mu (T + S) = \nabla_\mu T + \nabla_\mu S
+    \end{align}
+    
+    \item \textbf{Leibniz (Product) Rule:} 
+    \begin{align}
+    \nabla_\mu (T \otimes S) = (\nabla_\mu T) \otimes S + T \otimes (\nabla_\mu S)
+    \end{align}
+    
+    \item \textbf{Commutes with Contractions:} 
+    \begin{align}
+    \nabla_\mu (T^\lambda_{\;\rho}) = (\nabla_\mu T)^\lambda_{\;\rho}
+    \end{align}
+    
+    \item \textbf{Reduces to the Partial Derivative on Scalars:} 
+    \begin{align}
+    \nabla_\mu \phi = \partial_\mu \phi
+    \end{align}
+\end{enumerate}
+
+\subsection{Covariant Derivative of a One-Form}
+
+We begin by considering the covariant derivative of a one-form \( \omega_\lambda \) and a vector \( V^\lambda \). The covariant derivative of their product is given by:
+
+\begin{align}
+\nabla_\mu (\omega_\lambda V^\lambda) = (\nabla_\mu \omega_\lambda) V^\lambda + \omega_\lambda (\nabla_\mu V^\lambda)
+\end{align}
+\begin{align}
+= (\partial_\mu \omega_\lambda) V^\lambda + \tilde{\Gamma}^\sigma_{\mu\lambda} \omega_\sigma V^\lambda + \omega_\lambda (\partial_\mu V^\lambda + \Gamma^\lambda_{\mu\sigma} V^\sigma)
+\end{align}
+
+Since \( \omega_\lambda V^\lambda \) is a scalar, its covariant derivative must equal its partial derivative. Therefore:
+
+\begin{align}
+\nabla_\mu (\omega_\lambda V^\lambda) = \partial_\mu (\omega_\lambda V^\lambda)
+\end{align}
+\begin{align}
+= (\partial_\mu \omega_\lambda) V^\lambda + \omega_\lambda (\partial_\mu V^\lambda)
+\end{align}
+
+Equating the terms from (3.12) and (3.13), we find that for the equation to hold, the terms involving the connection coefficients must cancel out. This gives the relation:
+
+\begin{align}
+0 = \tilde{\Gamma}^\sigma_{\mu\lambda} \omega_\sigma V^\lambda + \Gamma^\lambda_{\mu\sigma} \omega_\lambda V^\sigma
+\end{align}
+
+Since both \( \omega_\sigma \) and \( V^\lambda \) are arbitrary, this implies that:
+
+\begin{align}
+\tilde{\Gamma}^\sigma_{\mu\lambda} = -\Gamma^\sigma_{\mu\lambda}
+\end{align}
+
+Thus, the covariant derivative of a one-form \( \omega_\lambda \) can be expressed using the same connection coefficients as were used for the vector, but with a minus sign:
+
+\begin{align}
+\nabla_\mu \omega_\nu = \partial_\mu \omega_\nu - \Gamma^\lambda_{\mu\nu} \omega_\lambda
+\end{align}
+
+\subsubsection{Torsion and Metric Compatibility}
+\begin{itemize}
+  \item \textbf{Torsion-Free Condition:} The torsion tensor is defined as:
+  \begin{align}
+  T^\lambda_{\mu\nu} = \Gamma^\lambda_{\mu\nu} - \Gamma^\lambda_{\nu\mu}
+  \end{align}
+  A connection is torsion-free if \(T^\lambda_{\mu\nu} = 0\).
+
+  Or in another notation
+  \begin{align}
+  \Gamma^{\lambda}_{\mu\nu} = \Gamma^{\lambda}_{(\mu\nu)}
+  \end{align}
+  \item \textbf{Metric Compatibility:} A connection is metric-compatible if the covariant derivative of the metric vanishes:
+  \begin{align}
+  \nabla_\rho g_{\mu\nu} = 0
+  \end{align}
+\end{itemize}
+
+Also, if a covariant derivative is metric-compatible, the indices commutes. 
+
+The claim is that there is exactly one torsion free connection on a given manifold that is compatible with some given metric on that manifold. We can use the fact that
+\begin{align}
+\nabla_{\mu} g_{\rho\nu} = \nabla_\rho g_{\mu\nu} = \nabla_\nu g_{\mu\rho} = 0
+\end{align}
+to derive the following formula
+\begin{align}
+\Gamma^\sigma_{\mu\nu} = \frac{1}{2} g^{\sigma\rho} \left( \partial_\mu g_{\rho\nu} + \partial_\nu g_{\rho\mu} - \partial_\rho g_{\mu\nu} \right)
+\end{align}
+
+\textbf{This formula is one of the most important in this subject: commit it to memory.} Of course, we have only proved that if a metric-compatible and torsion-free connection exists, it must be of the form (6.39); you can check for yourself that the right-hand side of (6.39) transforms like a connection.
+
+Another interesting property is
+\[
+\nabla_\mu V^\mu = \partial_\mu V^\mu + \Gamma^\mu_{\mu\lambda} V^\lambda
+\]
+
+It is straightforward to show that the Christoffel connection satisfies
+
+\[
+\Gamma^\mu_{\mu\lambda} = \frac{1}{\sqrt{|g|}} \partial_\lambda (\sqrt{|g|}),
+\]
+
+and we therefore obtain
+
+\[
+\nabla_\mu V^\mu = \frac{1}{\sqrt{|g|}} \partial_\mu (\sqrt{|g|} V^\mu).
 \]
 
 
 
+\subsection{Parallel Transfer}
+In differential geometry, \textbf{parallel transport} describes how vectors are moved along a curve in a curved space while maintaining their direction relative to the geometry of the space. 
 
+Given a curve \( x^\mu(\lambda) \), the tangent vector to the curve is \( \frac{dx^\mu}{d\lambda} \), which is a contravariant vector representing the rate of change of the coordinates \( x^\mu \) along the parameter \( \lambda \).
+
+To define \textbf{parallel transport}, we introduce the \textbf{directional covariant derivative}:
+\[
+\frac{D}{D\lambda} = \frac{dx^\mu}{d\lambda} \nabla_\mu
+\]
+This derivative measures how a vector or tensor changes along the curve, taking into account the curvature of the space through the covariant derivative \( \nabla_\mu \).
+
+A vector \( V^\mu \) is said to be \textbf{parallel transported} along the curve if its covariant derivative along the curve vanishes:
+\[
+\frac{D}{D\lambda} V^\mu = \frac{d}{d\lambda} V^\mu + \Gamma^\mu_{\sigma\rho} \frac{dx^\sigma}{d\lambda} V^\rho = 0
+\]
+This equation describes how the components of the vector change in curved space to ensure it remains "parallel" relative to the geometry of the space.
+
+In curved space, parallel transport ensures that the vector maintains its direction relative to the manifold's geometry, even though the space itself may be curved.
+
+\subsection{Parallel Transport and Metric Compatibility}
+
+The equation for \textbf{parallel transport} of a vector \( V^\mu \) along a curve \( x^\sigma(\lambda) \) is given by:
+\[
+\frac{d}{d\lambda} V^\mu + \Gamma^\mu_{\sigma\rho} \frac{dx^\sigma}{d\lambda} V^\rho = 0
+\]
+This equation describes how the components of a vector change as it is transported along the curve, with the Christoffel symbols \( \Gamma^\mu_{\sigma\rho} \) accounting for the curvature of the space.
+
+Since the parallel transport equation is a first-order differential equation, it can be treated as an initial-value problem. Given the value of a vector at a point along the curve, there is a unique continuation of the vector that satisfies the parallel transport equation. This process allows the vector to be consistently transported to other points along the curve.
+
+\subsubsection{Metric Compatibility}
+The notion of parallel transport depends on the connection, and different connections give different transport behavior. However, when the connection is \textbf{metric-compatible}, the metric tensor \( g_{\mu\nu} \) itself is parallel transported along the curve:
+\[
+\frac{D}{D\lambda} g_{\mu\nu} = \frac{dx^\sigma}{d\lambda} \nabla_\sigma g_{\mu\nu} = 0
+\]
+This condition means that the metric does not change as we move along the curve, ensuring that lengths and angles are preserved. In other words, the metric is constant with respect to the covariant derivative along the path.
+
+\subsubsection{Preservation of Inner Products}
+An important consequence of metric compatibility is that the inner product of two parallel-transported vectors is preserved. If two vectors \( V^\mu \) and \( W^\nu \) are parallel transported along the curve, then their inner product remains constant:
+\[
+\frac{D}{D\lambda} (g_{\mu\nu} V^\mu W^\nu) = 0
+\]
+This means that parallel transport with a metric-compatible connection preserves:
+\begin{itemize}
+    \item The \textbf{norm} (or length) of vectors.
+    \item The \textbf{sense of orthogonality}, meaning that if two vectors are perpendicular at one point, they remain perpendicular as they are transported.
+\end{itemize}
+
+\subsubsection{Connection to Geodesics}
+With the notion of parallel transport defined, the next natural topic is \textbf{geodesics}. A geodesic is the generalization of the concept of a straight line in curved space—it is the path of shortest distance between two points. Geodesics are curves along which the tangent vector is parallel transported. In curved space, the concept of a straight line is replaced by the geodesic, which represents the "straightest possible path" on the manifold.
+
+
+
+\subsection{Geodesic Equation}
+The covariant derivative also appears in the definition of geodesics, which generalize the concept of a straight line in curved spaces. The geodesic equation is:
+
+\begin{align}
+\frac{d^2 x^\mu}{d\lambda^2} + \Gamma^\mu_{\sigma\rho} \frac{dx^\sigma}{d\lambda} \frac{dx^\rho}{d\lambda} = 0
+\end{align}
+
+\subsection{Properties of Geodesics}
+
+In general relativity, geodesics are the paths followed by unaccelerated test particles. A \textbf{test particle} is a body that does not influence the geometry of the spacetime through which it moves. This is never perfectly true but is often an excellent approximation. The concept of geodesics allows us to study, for example, the motion of planets around the Sun without considering their gravitational effect on the Sun.
+
+The \textbf{geodesic equation} generalizes Newton's law \( f = ma \) in curved spacetime, where there is no external force acting (\( f = 0 \)):
+\[
+\frac{d^2 x^\mu}{d\tau^2} + \Gamma^\mu_{\rho\sigma} \frac{dx^\rho}{d\tau} \frac{dx^\sigma}{d\tau} = 0
+\]
+We can also introduce forces, like an electromagnetic field, which would modify the equation:
+\[
+\frac{d^2 x^\mu}{d\tau^2} + \Gamma^\mu_{\rho\sigma} \frac{dx^\rho}{d\tau} \frac{dx^\sigma}{d\tau} = \frac{q}{m} F^\mu_{\nu} \frac{dx^\nu}{d\tau}
+\]
+Here, \( F^\mu_{\nu} \) is the electromagnetic field tensor, \( q \) is the particle's charge, and \( m \) is its mass.
+
+\subsection{Parametrization of Geodesics}
+
+When we derived the geodesic equation by requiring that the tangent vector be parallel transported, we introduced a parameter \( \lambda \). In practice, however, we often use the \textbf{proper time} \( \tau \), which measures time along the path of the particle. The transformation from \( \lambda \) to \( \tau \) is given by:
+\[
+\tau \to \lambda = a\tau + b
+\]
+This transformation leaves the geodesic equation unchanged. Parameters related to proper time are called \textbf{affine parameters}, which are as good as proper time for parametrizing geodesics.
+
+The requirement that the tangent vector be parallel transported also constrains the parametrization of the curve. If you walk in a certain direction and keep the tangent vector parallel transported, you define both a path and the parameter along that path.
+
+\subsection{Alternative Parameterization}
+
+You can use another parameterization, but this generally won’t satisfy the standard geodesic equation:
+\[
+\frac{d^2 x^\mu}{d\alpha^2} + \Gamma^\mu_{\rho\sigma} \frac{dx^\rho}{d\alpha} \frac{dx^\sigma}{d\alpha} = f(\alpha) \frac{dx^\mu}{d\alpha}
+\]
+where \( f(\alpha) \) is related to the affine parameter \( \lambda \) by:
+\[
+f(\alpha) = -\left( \frac{d^2 \alpha}{d\lambda^2} \right) \left( \frac{d\alpha}{d\lambda} \right)^{-2}
+\]
+If this condition is satisfied, you can always find an affine parameter \( \lambda(\alpha) \) that satisfies the standard geodesic equation.
+
+\subsection{Four-Velocity and Four-Momentum}
+
+For timelike paths, we can express the geodesic equation in terms of the four-velocity \( U^\mu = \frac{dx^\mu}{d\tau} \):
+\[
+U^\lambda \nabla_\lambda U^\mu = 0
+\]
+Similarly, using the four-momentum \( p^\mu = m U^\mu \), the geodesic equation is:
+\[
+p^\lambda \nabla_\lambda p^\mu = 0
+\]
+This expresses the idea that freely-falling particles move along a path in which their momenta remain constant in direction.
+
+For null paths (light or other massless particles), the proper time \( \tau \) is not appropriate as an affine parameter, but the concept of affine parametrization still applies.
+
+
+
+
+
+
+
+\subsection{Riemann Tensor}
+The Riemann tensor, a (1, 3) tensor, is the technical expression of curvature and is derived from the connection as follows:
+
+\begin{align}
+R^\rho_{\sigma\mu\nu} = \partial_\mu \Gamma^\rho_{\nu\sigma} - \partial_\nu \Gamma^\rho_{\mu\sigma} + \Gamma^\rho_{\mu\lambda} \Gamma^\lambda_{\nu\sigma} - \Gamma^\rho_{\nu\lambda} \Gamma^\lambda_{\mu\sigma}
+\end{align}
+
+This tensor vanishes in flat space and plays a key role in Einstein's field equations.
 
 
 
