@@ -1,9 +1,8 @@
-\documentclass[12pt]{book}
+\documentclass[11pt,letterpaper]{book}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{latexsym, epsfig, ulem, cancel, multicol, hyperref}
 \usepackage{graphicx, tikz, subfigure,pgfplots}
 \usepackage{blindtext}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
 \setlength{\parindent}{0pt}
 \usepackage{multirow}
 \usepackage{mathtools}
@@ -100,7 +99,7 @@ An \textbf{Event} is basically something that just happens, regardless of who is
     \item The spatial separation between event 1 and event 2
 \end{enumerate}
 One might be tempted to just use these measurements and tryout this relationship of spacetime interval, but there are more works to do before throwing in numbers. We would first have to unify the units of space and time such that the operation make sense.\\
-\newline
+
 We start with measuring time in meters, which is not conventional, yet familiar. As we often measures distance with time such as \textit{10 minutes away from school}. We would assume an underlying speed given the means of transportation. And for our purpose, the underlying speed is the speed of light $c$.\\
 Therefore, the time we use for our practice would be 
 \begin{align}
@@ -110,7 +109,7 @@ where $\Delta t'$ is time measured in seconds, and $c$ is the speed of light $(2
 now we have a unit of time that is consistent with the measurement of spatial separation.\\
 \\For example, $1ns$ or $1\times 10^{-9}s$ is $\approx 0.3$ \textit{meters of time}\\
 \\A similar practice can be done for spatial separation if we are would like to have the units of distance comply with that of time.\\
-\newline
+
 For example, $1\; Au$ or \textit{1 astronomical unit} (The distance from the earth to the sun) is $499$ \textit{seconds of distance}. This means it takes light, the speed limit of the universe, $499$ seconds to cross this distance. 
 \\
 \\
@@ -120,24 +119,24 @@ Note that, the spacetime interval may be negative in some cases, as long as we k
 \\
 Now that we are good with the units, let us talk about where did these intervals we are dealing with came from, where we have to introduce the concept of an \textbf{Spacetime interval}\\, one the other side of the equation.
 \\
-\newline
+
 Just like the Pythagoras example we made earlier, there can be an indefinite amount of triangles that share the same hypotenuse. You can play around with the numbers of the sides of a right triangle while keeping the hypotenuse the same. We call this \textbf{Invariance of distance} across different methods of measurements. \\
-\newline
+
 This concept extends beyond spatial distance. With experimental data, we found that $\Delta s$, or the spacetime interval, is also invariance across different methods of measurement, or different observers. And this is a key concept that help us figure stuff out in the theory of relativity. \\
-\newline
+
 \textbf{Remark: }Note that there is a \textbf{minus sign} in the relationship between space and time, therefore it is not a straight forward relationship like a right triangle.
 
 \subsection{Utilizing Invariance of spacetime interval}
 After understanding the basics of this relationship, we can give some example of the utilization of this properties.\\
-\newline
+
 Assume there is a certain particle, say muon ($\mu$). It is currently traveling at a speed of $0.9c$ or 90\% the speed of light. The muon zips through 2 consecutive detectors installed in a laboratory. The 2 detectors are 1 meters apart. All the data was measured by observers in the laboratory. \\
-\newline
+
 We start by examining our events. Let muon crossing detector 1 be event 1, and the same for detector 2. We obtain the following data.
 \begin{align}
 \Delta t_{lab} = \frac{1}{0.9c} \;\;\; \Delta r_{lab} = 1m
 \end{align}
 Now if we look at muon's perspective, something peculiar happens. \\
-\newline 
+ 
 If we look at muon's perspective, and treat it as \textit{stationary}, and the entire earth is zooming in front of it, we get some very different observations.\\
 \\
 First of which, the distance between event 1 and event 2 are $zero$. Since for the muon, both events happened right at his position. Therefore the relationship becomes the following
@@ -178,14 +177,14 @@ If we carry out this calculation, we find that the time separation between the 2
 
 \subsection{Frame of Reference}
 We start by imaging us free-falling from a rooftop wit an apple. If were to fall along with an enclosure that stops us from observing outside, we would think we are floating in the house without the influence of gravity. This is called a \textbf{free float} frame, or \textbf{free fall} frame.\\
-\newline
+
 Here, Newton's 1st law works just as one would expected. An object that is initially at rest relative to the frame remains at rest without force acted upon it. An object that is moving in a constant velocity wants to keep moving at the velocity. This is called \textbf{inertia}. And if Newton's 1st law so accurately describes such a free fall frame, we would call these \textbf{inertial frame}. 
 \\
-\newline
+
 One may have noticed that there are discrepancies in this definition. The earth gravitational field is not uniform as it's magnitude decreases by inverse square law, and the direction vectors in 2 horizontally spaced position points towards the center of the earth instead of being parallel to each other. So if we are in a free fall frame that is big enough, or if we observe for a long enough time period, we would eventually spot the discrepancies and realize that we are inside a gravitational field. \\
-\newline
+
 This difference in gravity due to spatial separation is called an \textbf{tidal} effect. And owing to its existence, we have to refine our definition for inertial frame. \\
-\newline
+
 An Inertial frame would have to follow the following criteria:\\
 \begin{enumerate}
     \item It has to obey Newton's 1st law.
@@ -193,20 +192,20 @@ An Inertial frame would have to follow the following criteria:\\
     \item Therefore, an inertial frame is \textbf{local}.
 \end{enumerate}
 Let us elaborate on the 3 criteria.\\
-\newline
+
 The definition of inertial reference frame rely on Newton's first law. We say a reference frame to be inertial if it obeys this law, which brings us to the second criteria.\\
-\newline
+
 Since gravity is not uniformly distributed in the space, there are bound to be inconsistencies with Newton's first law, or the law of inertia. Therefore we have to specify a certain time period and a limited size space to be our reference frame in which the inconsistencies with the law of inertia is not detectable or negligible in our desired precision. This can mean measuring precision or just a precision under which we deem insignificant. \\
-\newline
+
 With the first and second criteria explained, it is not hard to see why an inertial frame is local. We are working with very specific setup that we defined. And if we passes that specific setup, we can no longer treat the frame of reference inertial.\\
-\newline
+
 Also, we would call the object we are interested in observing a \textbf{test particle}. Such particle should experience the same acceleration across all none-unique inertial frame. This means, it would travel in a straight line in every inertial reference frame and for all observers in an inertial reference frame. And of course, \textit{same acceleration} is relative to the given measuring precision or desired precision. 
 
 \subsection{Observers}
 Now with the understanding of inertial frame, we can talk about observers.\\
-\newline
+
 An ideal observer in the special relativity setup can be imagined as a lattice of synchronized clocks that memorize where and when an event happened in an inertial frame. The conventional method for synchronizing such a lattice is using light pulse. We would set 1 clock to $00:00$, use it as a standard clock and set other clocks' time to $00:00+\Delta r$, where $\Delta r$ is distance ,measured in time, between each clock to the standard clock. Once the standard clock begin to record time, it sends a light pulse that, upon detection, activates other clocks. And now we have a lattice of synchronized clocks we can use to measure our data.\\
-\newline
+
 \textbf{Remark:} Setting up all the clocks at the same time and location and then bring them to the desired location would not work since their motion would inevitably dilates time, causing all the clocks to run a tiny slower. The severeness of this effect is related to how fast you move the clocks. 
 
 \subsection{Summary}
@@ -221,21 +220,21 @@ If all 4 criteria are met, we can begin to study how particles, space, and time 
 
 \subsection{Some food for thoughts}
 Let us show why defining a constraint in space and time is important for our study.\\
-\newline
+
 imagine there are 2 identical balls falling from 1 km. It would take them about ... W.I.P.
 
 \section{Homogeneity of Inertial Reference Frames}
 This chapter will focus on how the principle of relativity play a role in our study of special relativity.\\
-\newline
+
 The principle of relativity states that:
 \begin{quote}
     \textit{All the laws of physics are the same in every free-float (inertial) reference frame.}
 \end{quote}
 \subsection{What is changed across inertial reference frame}
 There are physical parameters that will change across inertial reference frame that are moving with a constant velocity relative to each other. And this section will discuss what would change in different inertial frame.\\
-\newline
+
 Time and distance is an obvious one since we have discussed it many times up to this point. But we can therefore derive more physical quantities that do not remain constant in different inertial frame. \\
-\newline
+
 If an object is moving relative to an observer that is at rest in his frame, then in the object's frame, it is stationary and the observer is moving relative to the object, this shows that velocity is not constant across frames. Another quantity that is not as obvious is acceleration. But if velocities is not the same across reference frame, so are acceleration. This implies that force is also not the same in different frame. And if this is true, then field would also not behave in the same way across different frame of reference. 
 \subsection{What is the same across inertial reference frame}
 In short, laws of physics stays the same in different frames. Even though forces, motions, or even energies may not be the same in different frames, the way they interact in a given frame always agree on the same universal law of physics. This comes from the negative version of the principle of relativity, stating that:
@@ -243,14 +242,14 @@ In short, laws of physics stays the same in different frames. Even though forces
     \textit{No test of the laws of physics provides any way whatsoever to distinguish one free-float frame from another.}
 \end{quote}
 This means that there are no such thing as \textit{standard} frame, and any physical experiment would not yield a result that gives you a clue of whether you are moving at a constant velocity or at rest. \\
-\newline
+
 Therefore the physical constants that we are familiar with such as the permittivity of free space, permeability of free space, or gravitational constant would stay this same. Anything that is fundamental and cannot give you information on absolute motion would remain constant across frames. 
 \subsection{Relativity of Simultaneity}
 This one is a bit counter intuitive. An event that happens simultaneously in one frame cannot happen simultaneously in another frame that is moving relative to each other. \\
-\newline 
+ 
 Suppose a train moving on a railway got stroked by 2 lightnings at the front end and the rear end of the train simultaneously for observer that is at rest in his frame. For the observer on the moving train, these 2 event, however, did not happen on the same time. The lightning would strike the front end of the train first and then the rear end. 
 \\
-\newline
+
 We can also think about this using the invariance of spacetime interval. If 2 events can happen simultaneously in 2 different frame, then we would have the following relationship:
 \begin{align}
 \Delta r_A^2 = \Delta r_B^2
@@ -258,12 +257,12 @@ We can also think about this using the invariance of spacetime interval. If 2 ev
 Experimental data showed that this is \textbf{not} a valid equality, which brings us to the next property in special relativity, \textbf{length contraction}.
 \subsection{Length contraction}
 Just like \textbf{time dilation}, length of an object is not invariant across inertial frames. With experimental data and calculation done with the invariant of spacetime interval, we find that for an observer that is at rest in his frame, an object that is moving would have its length contracted along the direction of its motion. However, the dimension that is transverse to the direction of its motion would be unchanged. \\
-\newline
+
 Such peculiar phenomenon is described as \textbf{Length Contraction}. We can see this relationship by thinking about the invariant of spacetime. \\
-\newline
+
 Suppose a set of experiment apparatus is situated in a moving train relative to an outside observer who is at rest in this frame. The apparatus is consisted of 2 fireworks that is situated \textbf{r} meters apart from each other. Now in the train, Alice set of both fireworks simultaneously in her frame, and the outside observer Bob recorded what he saw. We now have the following information.
 \\
-\newline
+
 
 Derivation for length contraction goes in here.
 
@@ -281,7 +280,7 @@ First of all, we would imagine there to be a train moving with respect to an out
 Lorentz transformation is a linear transformation that preserves the origin and the speed of light. It helps us to investigate how events across different references frame position themselves.
 \subsection{Deriving the Lorentz transform}
 Before going into deriving the Lorentz transform, we have to bear in mind several important requirements. First of all, the transformation have to preserve the invariant of spacetime interval. Secondly, the transformation must be linear; that is, an object going in a straight line with respect to one frame should also maintain a straight line motion after transformed. \\
-\newline
+
 Now we can start with the basic setup. Since the relativistic effects do not manifest on dimensions transverse to the direction of motion, we can confidently say that the coordinates would not change for the other 2 dimensions orthogonal to the direction of motion. We would denote them as $y$ and $z$, and $y'$, $z'$ in the transformed frame respectively. We have the following relationship:
 \begin{align}
 y=y' \;\;\; z=z'
@@ -291,7 +290,7 @@ Now imagine a train traveling with respect to an observer that is rest at his fr
 x=\beta t
 \end{align}
 where $\beta = \frac{v_{rel}}{c}$\\
-\newline
+
 Now we would like to figure out when and where in the train's reference frame do things happen. Since the first spark is coincidence in both frame and both spark happens at the same place for the train, we know that
 \begin{align}
 x=0 \;\; x'=0 \;\; \Delta x' = 0 \;\; \Delta t = t \;\; \Delta t' = t' \;\; \Delta x = \beta t
@@ -336,7 +335,7 @@ t = \gamma t' + Bx'
 x=\gamma \beta t' + Gx' 
 \end{align}
 The extra term of $x$ is to consider events that do not happen right on the origin. But we still let both frame share the same origin.\\
-\newline
+
 Based on the invariance of spacetime interval and the above underlying circumstances, we can obtain the following relationship
 \begin{align}
 t^2 - x^2 = t'^2 - x'^2
@@ -419,9 +418,9 @@ x' = \gamma (x-\beta t)
 \end{align}
 \subsection{Relativistic Speed Addition}
 Since the speed of light is the absolute speed limit of the universe, we cannot surpass it. If you are on a train that is going in $0.9c$ relative to lab frame stationary on earth, you shoot a bullet that goes $0.9c$ relative to you, the bullet would certainly not travel $1.8c$ with respect to the earth. We have derived this once earlier using an explicit method.\\
-\newline
+
 But wit hthe newly acquired tool that is the Lorentz transformation, we can do it much more easily.\\
-\newline
+
 Let the lab frame be denoted by $t,x$, the train frame be $t',x'$, and the bullet frame be $t'', x''$. The speed of the bullect relative to the earth frame can simply be derived as the following
 \begin{align}
 \begin{bmatrix}
@@ -513,7 +512,7 @@ Here, $\beta$ is the speed of the train relative to the lab observer, $\beta ' $
 For this chapter, we would explore the spacetime diagram that would help us navigate through the study of special relativity.
 \subsection{Spacetime Diagram}
 First of all, let us examine this plane where the y-axis is time and the x-axis is spatial separation.
-\newline
+
 What is interesting about this diagram is that, the 2 dots on the diagram represents 2 different events. And the line connecting 2 events, is what we would call a worldline.
 
 \begin{center}
@@ -562,7 +561,7 @@ ytick=\empty,
 \end{tikzpicture}
 \end{center}
 We see that the 3 segments follow the Pythagorean relationship, and the shortest path connecting 2 points is the straight line. This line is unique to other path. But in the spacetime diagram, the story is quite different. \\
-\newline
+
 In the spacetime diagram, the straight line connecting 2 dots, is a worldline that connects the 2 events. This line has a rather interesting property that is unique to this specific path. If we were to look at this event from the frame where its time is proper, we have the following:
 \begin{center}
 \begin{tikzpicture}
@@ -589,9 +588,9 @@ We see that in this frame, 2 event happened at the same location, therefore the 
 \Delta s = \Delta t
 \end{align}
 This is therefore the longest time that that could have gone through between these 2 events. This is called the \textbf{Principle of Maximum Aging}. That is, the straight worldline traces the longest time in the spacetime diagram, where any deviation from this straight path will result in a shorter time lapsed. This is also the path that a free particle would trace between these 2 events. Therefore, think of it like the \textit{reference worldline}.\\
-\newline
+
 After understanding this principle, let us examine the \textbf{Hyperbola of invariant spacetime}.\\
-\newline
+
 Recall that the spacetime interval follows a relationship such that
 \begin{align}
 \Delta s^2 = - \Delta t^2 + \Delta r^2
@@ -629,21 +628,21 @@ Let's think of some examples to understand the difference. Let there be a train 
 -\Delta t'^2 = \Delta s^2 =  -\Delta t^2 + \Delta r^2
 \end{align}
 We see that we yield a negative number for the spacetime interval. We call this \textbf{Timelike Interval}, and the worldline connecting these 2 events are called \textbf{Timelike Worldline}. And when we have a timelike interval, we would call it the \textbf{Proper Time}\\
-\newline
+
 Similarly, we can define another similar situation. The train now has 2 spark plugs with spatial separation $\Delta r'$. For the train, 2 spark plugs would flash simultaneously, meaning that the time separation is zero for the train observer. We have the following relationship:
 \begin{align}
 \Delta r'^2 = \Delta s^2 = -\Delta t^2 + \Delta r^2
 \end{align}
 We see that the spatial separation predominates the relationship and yielding a positive spacetime interval. We call this a \textbf{Spacelike Interval}. And just like the timelike interval, we would call this spacelike interval the \textbf{Proper Distance}.\\
-\newline
+
 One thing to notice is that no worldline can connect 2 events connected by a spacelike interval. This means that 2 events connected by a spacelike interval has no causal relationship, and the sequence of which event happens first can be frame dependent as it would not violate causality.\\
-\newline
+
 Lastly, we have a special case. If the 2 events lie on the line that represents the speed of light, or when $\Delta t = \Delta r$, we will have a spacetime interval that is zero.
 \begin{align}
 \Delta s = 0
 \end{align}
 We call this a \textbf{Lightlike Interval}, since the events are located on the line that is the speed of light. Only particles that can travel at the speed of light, or influence that and propagate at the speed of light can connect 2 events tied by a lightlike interval, such as photon, and gravity. \\
-\newline 
+ 
 We can look at this sample diagram and intuitively understand what are the kinds of intervals. \\
 
 \begin{itemize}
@@ -663,7 +662,7 @@ We can look at this sample diagram and intuitively understand what are the kinds
 
 \subsection{Light Cone}
 Since causality influence our universe at the speed of light, we can think of the speed of light and the distance it travels as the boundary of our interaction, outside which we will never be able to apply any effect. With this in mind, we can dissect our spacetime diagram into 5 different component. \\
-\newline
+
 Let us imagine we are at the origin of this spacetime diagram.
 \begin{enumerate}
     \item The area shaded blue will be our \textbf{future light cone}, it contains everything that one at the origin will ever be able to alter
@@ -686,13 +685,13 @@ Let us imagine we are at the origin of this spacetime diagram.
 In this chapter we would seek to treat Momentum and Energy as one group. Conservation of Momentum and Conservation of Energy, or the Newtonian way to understanding motion, fails to work when stuff is happening in relativistic speed. We therefore seek a new way to explore the conservation. We define a term \textbf{Momenergy}, or \textbf{Momentum-energy} to denote this new property.
 \subsection{Relationship of Momentum and Energy}
 Notice that our notation of speed $\beta$ does not involve a unit. If we consider the classical definition of momentum and energy, $\textbf{p}=m\textbf{v}$ and $E = \frac{1}{2}mv^2$, we would have momentum and energy in the same unit. \\
-\newline
+
 We should realize that momenergy is a directed quantity, or a vector, with \textbf{4 components}. It has \textbf{3 dimensions of space} that corresponds with momentum and \textbf{1 dimension of time} for energy. The direction at which the momenergy point is the directed along the worldline between 2 events.\\
-\newline
+
 Remember that there is no preferred direction for momenergy. It points at where our test particle is moving, or along the worldline. Let us denote the movement of the particle along the 4-dimensional spacetime with \textbf{spacetime displacement}. This displacement is a vector with 4 components, 1 in time and 3 in space. \\
-\newline
+
 Since the momenergy points along the worldline, its direction should be consistent for all inertial frame. And the time we would use for our spacetime displacement would the proper time along the worldline, as that is agreed upon by all inertial frame.\\
-\newline
+
 If we were to examine the spacetime diagram, we can figure out the relationship that is somewhat Pythagorean.\\
 
 \begin{figure}[!h]
@@ -721,14 +720,14 @@ Our claim is that this momenergy would be conserved between, say, a collision. A
 
 \subsection{Space component of momenergy, Momentum}
 We have to be careful here since the numerator of this expression is actually a vector with 4 components $\tribkt{t,x,y,z}$, and is divided by a scalar \textit{proper time}.\\
-\newline
+
 We can therefore investigate momenergy of different dimension separately. Let us define proper time to be $\tau$, and $E$ be energy
 s
 Remember that the momenergy lies on the spacetime interval, our claim is that it has the same magnitude as the spacetime displacement. And since the magnitude of the spacetime displacement should equal to the proper time, we can see that the magnitude of momenergy is simply $\textit{m}$.
 \\
-\newline
+
 We would also notice that energy and momentum is not conserved across different reference frame, but mass, or momenergy, is. Similar to what we have discussed in the invariant of spacetime interval, an object can have infinite possible momentum and energy as measured in different frames, but its spacetime interval, or mass is agreed upon by all observers. \\
-\newline
+
 Why have we not yet noticed the inconsistency of Newtonian mechanics? To answer this question, we can examine the Newtonian expression of momentum. 
 \begin{align}
 \textbf{p}_{Newton} = m\dydx{\textbf{r}}{t}
@@ -748,7 +747,7 @@ We see that the difference does not occur until the particle moves with about $\
 
 \subsection{Time component of Momenergy, Energy}
 Let's investigate the time component of our 4-vector momenergy, how different is it from our classical definition?\\
-\newline 
+ 
 We have established previously that 
 \begin{align}
 E =m \dydx{t}{\tau} =\gamma m
@@ -762,7 +761,7 @@ How does this compare to our relativistic definition?
 E_{rest} = m
 \end{align}
 We call $E_{rest}$ the rest energy of the particle. The difference here primarily comes from the fact that, $E_{rest}$ describes the total energy a particle carries, which is a relationship not described in Newtonian mechanics that only describes the \textit{Kinetic Energy} of the Particle. We should make our definition of energy more rigorous. \\
-\newline
+
 Let $E$ be our total energy, it should have the following relationship:
 \begin{align}
 E = m + K
@@ -776,7 +775,7 @@ Now let us look back at \textit{Figure 4}, we notice that the slope of the line 
 v = \frac{p}{E}
 \end{align}
 The speed of the particle is the slope of the worldline, therefore the slope of the momenergy. \\
-\newline
+
 Now we can get the units sorted out so we can start working on the conversions. Here we will use $E_c$, $K_c$ to denote the converted energy, which should have the same unit across.
 
 \begin{align}
@@ -793,11 +792,11 @@ K_c = \frac{1}{2}m\beta^2= \frac{1}{2}mv^2c^2
 Here, we get to see the most famous equation of physics in its full glory. $E = mc^2$ demonstrates an incredibly large energy for any mass. But remember that Energy is not the same as mass. We must always remember that it is the rest energy $E_{rest} = mc^2$. Mass is the magnitude of the 4-vector momenergy. 
 \subsection{Conservation of Momentum-Energy}
 After sorting out our relativistic mechanics, we have come to a very important property that can help us study stuff happening at high speed. \textbf{The conservation of total energy.}\\
-\newline
+
 We must realize the potency of this relativistic expression of energy. It includes all sort of energies that is being converted, or transformed in the system during the event. All the interaction of energy is zipped into this \textit{proper time interval}. In the other hand, Newtonian energy is only conserved in perfectly elastic collision, as energy would be converted into heat, sound, and other sort that makes the equivalence invalid. Relativistic mechanics governs \textit{all} interaction of energy. \\
-\newline
+
 So how does this conservation translate into calculation and experimental measures?\\
-\newline 
+ 
 Imagine 2 particle collides, and we plot their interaction on the spacetime diagram. The only thing we need to bear in mind is that the sum of the spacetime displacement, or momenergy should add up to a constant that maintain its value before and after the collision. \\
 \newpage
 
@@ -809,9 +808,9 @@ Not only that, since we are interested in \textit{the time part of momenergy}, o
     \caption{Momenergy of a system of particles (pg 207)}
     \label{fig:pg207}
 \end{figure}\\
-\newline
+
 What about the space part of the momenergy, the momentum? As we can see from the figure above, it also stays the same before and after the collision, as measured by any inertial frame. Therefore we call this \textbf{Conservation of space part of momenergy}.
-\newline
+
 Here, we have a good opportunity to clarity the differences between \textit{invariant}, \textit{conserved}, and \textit{constant}. 
 \begin{itemize}
     \item \textbf{Invariant}: A quantity is said to be invariant if it has the same value when measured by observers from reference frames in relative motion with each other. Such as the speed of light, or space time interval.
@@ -921,7 +920,7 @@ We have to define a system on which we would start to do our magic of special re
 
 \subsection{Mass of the System} 
 This is a very important concept to grasp in the study of relativity. We are examining \textit{rest mass} of the entire system we are interested in. It is a \textit{property} of the system, and it is an inherent characteristic that cannot be attributed to any specific entity in the system nor does it manifest in a specific form. Asking where the mass of the system is located is a poorly worded problem. Nature demands a conservation of total energy before and after an interaction, therefore we found this quality that satisfy this demand.\\
-\newline
+
 We have to realize that, although kinetic energy and momentum has been following a linear relationship, meaning we can add or subtract easily, mass addition does not follow a linear relationship in the system. Now let's do a few examples to make the concept solid. Remember, to study this system, we have to ensure it is an \textbf{isolated system}. As long as the system is isolated, we can choose an arbitraty frame to study it and will get an invariant rest mass for the system.  \\
 \subsubsection{Sample Problem I}
 Compute $m_{sys}$ for all the following case, assuming all the particle in question are of mass $m$ unless otherwise stated.
@@ -983,14 +982,14 @@ $h$ here is the plank constant. Also, since a photon is mass-less, it means that
 E = p 
 \end{align}
 Here, p represents the momentum of the photon, and E is the energy that proton carries. \\
-\newline
+
 
 We get to see the effect of a photon interaction when a photon scatters off an election. Compton first discovered this effect and derived a theory that quantize the energy of light, which was a monumental event in the study of quantum physics.\\
-\newline
+
 With enough energy, mass can even be conjured out of nowhere. A photon carrying $p=4m_e$ can hit an electron at rest and create a pair of $e^-$ and $e^+$, an electron and a positron. These particles would form a structure called $polyelectron$ which will keep moving in the direction of the original photon. And the photon that caused the incident would scatter and turn around going to opposite direction. This is called a \textbf{backward scattering}. \\
-\newline
+
 If you would accelerate something heavier like a proton and clash it with another proton, you can make heavier particles out of nowhere. And when a pair of matter and antimatter, such as electron and position, touches each other, they would annihilate and convert all its mass to energy. This is probably the most efficient way of obtaining energy. Way more efficient than nuclear fission and fusion which also harvest the conversion of mass to energy. \\
-\newline
+
 Do keep in mind that energy and mass are not always convertible, and they have to comply with the 2 fundamental laws in relativity:
 \begin{itemize}
     \item \textbf{Invariant of Momenergy of isolated system, and conservation of Momenergy before and after interactions in an isolated system.}
@@ -3161,7 +3160,7 @@ The Levi-Civita symbol transforms under a coordinate transformation \( x^{\mu} \
 \begin{align}
 \tilde{\epsilon}_{\mu_1 \mu_2 \cdots \mu_n} = \frac{\partial x^{\nu_1}}{\partial x^{\mu_1}} \frac{\partial x^{\nu_2}}{\partial x^{\mu_2}} \cdots \frac{\partial x^{\nu_n}}{\partial x^{\mu_n}} \tilde{\epsilon}_{\nu_1 \nu_2 \cdots \nu_n}
 \end{align}
-This transformation law shows that the Levi-Civita symbol acquires a factor that depends on the Jacobian of the transformation. Unlike tensors, it includes a determinant factor, making it a **tensor density** rather than a pure tensor.
+This transformation law shows that the Levi-Civita symbol acquires a factor that depends on the Jacobian of the transformation. Unlike tensors, it includes a determinant factor, making it a \textbf{tensor density} rather than a pure tensor.
 
 \subsection{Metric Determinant and Tensor Densities}
 
@@ -3173,7 +3172,7 @@ Here, the determinant of the metric transforms with the square of the Jacobian d
 
 \subsection{Converting Levi-Civita Symbol into a Tensor}
 
-To convert the Levi-Civita symbol into an actual tensor, we multiply it by \( \sqrt{|g|} \), the square root of the absolute value of the metric determinant. This gives us the **Levi-Civita tensor**:
+To convert the Levi-Civita symbol into an actual tensor, we multiply it by \( \sqrt{|g|} \), the square root of the absolute value of the metric determinant. This gives us the \textbf{Levi-Civita tensor}:
 \begin{align}
 \epsilon_{\mu_1 \mu_2 \cdots \mu_n} = \sqrt{|g|} \tilde{\epsilon}_{\mu_1 \mu_2 \cdots \mu_n}
 \end{align}
@@ -3285,7 +3284,7 @@ The fundamental use of the connection is in defining the covariant derivative. F
 
 Covariant derivatives of other tensors follow similar rules. 
 
-In our discussion of manifolds, it became clear that the partial derivative \(\partial_\mu\) does not behave as a good tensor operator under coordinate transformations. We introduce the \emph{covariant derivative} \(\nabla_\mu\), which generalizes the partial derivative in a way that transforms properly as a tensor on a manifold.
+In our discussion of manifolds, it became clear that the partial derivative \(\partial_\mu\) does not behave as a good tensor operator under coordinate transformations. We introduce the \textbf{covariant derivative} \(\nabla_\mu\), which generalizes the partial derivative in a way that transforms properly as a tensor on a manifold.
 
 \subsubsection{Transformation Properties}
 The covariant derivative transforms according to:
@@ -3538,9 +3537,6 @@ For null paths (light or other massless particles), the proper time \( \tau \) i
 
 
 
-
-
-
 \subsection{Riemann Tensor}
 The Riemann tensor, a (1, 3) tensor, is the technical expression of curvature and is derived from the connection as follows:
 
@@ -3549,6 +3545,10 @@ R^\rho_{\sigma\mu\nu} = \partial_\mu \Gamma^\rho_{\nu\sigma} - \partial_\nu \Gam
 \end{align}
 
 This tensor vanishes in flat space and plays a key role in Einstein's field equations.
+
+\[
+\Lambda^{\alpha}_{\mu\nu;\sigma} = \Lambda^{\alpha}_{\mu\nu,\sigma}
+\]
 
 
 
