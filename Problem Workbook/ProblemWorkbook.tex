@@ -11,6 +11,7 @@
 \usepackage{pgfplots}
 
 
+
 \setcounter{secnumdepth}{3}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex}
@@ -125,7 +126,7 @@
 \ifshow
   \textbf{\Large GRW Workbook}\\
 \else
-  \textbf{\Large General Relativity Workbook}\\
+  \textbf{\Large General Relativity Workbook\\Worked Out Solutions}\\
 \fi
 Dennis Li\\Prof. Gabe\\
 \end{center}
@@ -687,7 +688,8 @@ This can be understood since the Kronecker Delta is basically the identity matri
 
 \section{BOX 4.2}
 \subsection{Exercise}
-$N$ is $\frac{kg\cdot m}{s^2}$ but time is in unit of seconds, so the unit of electric field in GR is kg/(m\cdot C).
+$N$ is $\frac{kg\cdot m}{s^2}$ but time is in unit of seconds, so the unit of electric field in GR is $kg/(m\cdot C)$.
+
 \subsection{Exercise}
 Same reasoning goes to this one.
 
@@ -699,9 +701,273 @@ Examine the abstract equation below
 \]
 This is basically multiplying the row vector that correspond to $\mu$ and multiply by the column vector of 4 velocity, with the Minkowski metric to make the geometry right. It is essentially the same as
 
+\begingroup
+\let\clearpage\relax
+\chapter{Arbitrary Coordinates}
+\endgroup 
 
-            
-            
+
+
+\begingroup
+\let\clearpage\relax
+\chapter{Tensor Equations}
+\endgroup 
+
+\section{BOX 6.1}
+    \subsection{Exercise}
+
+    We would like to find 
+    \[
+    \dydx{x^\mu}{x'^\nu}
+    \]
+    For polar coordinates, and this tells us that $\mu \in \{ x,y\}$ and $\nu \in \{r,\theta\}$, we have
+    \[
+    \begin{cases}
+        \dydx{x^x}{x^r} = \cos\theta\\
+        \dydx{x^y}{x^r} = \sin\theta\\
+        \dydx{x^x}{x^\theta} = -r\sin\theta\\
+        \dydx{x^y}{x^\theta} = r\cos\theta
+    \end{cases}
+    \]
+
+    \subsection{Exercise}
+
+    This problem is trivial. For the following expression
+    \[
+    \Phi = br^2\cos\theta\sin\theta
+    \]
+    We have the gradient
+    \[
+    \boldsymbol\nabla\Phi = \tribkt{2br\cos\theta\sin\theta ,br^2\paren{\cos^2\theta-\sin^2\theta}}
+    \]
+
+    \subsection{Exercise}
+    Now if we take it's gradient in terms of Cartesian coordinates, we first write down the expression in Cartesian coordinates
+    \[
+    \Phi = bxy
+    \]
+    We know that the covector transformation of a Gradient is
+    \[
+    \partial'_{\nu}\Phi = \dydx{x^{\mu}}{x'^\nu}\partial_{\mu}\Phi
+    \]
+    We would go through individual component
+    \[
+    \partial'_{r}\Phi = \pypx{x^x}{r}\pypx{\Phi}{x^x} + \pypx{x^y}{r}\pypx{\Phi}{x^y}
+    \]
+    This turns out to be
+    \[
+    \partial'_{r}\Phi = \cos\theta \cdot by + \sin\theta\cdot bx
+    \]
+    Substituting our relationship, we have
+    \[
+    \partial'_{r}\Phi = br\sin\theta\cos\theta + br\sin\theta\cos\theta = 2br\sin\theta\cos\theta
+    \]
+    Now we look at the other part of the gradient
+    \[
+    \partial'_{\theta}\Phi = \pypx{x^x}{\theta}\pypx{\Phi}{x^x} + \pypx{x^y}{\theta}\pypx{\Phi}{x^y}
+    \]
+    Evaluating this, we have
+    \[
+    \partial'_{\theta}\Phi = - by\cdot r\sin\theta  + bx \cdot r\cos\theta = br^2\paren{\cos^2\theta-\sin^2\theta}  
+    \]
+    We have showed that they amount to the same result. 
+
+
+\section{BOX 6.2}
+    \subsection{Exercise}
+    Now we would like to consider the following vector, which in Cartesian coordinate is
+    \[
+    \mathbf{v} = \unx + \uny
+    \]
+    We see that it has
+    \[
+    \mathbf{v}^{\mu} = \begin{bmatrix}
+        1\\0
+    \end{bmatrix}
+    \]
+    We would like to lower its index, and show that
+    \[
+    \mathbf{v}_{\mu} = \begin{bmatrix}
+        1\\0
+    \end{bmatrix}
+    \]
+    To lower its index, we would need to perform the following transformation
+    \[
+    A_{\mu} = g_{\mu\nu}A^{\nu}
+    \]
+    We know that in a flat plane, the geometry is Euclidean, this means that 
+    \[
+    v_{\nu} = \begin{bmatrix}
+        1&0\\0&1
+    \end{bmatrix}
+    \begin{bmatrix}
+        1\\0
+    \end{bmatrix} = \begin{bmatrix}
+        1\\0
+    \end{bmatrix}
+    \]
+    This in turn solves the problem.
+    
+    \subsection{Exercise}
+    To transform this vector into polar coordinate, we follow the rules below
+    \[
+    \mathbf{v}'_{\nu} = \pypx{x^\mu}{x^\nu}\mathbf{v}_\mu
+    \]
+    For our $r$, we have
+    \[
+    \mathbf{v}'_{r} = \pypx{x^\mu}{x^r}\mathbf{v}_\mu
+    \]
+    Since $\mathbf{v}^y = 0$, we are only concerned about the $x$ component. And we have previously calculated this partial derivative, therefore
+    \[
+    \mathbf{v}_{r} = \cos\theta
+    \]
+    Similarly, we have
+    \[
+    \mathbf{v}_{\theta} = -r\sin\theta
+    \]
+
+    \subsection{Exercise}
+    To raise the index, we need to call the metric tensor in polar coordinate
+    \[
+    g'_{\mu\nu} = g_{\alpha\beta}\pypx{x^\alpha}{x^\mu}\pypx{x^\beta}{x^\nu}
+    \]
+    Since the metric tensor of the Cartesian coordinate is identity, we are only concerned about the diagonal term. This gives us
+    \[
+    g'_{\mu\nu} = \pypx{x^\alpha}{x^\mu}\pypx{x^\beta}{x^\nu}\delta_{\alpha\beta}
+    \]
+    Now we have greatly simplified the expression, we can start to evaluate.
+    \[
+    g'_{rr} = \pypx{x^x}{x^r}\pypx{x^x}{x^r} + \pypx{x^y}{x^r}\pypx{y}{x^r} = \cos^2\theta+\sin^2\theta = 1
+    \]
+    \[
+    g'_{r\theta} = \pypx{x^x}{x^r}\pypx{x^x}{x^\theta} + \pypx{x^y}{x^r}\pypx{y}{x^\theta} = -r\cos\theta\sin\theta + r\cos\theta\sin\theta
+    \]
+    Similarly, the other diagonal term disappears. 
+    \[
+    g'_{\theta\theta} = \pypx{x^x}{x^\theta}\pypx{x^x}{x^r} + \pypx{x^y}{x^r}\pypx{y}{x^\theta} = r^2\sin^2\theta + r^2\cos^2\theta = r^2
+    \]
+    Therefore we have constructed our metric tensor to be
+    \[
+    g'_{\mu\nu} = \begin{bmatrix}
+        1&0\\
+        0&r^2
+    \end{bmatrix}
+    \]
+    Now we simply take the \textbf{inverse} of the metric tensor to obtain the version with 2 contravariant indecies.
+    \[
+    g'^{\mu\nu} = \paren{g'_{\mu\nu}}^{-1}
+    \]
+    This will provide
+    \[
+    g'^{\mu\nu} = \frac{1}{\abso{g'_{\mu\nu}}}\begin{bmatrix}
+        r^2&0\\
+        0&1
+    \end{bmatrix} = \begin{bmatrix}
+        1&0\\
+        0&\frac{1}{r^2}
+    \end{bmatrix}
+    \]
+    Now we can obtain
+    \[
+    \mathbf{v}'^{\mu} = g'^{\mu\nu}\mathbf{v}'_\nu
+    \]
+    Since we only have diagonal term, we ignore the off-diagonal terms, and only diagonal term survives. 
+    \[
+    \mathbf{v}'^{r} = g'^{rr}\mathbf{v}'_r = \cos\theta
+    \]
+    \[
+    \mathbf{v}'^{\theta} = g'^{\theta\theta}\mathbf{v}'_{\theta} = -\frac{r\sin\theta}{r^2} = -\frac{\sin\theta}{r}
+    \]
+
+\section{BOX 6.3}
+Before doing this BOX, we would need to recognize an important identity
+\[
+\pypx{x'^\mu}{x^\alpha}\pypx{x^\alpha}{x'^\nu} = \delta^{\mu}_{\;\nu}
+\]
+    \subsection{Exercise}
+    We would like to show that, for all metric tensors
+    \[
+    g^{\mu\alpha}g_{\alpha\nu} = \delta^{\mu}_{\;\nu} \quad g'^{\gamma\beta}g'_{\beta\sigma} = \delta^{\gamma}_{\;\sigma}
+    \]
+    To do so, we would like to introduce the definition of transformation between metric tensors. And after exhausting the repertoire of Greek letter.
+    \[
+    g'^{\mu \beta} g_{\beta \nu}' = \frac{\partial x'^{\mu}}{\partial x^{\alpha}} \delta^{\gamma}_{\sigma} \frac{\partial x^{\delta}}{\partial x'^{\nu}} g^{\alpha \sigma} g_{\gamma \delta} = \frac{\partial x'^{\mu}}{\partial x^{\alpha}} \frac{\partial x^{\delta}}{\partial x'^{\nu}} g^{\alpha \sigma} g_{\sigma \delta}
+    \]
+    Now we have a Kronecker delta remaining.
+    \[
+    g'^{\mu \beta} g_{\beta \nu}' = \frac{\partial x'^{\mu}}{\partial x^{\alpha}} \frac{\partial x^{\delta}}{\partial x'^{\nu}} \delta^{\alpha}_{\;\delta} = \frac{\partial x'^{\mu}}{\partial x^{\alpha}} \frac{\partial x^{\alpha}}{\partial x'^{\nu}} = \delta^{\mu}_{\;\nu}
+    \]
+    This completes the proof. 
+
+\section{BOX 6.4}
+    \subsection{Exercise}
+    We would like to prove that
+    \[
+    \frac{\partial x'^{\mu}}{\partial x^{\alpha}} \frac{\partial x^{\beta}}{\partial x'^{\nu}} \delta^{\alpha}_{\beta} = \delta'^{\mu}_{\;\;\nu} \equiv \delta^{\mu}_{\;\nu}
+    \]
+    To prove this, we recognize the fact that the Kronecker delta collapses the sum into
+    \[
+    \frac{\partial x'^{\mu}}{\partial x^{\alpha}} \frac{\partial x^{\alpha}}{\partial x'^{\nu}} = \delta'^{\mu}_{\;\;\nu}
+    \]
+    This is possible because only when $\alpha = \beta$, the term in the sum survives. Now we would apply the transformation identity to show that this is equivalent to
+    \[
+    \delta'^{\mu}_{\;\;\nu} \equiv \delta^{\mu}_{\;\nu}
+    \]
+    This is automatically true since both of them are simply identity. 
+
+\section{BOX 6.5}
+    \subsection{Exercise}
+    We would like to show that the following operation produces a tensor.
+    \[
+    C_{\mu \nu}^{\;\; \alpha} = A_{\mu \nu} B^{\alpha}
+    \]
+    This is a trivial proof. We simply write things out, and it is
+    \[
+    \pypx{x'^\mu}{x^\rho}\pypx{x'^\nu}{x^\phi}\pypx{x'^{\psi}}{x^{\alpha}}C_{\mu\nu}^{\;\;\alpha} =  \pypx{x'^\mu}{x^\rho}\pypx{x'^\nu}{x^\phi}A_{\mu\nu}\pypx{x'^{\psi}}{x^{\alpha}}
+    \]
+    We reorganize a little, and will have
+    \[
+     \pypx{x'^\mu}{x^\rho}\pypx{x'^\nu}{x^\phi}\pypx{x'^{\psi}}{x^{\alpha}}C_{\mu\nu}^{\;\;\alpha} =  \pypx{x'^\mu}{x^\rho}\pypx{x'^\nu}{x^\phi}\pypx{x'^{\psi}}{x^{\alpha}}A_{\mu\nu}B^{\alpha}
+    \]
+    This proves that this operation indeed produces a tensor. 
+
+    \subsection{Exercise}
+    We would like to show that
+    \[
+    C'^{\mu \ \alpha}_{\;\;\nu} \equiv g'^{\mu \sigma} C_{\sigma \nu}^{\ \alpha} = \frac{\partial x'^{\mu}}{\partial x^{\beta}} \frac{\partial x^{\gamma}}{\partial x'^{\nu}} \frac{\partial x'^{\alpha}}{\partial x^{\delta}} C^{\beta \ \delta}_{\ \gamma}
+    \]
+    This is pretty trivial, we just stick with definition. We examine the RHS
+    \[
+    g'^{\mu \sigma} C_{\sigma \nu}^{\ \alpha}
+    \]
+    We see that $\sigma$ contracts, and an additional contravariant index $\mu$ is added in. This will give us
+    \[
+    g'^{\mu \sigma} C_{\sigma \nu}^{\ \alpha} = C^{\mu\ \alpha}_{\;\;\nu}
+    \]
+
+    \subsection{Exercise}
+    Finally, we would like to show that
+    \[
+    C^{\mu \ \alpha}_{\;\;\mu} 
+    \]
+    Transforms like a four-vector $C^\alpha$, which is also quite trivial using the definitions. 
+    \[
+    C^{\mu \ \alpha}_{\;\;\mu}  = \pypx{\mu}{\rho}\pypx{\phi}{\mu}\pypx{\alpha}{\psi} A^{\rho \ \psi}_{\;\;\phi} = \delta^{\rho}_{\phi} \pypx{\alpha}{\psi} A^{\rho \ \psi}_{\;\;\phi} = \pypx{\alpha}{\psi} A^{\rho \ \psi}_{\;\;\rho}
+    \]
+    We see that, the transformation of this tensor is exactly the same as
+    \[
+    A'^{\beta} = \pypx{\beta}{\mu}A^{\mu}
+    \]
+
+    
+    
+    
+
+    
+    
+    
+
+
 
 
 
